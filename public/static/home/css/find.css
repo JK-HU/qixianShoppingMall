@@ -1,0 +1,145 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+ul,li{list-style: none;padding: 0;margin: 0;}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+/* icon */
+.iconfont{
+    vertical-align: middle;
+}
+
+#wrap{
+    max-width: 100%;
+    height: auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+.head{
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    /* background-color: rgba(148, 150, 150, 0.83); */
+    background-color: #fff;
+    border-bottom: 1px solid #e4e0e0;
+    z-index: 9999;
+}
+
+.head .headcon{
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+/* 内容 */
+.con{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #efefef;
+    padding: 12px 0 14px 0;
+    
+}
+.con:nth-child(1){
+    margin-top: 10px;
+}
+.con .cons{
+    width: 97%;
+    height: 88px;
+    margin: auto;
+    display: flex;
+
+}
+.con:last-child{
+    padding-bottom: 6rem;
+}
+.con .conright{
+    flex: 2;
+    display: flex;
+    flex-direction:column;
+    margin-right: 14px;
+}
+.con .cons .conright .righta{
+    flex: 1;
+    height: auto;
+    font-size: 13px;
+    text-align: left;
+    color: #000;
+    padding-left: 10px;
+    /* padding-bottom: 12px; */
+    /* overflow: hidden; */
+    
+}
+
+.con .cons .conright .rightb{
+    flex: 1;
+    text-align: left;
+    font-size: 10px;
+    padding-left: 10px;
+    line-height: 33px;
+    color: rgb(158,158,158);
+}
+.con .cons .conright .rightc{
+    flex: 1;
+    padding-left: 10px;
+    line-height: 27px;
+}
+.con .cons .conright .rightc .browse{
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    color: rgb(158,158,158);
+}
+.con .cons .conright .rightc .give{
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    margin-left: 42px;
+    color: rgb(158,158,158);
+}
+.con .cons .conright .rightc .forward{
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    margin-left: 15px;
+    color: rgb(158,158,158);
+}
+.con .cons .conleft{
+    flex: 1;
+    height: 88px;
+    margin-right: 6px;
+    margin-top: -44px;
+    transform: translateY(50%);
+
+}
+.con .cons .conleft img{
+    width: 79%;
+    height: auto;
+    margin-top: 44px;
+    transform: translateY(-50%);
+
+}
+
+
+
+
+
+

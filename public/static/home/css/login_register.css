@@ -1,0 +1,374 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: #fff;
+}
+ul,li{list-style: none;padding: 0;margin: 0;}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+input::-webkit-input-placeholder{
+    font-size: 16px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+
+  
+
+#wrap{
+    max-width: 100%;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+#wrap .login{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#wrap .login .head{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #efe9e9;
+}
+
+#wrap .login .head .headcon{
+    width: 90%;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+
+}
+
+#wrap .login .head .headcon > span{
+    display: inline-block;
+    height: 100%;
+
+}
+#wrap .login .head .headcon > span:nth-child(1) {
+    width: 20%;
+    text-align: center;
+}
+#wrap .login .head .headcon > span:nth-child(2) {
+    width: 60%;
+    text-align: center;
+}
+#wrap .login .head .headcon > span:nth-child(3) {
+    width: 15%;
+    text-align: center;
+}
+
+
+#wrap .login .logo{
+    width: 100%;
+    height: 210px;
+    padding-top: 1rem;
+    background-color: #fff;
+
+}
+#wrap .login .logo .logocon{
+    width: 207px;
+    height: 207px;
+    margin: auto;
+}
+
+#wrap .login .logo .logocon > img{
+    width: 100%;
+    height: 100%;
+}
+#wrap .login .login_ipt{
+    width: 100%;
+    height: auto;
+    padding-top: 1rem;
+
+}
+
+#wrap .login .login_ipt .ipt_name{
+    width: 97%;
+    height: 40px;
+    line-height: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e4dcdc;
+
+}
+#wrap .login .login_ipt .ipt_name > span{
+    display: inline-block;
+    width: 80px;
+    height: 100%;
+    text-align: center;
+}
+#wrap .login .login_ipt .ipt_name .ipt_name_ipt{
+    width: 60%;
+    height: 100%;
+    margin-left: 13px;
+    display: inline-block;
+}
+#wrap .login .login_ipt .ipt_name .ipt_name_ipt > input {
+    width: 100%;
+    height: 88%;
+    
+}
+
+/* input placeholder大小 */
+/* #wrap .login .login_ipt .ipt_name .ipt_name_ipt > input::-webkit-input-placeholder,#wrap .login .login_ipt .ipt_psword .ipt_ps_ipt > input::-webkit-input-placeholder{
+    font-size: 16px;
+}
+
+#wrap .login .login_ipt .ipt_name .ipt_name_ipt > input:-moz-placeholder,#wrap .login .login_ipt .ipt_psword .ipt_ps_ipt > input::-moz-input-placeholder {
+
+    font-size: 16px;
+}
+
+#wrap .login .login_ipt .ipt_name .ipt_name_ipt > input:-ms-input-placeholder,#wrap .login .login_ipt .ipt_psword .ipt_ps_ipt > input::-ms-input-placeholder{
+
+    font-size: 16px;
+} */
+
+/* input placeholder大小结束 */
+
+
+
+#wrap .login .login_ipt .ipt_psword{
+    width: 97%;
+    height: 40px;
+    line-height: 40px;
+    margin: auto;
+    border-bottom: 1px solid #e4dcdc;
+}
+#wrap .login .login_ipt .ipt_psword > span{
+    display: inline-block;
+    width: 80px;
+    height: 100%;
+    text-align: center;
+}
+#wrap .login .login_ipt .ipt_psword .ipt_ps_ipt{
+    width: 60%;
+    height: 88%;
+    margin-left: 13px;
+    display: inline-block;
+}
+#wrap .login .login_ipt .ipt_psword .ipt_ps_ipt > input{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 登录按钮 */
+.btn_subMess{
+    width: 95%;
+    height: 46px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1rem;
+
+}
+
+.btn_subMess > button {
+    display: block;
+    width: 92%;
+    height: 46px;
+    margin: 0 auto;
+    line-height: 46px;
+    font-size: 20px;
+    color: #9c9a9a;
+    border: 1px solid #d2c9c9;
+    border-radius: 5px;
+    background: none;
+}
+
+/* 协议 */
+.agree{
+    width: 89%;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px auto;
+}
+.agree > span {
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
+}
+.agree > a{
+    display: inline-block;
+    font-size: 13px;
+    color: #5d5c94;
+}
+.agree > a:nth-child(1){
+    display: inline-block;
+}
+.agree > a:nth-child(2){
+    display: inline-block;
+}
+
+
+/* 注册页面 */
+
+#register,#forgetpsword{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+#register .head,#forgetpsword .head{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #efe9e9;
+}
+#register .head .headcon,#forgetpsword .head .headcon{
+    width: 90%;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+}
+#register .head .headcon > a,#forgetpsword .head .headcon > a{display: inline-block;width: 20%;}
+#register .head .headcon > span,#forgetpsword .head .headcon > span{
+    display: inline-block;
+    height: 100%;
+}
+#register .head .headcon > span:nth-child(1),#forgetpsword .head .headcon > span:nth-child(1) {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+
+}
+#register .head .headcon > span:nth-child(2),#forgetpsword .head .headcon > span:nth-child(2) {
+    width: 56%;
+    height: 100%;
+    text-align: center;
+}
+
+#register .logo,#forgetpsword .logo{
+    width: 100%;
+    height: 210px;
+    padding-top: 1rem;
+    background-color: #fff;
+
+}
+#register .logo .logocon,#forgetpsword .logo .logocon{
+    width: 207px;
+    height: 207px;
+    margin: auto;
+}
+
+#register .logo .logocon > img,#forgetpsword .logo .logocon > img{
+    width: 100%;
+    height: 100%;
+}
+#register .register_ipt{
+    width: 100%;
+    height: auto;
+    padding-top: 1rem;
+
+}
+
+#register .register_ipt .ipt_name,#register .register_ipt .ipt_psword,#register .register_ipt .ipt_confirmps,
+#forgetpsword .forgetpsword_ipt .forgetpsword_name,#forgetpsword .forgetpsword_ipt .forgetpsword_psword,#forgetpsword .forgetpsword_ipt .forgetpsword_confirmps
+{
+    width: 97%;
+    /* height: 40px; */
+    line-height: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e4dcdc;
+
+}
+/* #register .register_ipt .ipt_name > span{
+    display: inline-block;
+    width: 80px;
+    height: 100%;
+    text-align: center;
+} */
+#register .register_ipt .ipt_name .ipt_newname_ipt,#register .register_ipt .ipt_psword .ipt_newps_ipt,#register .register_ipt .ipt_confirmps .ipt_confirmps_ipt,
+#forgetpsword .forgetpsword_ipt .forgetpsword_name .forgetpsword_newname_ipt,#forgetpsword .forgetpsword_ipt .forgetpsword_psword .forgetpsword_newps_wrap,#forgetpsword .forgetpsword_ipt .forgetpsword_confirmps .forgetpsword_confirmps_wrap
+{
+    width: 90%;
+    height: 100%;
+    margin-left: 13px;
+    display: inline-block;
+}
+#register .register_ipt .ipt_name .ipt_newname_ipt > input,#register .register_ipt .ipt_psword .ipt_newps_ipt > input,#register .register_ipt .ipt_confirmps .ipt_confirmps_ipt > input,
+#forgetpsword .forgetpsword_ipt .forgetpsword_name .forgetpsword_newname_ipt > input,#forgetpsword .forgetpsword_ipt .forgetpsword_psword .forgetpsword_newps_wrap > input,#forgetpsword .forgetpsword_ipt .forgetpsword_confirmps .forgetpsword_confirmps_wrap > input
+{
+    width: 100%;
+    height: 32px;
+    text-align: left;
+    
+}
+
+#register .register_ipt .ipt_verification,#forgetpsword .forgetpsword_ipt .forgetpsword_verification{
+    position: relative;
+    display: block;
+    width: 97%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid #e4dcdc;
+}
+
+#register .register_ipt .ipt_verification .ipt_verification_ipt,#forgetpsword .forgetpsword_ipt .forgetpsword_verification .forgetpsword_verification_wrap{
+    display: inline-block;
+    width: 97%;
+    height: 40px;
+    margin-left: 13px;
+    text-align: left;
+
+}
+#register .register_ipt .ipt_verification .ipt_verification_ipt > input,#forgetpsword .forgetpsword_ipt .forgetpsword_verification .forgetpsword_verification_wrap > input{
+    width: 60%;
+    height: 32px;
+    text-align: left;
+}
+
+#register .register_ipt .ipt_verification > button,#forgetpsword .forgetpsword_ipt .forgetpsword_verification > button{
+    display: inline-block;
+    position: absolute;
+    right: 8%;
+    width: 128px;
+    height: 33px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 1px solid #50c578;
+    color: #00b940;
+}
+
+/* 注册按钮 */
+#register .btn_regsMess,#forgetpsword .btn_regsMess{
+    width: 95%;
+    height: 46px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1rem;
+}
+#register .btn_regsMess > button,#forgetpsword .btn_regsMess > button {
+    display: block;
+    width: 92%;
+    height: 46px;
+    margin: 0 auto;
+    line-height: 46px;
+    font-size: 20px;
+    color: #9c9a9a;
+    border: 1px solid #d2c9c9;
+    border-radius: 5px;
+    background: none;
+}
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台功能模块管理</title>
+    <link rel="stylesheet" href="/static/plugins/layui/css/layui.css" media="all" />
+</head>
+<body>
+    <table class="layui-table">
+        <colgroup>
+            <col width="150">
+            <col width="150">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>模块</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach name="is_show" key="key" item="vo"}
+        <tr>
+            <td>{$vo['name']}</td>
+            <td>
+                {if $vo['install']} 已安装 {else} 未安装 {/if}
+            </td>
+            <td>
+                {if condition="$vo['install'] eq true"}
+                <a href="{:url('manage/admin/deleteManage', ['name'=>$key])}" target="_blank">卸载</a>
+                {else}
+                <a href="{:url('manage/admin/installManage', ['name'=>$key])}" target="_blank">安装</a>
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+</body>
+</html>

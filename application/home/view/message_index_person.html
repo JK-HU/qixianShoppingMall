@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/offeript.css" />
+</head>
+<body>
+<div class="wrap">
+    <div class="container">
+        <div class="headimg"><img src="/static/home/images/banner_sj.png" alt=""></div>
+        <!-- 表单提交 -->
+        <div id="form">
+            <div class="form_head">
+                <span class="head_tit">个人入驻</span>
+            </div>
+            <div class="form_name">
+                <input type="text" name="name" class='form_name_ipt' placeholder="请输入您的称呼"/>
+            </div>
+            <div class="form_phone">
+                <input type="text" name="phone" class='form_phone_ipt' placeholder="请输入您的联系号码">
+            </div>
+            <div class="form_area" style="display: none">
+                <input type="text" name="area" class='form_area_ipt' placeholder='暂无数据' value="" disabled />
+            </div>
+            <div class="form_sub">
+                <button class='nowApply'>立即申请</button>
+                <a href="javascript:alert('暂无数据')">
+                    <span class="icontel"></span>
+                    咨询客服: 1234567
+                </a>
+            </div>
+        </div>
+        <!-- 表单提交结束 -->
+    </div>
+</div>
+<script src="/static/home/js/jquery.js"></script>
+<script>
+    $('.form_area_ipt').val(localStorage.getItem('the-area'));
+    $('.nowApply').bind('click',function() {
+        $.ajax({
+            url : "{:url('message/index')}",
+            type : 'POST',
+            data  :{
+                form_name_ipt : $('.form_name_ipt').val(),
+                form_phone_ipt : $('.form_phone_ipt').val(),
+                form_area_ipt : $('.form_area_ipt').val(),
+                form_content_ipt : '',
+                form_title_ipt : '个人入驻'
+            },
+            success : function(data) {
+                alert(data.text);
+                if (data.code===1) {
+                    location.href='/';
+                }
+            },
+            error : function() {}
+        });
+    });
+
+</script>
+</body>
+</html>

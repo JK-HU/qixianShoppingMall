@@ -1,0 +1,163 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>{$title}</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" id="the-form">
+        <input type="hidden" name="id" id="id" value="{$info.id|default=''}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">所属用户组</label>
+            <div class="layui-input-4">
+                <select name="level" lay-verify="required">
+                    <option value="">请选择会员组</option>
+                    {volist name="$user_level" id="vo"}
+                    <option {if condition="isset($info['level']) && $vo['level_id'] eq $info['level']"}selected{/if} value="{$vo.level_id}">{$vo.level_name}</option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{:lang('nickname')}</label>
+            <div class="layui-input-4">
+                <input type="text" name="username" value="{$info.username|default=''}" lay-verify="required" placeholder="{:lang('pleaseEnter')}{:lang('nickname')}" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">余额</label>
+            <div class="layui-input-4">
+                <input type="text" name="money" value="{$info.money|default=''}" lay-verify="required" placeholder="{:lang('pleaseEnter')}余额" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">元</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">积分</label>
+            <div class="layui-input-4">
+                <input type="text" name="integral" value="{$info.integral|default=''}" lay-verify="required" placeholder="{:lang('pleaseEnter')}积分" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">分</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{:lang('email')}</label>
+            <div class="layui-input-4">
+                <input type="text" name="email" value="{$info.email|default=''}" lay-verify="eamil" placeholder="输入{:lang('email')}" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                必填：用于找回密码
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{:lang('tel')}</label>
+            <div class="layui-input-4">
+                <input type="text" name="mobile" value="{$info.mobile|default=''}" lay-verify="mobile" placeholder="输入{:lang('tel')}" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                只能填写数字
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{:lang('pwd')}</label>
+            <div class="layui-input-4">
+                <input type="password" name="password" value="{$info.password|default=''}" placeholder="输入{:lang('pwd')}" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                密码必须大于6位，小于15位
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{:lang('sex')}</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="sex"  {if condition="isset($info['sex']) && $info['sex'] eq 1"}checked{/if} value="1" title="{:lang('man')}">
+                    <input type="radio" name="sex"  {if condition="isset($info['sex']) && $info['sex'] eq 0"}checked{/if} value="0" title="{:lang('woman')}">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{:lang('qq')}</label>
+            <div class="layui-input-4">
+                <input type="text" name="qq" value="{$info.qq|default=''}" placeholder="输入{:lang('qq')}" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{:lang('address')}</label>
+            <div class="layui-input-inline">
+                <select name="province" lay-filter="province">
+                    <option value="">请选择省</option>
+                    {volist name="$province" id="vo"}
+                    <option {if condition="isset($info['province']) && $vo['id'] eq $info['province']"}selected{/if} value="{$vo.id}">{$vo.name}</option>
+                    {/volist}
+                </select>
+            </div>
+            <div class="layui-input-inline" >
+                <select name="city" id="city" lay-filter="city">
+                    {if condition="isset($info['city'])"}
+                    <option value="{$info['city']}" selected>{$city}</option>
+                    {/if}
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="district" id="district" lay-filter="s3">
+                    {if condition="isset($info['district'])"}
+                    <option value="{$info['district']}" selected>{$district}</option>
+                    {/if}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
+                <a href="{:url('index')}" class="layui-btn layui-btn-primary">{:lang('back')}</a>
+            </div>
+        </div>
+    </form>
+</div>
+{include file="common/foot"/}
+<script>
+    layui.use(['form', 'layer'], function () {
+        var form = layui.form, layer = layui.layer,$= layui.jquery;
+        form.on('select(province)', function(data) {
+            var pid = data.value;
+            var loading = layer.load(1, {shade: [0.1, '#fff']});
+            $.get("{:url('getRegion')}?pid=" + pid, function (data) {
+                layer.close(loading);
+                var html='<option value="">请选择市</option>';
+                $.each(data, function (i, value) {
+                    html += '<option value="'+value.id+'">'+value.name+'</option>';
+                });
+                $('#city').html(html);
+                $('#district').html('<option value="">请选择县/区</option>');
+                form.render()
+            });
+        });
+        form.on('select(city)', function(data) {
+            var pid = data.value;
+            var loading = layer.load(1, {shade: [0.1, '#fff']});
+            $.get("{:url('getRegion')}?pid=" + pid, function (data) {
+                layer.close(loading);
+                var html='<option value="">请选择县/区</option>';
+                $.each(data, function (i, value) {
+                    html += '<option value="'+value.id+'">'+value.name+'</option>';
+                });
+                $('#district').html(html);
+
+                form.render()
+            });
+        });
+        form.on('submit(submit)', function (data) {
+            // 提交到方法 默认为本身
+            var loading = layer.load(1, {shade: [0.1, '#fff']});
+            $.post("", $('#the-form').serialize(), function (res) {
+                layer.close(loading);
+                if (res.code > 0) {
+                    layer.msg(res.msg, {time: 1800, icon: 1}, function () {
+                        location.href = res.url;
+                    });
+                } else {
+                    layer.msg(res.msg, {time: 1800, icon: 2});
+                }
+            });
+        })
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+
+    <link rel="stylesheet" href="/static/home/css/login_register.css">
+</head>
+<body>
+
+<div id="wrap">
+    <!-- 登录 -->
+    <div class="login" style="display: block">
+        <!-- 顶部 -->
+        <header class="head">
+            <div class="headcon">
+                <span onclick="location.href='{:url('index/index/index')}'">返回</span>
+                <span class="login_title"> 登录 </span>
+                <span class="register_txt">注册</span>
+            </div>
+            <div style="clear:both"></div>
+        </header>
+        <!-- logo -->
+        <div class="logo"><div class="logocon"><img src="/static/home/images/logo.jpg" alt="logo"></div> </div>
+        <!-- logo结束 -->
+        <!-- 登录表单 ipt_name-账户,ipt_psword-密码 -->
+        <div class="login_ipt">
+            <div class="ipt_name">
+                <span>账号</span>
+                <div class="ipt_name_ipt"><input type="text" name="ipt_name_ipt" class="get_ipt_name" placeholder="请输入手机号"/></div>
+            </div>
+            <div class="ipt_psword">
+                <span>密码</span>
+                <div class="ipt_ps_ipt"><input type="text" name="ipt_name_ipt" class="get_ipt_ps" placeholder="请输入6-20位登录密码"/></div>
+            </div>
+        </div>
+        <!-- 登录表单结束 -->
+        <!-- 登录按钮 -->
+        <div class="btn_subMess">
+            <button class="login_btn">登 录</button>
+        </div>
+        <!-- 登录按钮结束 -->
+        <!-- 协议 -->
+        <div class="agree">
+            <span>登录即为同意</span>
+            <a href="javascript:"> 《务团网用户协议》 </a>
+            <a class="showforget" href="javascript:" style="float:right">忘记密码</a>
+        </div>
+        <!-- 协议结束 -->
+    </div>
+
+    <!-- 注册 -->
+    <div id="register" style="display:none">
+        <header class="head">
+            <div class="headcon">
+                <a class="showlogin" href="javascript:"> <span>登录</span></a>
+                <span class="register_txt">用户注册</span>
+            </div>
+            <div style="clear:both"></div>
+        </header>
+        <!-- logo -->
+        <div class="logo"><div class="logocon"><img src="/static/home/images/logo.jpg" alt="logo"></div> </div>
+        <!-- logo结束 -->
+        <!-- 注册提交表单 -->
+        <div class="register_ipt">
+            <div class="ipt_name">
+                <div class="ipt_newname_ipt"><input type="text" name="ipt_newname_ipt" class="get_name" placeholder="请输入手机号"/></div>
+            </div>
+            <div class="ipt_verification">
+                <div class="ipt_verification_ipt"><input type="text" name="ipt_verification_ipt" class="get_verification" placeholder="请输入6位验证码"/></div>
+                <button class="get_verifbtn">获取验证码</button>
+            </div>
+            <div class="ipt_psword">
+                <div class="ipt_newps_ipt"><input type="text" name="ipt_newps_ipt" class="get_ps" placeholder="请输入6-20位登录密码"/></div>
+            </div>
+            <div class="ipt_confirmps">
+                <div class="ipt_confirmps_ipt"><input type="text" name="ipt_confirmps_ipt" class="get_confirmps" placeholder="确认登录密码"/></div>
+            </div>
+        </div>
+        <!-- 注册提交表单结束 -->
+        <!-- 注册按钮 -->
+        <div class="btn_regsMess">
+            <button class="sub_btn">确认注册</button>
+        </div>
+    </div>
+    <!-- 注册结束 -->
+
+    <!-- 忘记密码 -->
+    <div id="forgetpsword" style="display:none">
+        <header class="head">
+            <div class="headcon">
+                <a class="showlogin" href="javascript:"> <span>登录</span></a>
+                <span class="register_txt">忘记密码</span>
+            </div>
+            <div style="clear:both"></div>
+        </header>
+        <!-- logo -->
+        <div class="logo"><div class="logocon"><img src="/static/home/images/logo.jpg" alt="logo"></div> </div>
+        <!-- logo结束 -->
+        <!-- 忘记密码提交表单 -->
+        <div class="forgetpsword_ipt">
+            <div class="forgetpsword_name">
+                <div class="forgetpsword_newname_ipt"><input type="text" name="forgetpsword_newname" class="forgetpsword_newname" placeholder="请输入手机号"/></div>
+            </div>
+            <div class="forgetpsword_verification">
+                <div class="forgetpsword_verification_wrap"><input type="text" name="forgetpsword_verification_ipt" class="forgetpsword_verification_ipt" placeholder="请输入6位验证码"/></div>
+                <button class="forgetpsword_verifbtn">获取验证码</button>
+            </div>
+            <div class="forgetpsword_psword">
+                <div class="forgetpsword_newps_wrap"><input type="text" name="forgetpsword_newps_ipt" class="forgetpsword_newps_ipt" placeholder="请输入6-20位登录密码"/></div>
+            </div>
+            <div class="forgetpsword_confirmps">
+                <div class="forgetpsword_confirmps_wrap"><input type="text" name="forgetpsword_confirmps_ipt" class="forgetpsword_confirmps_ipt" placeholder="确认登录密码"/></div>
+            </div>
+        </div>
+        <!-- 忘记密码提交表单结束 -->
+        <!-- 忘记密码按钮 -->
+        <div class="btn_regsMess">
+            <button class="forgetpsword_btn">确认修改</button>
+        </div>
+    </div>
+
+    <!-- 忘记密码结束 -->
+
+
+</div>
+<script src="/static/home/js/jquery.min.js"></script>
+<script src="/static/home/js/login_register.js"></script>
+</body>
+</html>

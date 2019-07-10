@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/vip.css">
+</head>
+<body>
+
+<div id="wrap">
+
+    <header>
+        <a href="javscript:history.back(-1)"><span class="iconfont iconfanhui"></span></a>
+        <!-- <span class="iconfont iconzy"></span> -->
+        <span class="ordertit"><strong>超级会员</strong></span>
+    </header>
+
+    <div class="mainbg">
+        <img src="/static/home/images/vipbg.png" style="width:100%" alt="">
+
+        <!-- 立即开通 -->
+        <!-- <span class="vipOpen" onclick="javascript:location.href='{:url('user/member/choose')}'"><strong>立即开通</strong></span> -->
+
+        <!-- 会员特权_vipPriv -->
+        <div class="vipPriv">
+            <div class="vipPriv_tit"><span>会员特权</span></div>
+            <div class="vipPriv_ul">
+                <ul>
+                    <li>
+                        <img src="/static/home/images/vip2.png" alt="">
+                        <span>会员专属价</span>
+                    </li>
+                    <li>
+                        <img src="/static/home/images/vip2.png" alt="">
+                        <span>专享礼包</span>
+                    </li>
+                    <li>
+                        <img src="/static/home/images/vip3.png" alt="">
+                        <span>专享积分</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 会员价格 -->
+            <div class="vipIntegral">
+                <!-- <div class="tegral_img"><img src="/static/home/images/viptitle6.png" alt=""></div> -->
+                <div class="tegraltxt" style="padding:0">
+                    <ul class="vipprise">
+                        <!-- <li class="vippriseli">
+                            加入会员:<span class="vipprise_money">{$config.member_month_price}</span>/月
+                        </li> -->
+                        <!-- <li class="vippriseli">领取2000积分</li>
+                        <li class="vippriseli">积分兑换相应礼品</li> -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 免费领积分_viptitle3.png  vipInteg.png -->
+            <div class="vipIntegral">
+                <!-- <div class="tegral_img"><img src="/static/home/images/viptitle3.png" alt=""></div> -->
+                <div class="tegral_img"><img src="/static/home/images/vip2.png" alt=""> 生日有礼</div>
+
+                <div class="tegraltxt">
+                    <ul>
+                        <li>会员生日可领取务团网为您定制的生日专属礼品</li>
+                        <li>尊享会员一个自然年内可领取一次生日礼，请在有效期内领取并使用。</li>
+                        <li>若有效期内未领取，不再补发生日礼。</li>
+                        <li>生日日期需与身份证信息一致。</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="vipIntegral">
+                <div class="tegral_img"> <img src="/static/home/images/vip2.png" alt=""> 极速售后与专属客服</div>
+                <div class="tegraltxt">
+                    <ul>
+                        <li>在专业、高效的售后服务的基础上，为尊享会员开通的专属售后服务，尊享会员将享受以下专属极速售后服务</li>
+                        <li>专属客服一对一沟通</li>
+                        <li>门店微信一对一沟通</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="vipIntegral">
+                <div class="tegral_img"> <img src="/static/home/images/vip2.png" alt=""> 尊享黑卡-品质服务</div>
+                <div class="tegraltxt">
+                    <ul>
+                        <li>尊享会员卡可作取菜卡使用。</li>
+                        <li>尊享卡有效时间为1年，会员有效期内可享受尊享会员特权。</li>
+                        <li>续费说明：会员到期后，可续费尊享会员特权。</li>
+                        <li>尊享会员卡在购买后不可转让不可退</li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- 底部开通会员 -->
+
+            <button class="openVip">立即开通会员</button>
+
+            <!-- 底部开通会员结束 -->
+
+            <!-- 开通会员弹框 -->
+            <div class="cover"></div>
+            <div class="card">
+                <p class="title">务团网提示</p>
+                <div class="card_con">您将支付399元/年的服务费</div>
+                <button class="card_cancel">在考虑考虑</button>
+                <button class="card_success" onclick="javascript:location.href='{:url('user/member/choose')}'">我已理解,前去购买</button>
+            </div>
+
+            <!-- 开通会员弹框结束 -->
+
+
+        </div>
+    </div>
+</div>
+
+<script src="/static/home/js/jquery.js"></script>
+
+<script>
+$('.openVip').on('click',function() {
+    $('.card').attr('style','display:block');
+
+
+    // 取消card_cancel
+    $('.card_cancel').bind('click',function() {
+        $('.card').attr('style','display:none');
+        return false;
+    });
+    // 确认card_success
+    $('.card_success').bind('click',function() {
+        $('.card').attr('style','display:none');
+    });
+
+});
+
+
+</script>
+</body>
+</html>

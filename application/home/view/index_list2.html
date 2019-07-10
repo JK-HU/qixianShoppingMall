@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <script src="/static/home/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/home/js/swiper-3.4.0.jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="/static/home/css/swiper-3.2.7.min.css" /> -->
+    <link rel="stylesheet" href="/static/home/css/forma_jq.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_con.css" />
+    <link rel="stylesheet" type="text/css" href="/static/home/css/swiper-3.3.1.min.css" />
+
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+
+        /*
+
+        .container {
+
+        }
+        .swiper1 {
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid #e2e2e2;
+        }
+
+        .swiper1 .selected {
+            color: #ec5566;
+            border-bottom: 2px solid #ec5566;
+        }
+
+        .swiper1 .swiper-slide {
+            text-align: center;
+            font-size: 16px;
+            height: 50px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .swiper2 {
+            width: 100%;
+        }
+
+        .swiper2 .swiper-slide {
+            height: calc(100vh - 50px);
+            background-color: #f4f4f4;
+            color: #fff;
+            text-align: center;
+            box-sizing: border-box !important;
+            overflow-x: hidden !important;
+        } */
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .tab {
+            display: flex;
+            line-height: 51px;
+            position: fixed;
+            top: 51px;
+            width: 100%;
+            z-index: 99999;
+            border-bottom: 1px #ccc solid;
+            background: #fff;
+        }
+
+        .tab a {
+            width: 33%;
+            background: #fff;
+            text-align: center;
+            color: #000;
+        }
+
+        .tab .active {
+            border-bottom: 1px #f50 solid;
+            color: #f50;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: visible;
+            background: #fff
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            height: calc(100vh - 120px)
+        }
+
+        .swiper-slide {
+            height: auto;
+            background: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .list-group {
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+
+
+        /* 下拉刷新结束 */
+    </style>
+</head>
+<body>
+<div id='wrap'>
+    <!-- 顶部 -->
+    <header class="head" style="height:51px">
+        <div class="headcon">
+            <a href="index.html"><span class="iconfont iconfanhui"></span></a>
+            <a href="index.html" style="left:9%"><span class="iconfont iconhome"></span></a>
+            <span class="cj">旧房翻新</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tab" style="top:52px">
+            {volist name="type_list" id="vo"}
+            <a data-id="{$vo.id}" {if condition="$key eq 0"}class="active"{/if} href="javascript:;">{$vo.title}</a>
+            {/volist}
+        </div>
+        <div class="sort" style="position:fixed;z-index: 99999;">
+            <div class="sorta" style="position:fixed;left:50%;transform:translateX(-50%);width:100%;height:auto;display:block;background:#fff">
+                <span class="truesort">综合排序</span><i class="arrows iconfont iconarrow-up1"></i></div>
+        </div>
+        <div class="sortli" style="display:none">
+            <ul>
+                <li class="sortlis" data-fun='recommend' style="color:red">综合排序<i class="iconfont iconzhengque" style="color:red"></i></li>
+                <li class="sortlis" data-fun='sales'>销量高<i class="" style="color:red"></i></li>
+                <li class="sortlis" data-fun='praise'>好评高<i class="" style="color:red"></i></li>
+                <li class="sortlis" data-fun='price'>价格低<i class="" style="color:red"></i></li>
+            </ul>
+        </div>
+        <!-- 遮盖层 -->
+        <div class="cover" style="display:none"></div>
+        <!-- swiper2 -->
+        <div class="swiper-container">
+            <!-- <div class="refreshtip">下拉可以刷新</div> -->
+            <div class="swiper-wrapper w" style="background:rgb(244,244,244)">
+                <div class="swiper-slide d" style="margin-top:48px">
+                    <!-- <div class="init-loading list-group-item text-center" style="display: none;">下拉可以刷新</div> -->
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper" id="swiper_data">
+                            <div class="swiper-slide list-group" data-attrs="group_a"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <!-- 覆盖层 -->
+        <!-- 覆盖层结束 -->
+    </div>
+</div>
+<!-- <script src="/static/home/js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script> -->
+<script src="/static/home/js/oldhouse_con.js"></script>
+<script src="/static/home/js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var loadFlag = true;
+    var onloadnum = 5; //页面加载时获取的个数
+    var swiper_a_num = 0; //上拉或下拉加载时递增的数
+    var swipersize = 5; //上拉或下拉时每次加载的个数
+
+    // 页面加载
+    document.onreadystatechange = function () {
+        if (document.readyState == 'complete') {
+            var identName = $('.tab a.active').text(); // tab的text
+            var tabIndex = $('.tab a.active').index(); //tab选中的索引,从0开始
+            var tabId = $('.tab a.active').data('id');
+            var attrs_cur = $('.iconzhengque').parent().attr('data-fun');  // 获取排序属性
+            $.ajax({
+                 url : "{:url('goods/get_list')}", //页面初始加载
+                 data : {
+                     'tabIndex' : tabIndex,
+                     'tabId' : tabId,
+                     'attrs_cur' : attrs_cur,
+                     'onloadnum' : onloadnum,
+                     'swipersize' : swipersize,
+                     'swiper_a_num' : swiper_a_num
+                 },
+                 type : 'POST',
+                 dataType : 'json',
+                 success : function(re){
+                     for (var i in re) {
+                         $(".swiper-slide-active").eq(0).append('<div class="con">\
+                                        <a href="/home/goods/content1.html?id='+re[i].id+'">\
+                                            <div class="conimg"><img src="'+re[i].pic+'" alt=""></div>\
+                                            <div class="conc">\
+                                                <span>'+re[i].title+'</span>\
+                                                <span style="font-size:13px;color:#a8a4a4">'+re[i].introduce+'</span>\
+                                            </div>\
+                                        </a>\
+                                    </div>');
+                     }
+                     mySwiper.update(); // 重新计算高度;
+                 },
+                 error : function() {}
+            });
+
+            // 获取tabs的个数
+            var tablen = parseInt($('.tab a').length);
+            var swiper_wrapper = $('.swiper-wrapper');
+            /*console.log(tablen)
+            for ( let i = 0 ; i < tablen ; i++) {
+                var a = document.createElement('a');
+                a.setAttribute('href','javascript:;');
+                a.setAttribute('data-attrs',i);
+                a.innerHTML = 'SDF';
+                $('.tab').append(a);
+            }*/
+            var size_bf = 100 / parseInt({:count($type_list)});
+            $('.tab a').attr(`style`,`width:${size_bf}%`);
+        }
+    }
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        scrollbar: '.swiper-scrollbar',
+        slidesPerView: 'auto',
+        mousewheelControl: true,
+        freeMode: true,
+        onTouchMove: function (swiper) { //手动滑动中触发
+            var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+        },
+        onTouchEnd: function (swiper) {
+            var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+            // var identName = $('.swiper-slide-active')[0].dataset; // 判断每个页面的data-attrs
+            var identName = document.getElementsByClassName('swiper-slide-active')[0];
+            var tabIndex = $('.tab a.active').index(); //tab选中的索引
+            var tabId = $('.tab a.active').data('id');
+            var attrs_cur = $('.iconzhengque').parent().attr('data-fun');  // 获取属性
+            // 上拉加载
+            if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                // console.log("已经到达底部！");
+                if (loadFlag) {
+                    $(".loadtip").html('正在加载...');
+                } else {
+                    $(".loadtip").html('没有更多啦！');
+                }
+                ajax_common(attrs_cur,tabIndex,tabId,onloadnum,swipersize,swiper_a_num);
+            }
+            return false;
+        }
+    });
+
+    // mySwiper2滑动不用了但不能注释
+    var mySwiper2 = new Swiper('.swiper-container2', {
+        onTransitionEnd: function (swiper) {
+            mySwiper.update();
+            // $('.w').css('transform', 'translate3d(0px, 0px, 0px)');
+            // $('.swiper-container2 .swiper-slide-active').css('height', 'auto').siblings('.swiper-slide').css('height', '0px');
+            // $('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
+        }
+    });
+
+    // 切换页面
+    $('.tab').on('click','a',function () {
+        var swiper_a_num = 0;
+        var tabIndex = $(this).index(); //当前tabs的索引
+        var tabId = $(this).data('id');
+        var attr_cur = $('.iconzhengque').parent().attr('data-fun'); //选中的排序属性
+        var tabtxt = $(this).text();
+        $('.swiper-slide-active').eq(0).html(''); //清空
+        $(this).addClass('active').siblings('a').removeClass('active');
+        mySwiper2.slideTo($(this).index(), 500, false);
+        $('.w').css('transform', 'translate3d(0px, 0px, 0px)');
+        $('.swiper-container2 .swiper-slide-active').css('height', 'auto').siblings('.swiper-slide').css('height', '0px');
+
+        ajax_common(attr_cur,tabIndex,tabId,onloadnum,swipersize,swiper_a_num);
+        mySwiper.update();// 重新计算高度;
+    });
+
+    // 点击排序
+    $('.sortlis').bind('click',function() {
+        var swiper_a_num = 0;
+        mySwiper.update(); // 重新计算高度;
+        $('.swiper-slide-active').eq(0).html(''); //清空
+        var attrs_cur = $(this).attr('data-fun');  // 获取属性
+        var tabIndex = $('.tab a.active').index(); //tab选中的索引
+        var tabId = $('.tab a.active').data('id');
+
+        ajax_common(attrs_cur,tabIndex,tabId, onloadnum,swipersize,swiper_a_num)
+    });
+
+    /**
+     * 说明,变量名
+     * ajax_commom 获取数据公共方法
+     *
+     * attrs_cur 点击排序的属性
+     * tabIndex tab的索引,从0开始
+     * onloadnum 页面初始加载的个数
+     * swipersize 上拉加载的个数
+     * tabIndex tab的索引
+     * swiper_a_num 这是切换页面时,每次从0开始计数,在叠加
+     * recommend_flag; //综合排序
+     * sales_flag     //销量高
+     * praise_flag   //好评高
+     * price_flag   //价格低
+     * swiper-slide-active 添加到eq(1)中时可以左右滑动
+     **/
+
+    //上拉,切换页面时用于获取数据
+    function ajax_common(attrs_cur,tabIndex,tabId,onloadnum,swipersize,swiper_a_num) {
+
+         $.ajax({
+             url : "{:url('goods/get_list')}",
+             type : 'POST',
+             data : {
+                 'attrs_cur' : attrs_cur,
+                 'tabIndex' : tabIndex,
+                 'tabId' : tabId,
+                 'onloadnum' : onloadnum,
+                 'swiper_a_num' : swiper_a_num,
+                 'swipersize' : swipersize
+             },
+              success : function(re) {
+                  for (var i in re) {
+                      $(".swiper-slide-active").eq(0).append('<div class="con">\
+                                        <a href="/home/goods/content1.html?id=\'+re[i].id+\'">\
+                                            <div class="conimg"><img src="'+re[i].pic+'" alt=""></div>\
+                                            <div class="conc">\
+                                                <span>'+re[i].title+'</span>\
+                                                <span style="font-size:13px;color:#a8a4a4">'+re[i].introduce+'</span>\
+                                            </div>\
+                                        </a>\
+                                    </div>');
+                  }
+                  mySwiper.update(); // 重新计算高度;
+              },
+              error : function() {}
+         });
+
+    }
+
+</script>
+</body>
+</html>

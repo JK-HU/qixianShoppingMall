@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/enterprise_rz.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_xdqy.css" />
+</head>
+<body>
+<div class="wrap">
+    <div class="container">
+        <div class="headimg"><img src="/static/home/images/banner_sj.png" alt=""></div>
+        <!-- 表单提交 -->
+        <div id="form">
+            <div class="form_head">
+                <span class="head_tit">企业入驻</span>
+            </div>
+            <div class="form_company">
+                <input type="text" class="form_company_ipt" name="company" placeholder="请输入企业(公司)的称呼" />
+            </div>
+            <div class="form_phone">
+                <input type="text" class="form_phone_ipt" name="phone" placeholder="请输入您的联系号码">
+            </div>
+            <!-- 上传图片 -->
+            <div class="iploadimg">
+                <p>上传企业(公司)照片 , 更加方便了解您的需求(最多上传两张)</p>
+                <!-- <div class="deposit">
+                    <img src="/static/home/images/find3.jpg" alt="" />
+                    <i class="iconfont iconshanchu deleimg"></i>
+                </div> -->
+                <form>
+                    <label for="updataimg">
+                        <input type="file" name='updataimg' id="updataimg" hidden />
+                        <i class="iconfont iconshangchuan"></i>
+                    </label>
+                </form>
+            </div>
+            <!-- 上传图片结束 -->
+            <div class="form_sub">
+                <button id="subMess">立即申请</button>
+                <a href="javascript:alert('暂无数据')">
+                    <span class="icontel"></span>
+                    咨询客服: 1234567
+                </a>
+            </div>
+        </div>
+        <!-- 表单提交结束 -->
+    </div>
+</div>
+<script src="/static/home/js/jquery.js"></script>
+<script src="/static/home/js/enterprise_rz.js"></script>
+</body>
+
+</html>

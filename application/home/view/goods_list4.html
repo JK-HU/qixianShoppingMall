@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable"> 
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>{$type_info.title}</title>
+    <link rel="stylesheet" href="/static/home/css/serorder1.css" />
+    <script src="/static/home/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/home/js/swiper-3.4.0.jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/home/css/swiper-3.2.7.min.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_serorder.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_gwc.css" />
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .tab {
+            /* display: flex; */
+            height: 100%;
+            line-height: 51px;
+            position: absolute;
+            /* top: 310px; */
+            width: 20%;
+            z-index: 9999;
+            background: #fff;
+        }
+
+        .tab a {
+            /* width: 33%; */
+            width: auto;
+            background: #fff;
+            text-align: center;
+            color: #000;
+            margin-left: 6px;
+            display: block;
+        }
+
+        .tab .active {
+            border-bottom: 1px #f50 solid;
+            color: #f50;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: visible;
+            background: rgb(255, 255, 255);
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            /* height: calc(103vh - 120px); */
+            height: calc(116vh - 120px);
+        }
+
+        .swiper-slide {
+            height: auto;
+            background: rgb(255, 255, 255);
+            width: auto;
+            padding-top: 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .list-group {
+            padding-left: 0;
+            border-left: 4px solid #e7e5e5;
+            /* margin-bottom: 20px; */
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: rgba(255, 255, 255, 0);
+            border: 1px solid #ddd;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+
+        /* 下拉刷新结束 */
+    </style>
+</head>
+
+<body>
+<div id="wrap">
+    <!-- 顶部 -->
+    <header class="head">
+        <div class="headcon">
+            <a href="javascript:history.back()">
+                <span><i class="iconfont iconfanhui" style="font-size:20px;vertical-align: middle;color: #adaaaa;"></i>返回</span>
+            </a>
+            <span class="fanxin">{$type_info.title}</span>
+        </div>
+    </header>
+    <!-- 顶部结束 -->
+    <!-- 轮播图 -->
+    <section class="pc-banner">
+        <div class="swiper-container_f">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide-center none-effect" style="width:100%">
+                    {volist name="banner_list" id="vo"}
+                    <a href="{$vo.url}">
+                        <img src="{$vo.pic}">
+                    </a>
+                    {/volist}
+                    <div class="layer-mask"></div>
+                </div>
+                <!-- <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/static/home/images/fc_banner2.png">
+                    </a>
+                    <div class="layer-mask"></div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- 轮播图结束 -->
+    <!-- 订单 -->
+    <div class="container" id='order_contain' style="margin-top:9px;overflow: hidden;z-index: 999;">
+        <div class="tab">
+            {volist name="type_list" id="vo"}
+            <a data-id="{$vo.id}" {if condition="$key eq 0"}class="active"{/if} href="javascript:;"><span>{$vo.title}</span></a>
+            {/volist}
+        </div>
+
+        <!-- swiper2 -->
+        <div class="swiper-container">
+
+            <div class="swiper-wrapper w" style="background:rgb(255,255,255)">
+                <div class="swiper-slide d" style="margin-left: 87px;">
+                    <!-- <div class="init-loading list-group-item text-center" style="display: none;">下拉可以刷新</div> -->
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide list-group">
+                                <div class="onorder">
+                                    <div class="onordercon">
+                                        <ul>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+        <!-- 添加成功 -->
+        <div id="box_mask" class="box_mask" style="display:none">
+            <div class="box-alert">
+                <div class="alert_content"></div>
+                <div class="alert_ok"></div>
+            </div>
+        </div>
+        <!-- 添加成功结束 -->
+
+        <!-- 商品规格弹出层 -->
+        <div class="cover" id="cover"></div>
+        <div id="showEject" class='showEject'>
+            <div class="eject_box">
+                <div class="box_head">
+                    <img src="/static/home/images/sd1.jpg" alt="" class="img">
+                    <div class="money">
+                        <span class="money_prise">￥ 00.00</span>
+                        <span class="money_id" style="display: none"></span>
+                        <span class="money_gid" style="display: none"></span>
+                        <span style="font-size:20px">/ 件</span>
+                        <i class='iconfont iconquxiao'></i>
+                        <span class="money_descript"></span>
+                    </div>
+                </div>
+                <div class="box_content">
+                    <!-- 选择样式 -->
+
+
+                    <!-- 数量 iconiconless -->
+                    <div class="content_number">
+                        <span>数量</span>
+                        <span id="btn_add" class="iconfont iconzengjia addbtn_s iconcolor"></span>
+                        <span class="addbtn_s store_nums">1</span>
+                        <span id="btn_less" style="width: 20px;height:20px;line-height:20px;background:#ff4c4c;color:#fff;margin-top: 6px;border-radius: 50%" class="iconfont addbtn_s iconcolor">-</span>
+                        <span style="clear:both"></span>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                <div id='box_submit' class="box_submit">确定</div>
+            </div>
+        </div>
+        <!-- 商品规格弹出层结束 -->
+
+    </div>
+
+    {include file="common/footer" /}
+
+    <!-- 底部订单提交 -->
+    <!-- <div class="ft_order" style='display:none'>
+        <div class="orderpri">
+            共<span class="ordernum">0</span>件 合计 : ￥<span class="orderpriceNum">00</span>
+        </div>
+        <button>支付订单</button>
+    </div> -->
+    <!-- 底部订单提交结束 -->
+
+</div>
+<script src="/static/home/js/serorder.js"></script>
+<script src="/static/home/js/swiper.min.js"></script>
+<script src="/static/home/js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/home/js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+    var loadFlag = true;
+
+    // 页面加载
+    document.onreadystatechange = function () {
+        if (document.readyState == 'complete') {
+            var tabId = $('.tab').find('a').eq(0).attr('data-id'); //当前tabs的ID
+            $.ajax({
+                url : "{:url('goods/get_list')}", //页面初始加载
+                data : {
+                    'tabId' : tabId,
+                },
+                type : 'POST',
+                dataType : 'json',
+                success : function(re){
+                    for (var i in re) {
+                        $(".onordercon ul").eq(0).append('<li data-dityId="'+re[i].id+'" data-ditygId="'+re[i].gid+'"><a href="/home/goods/content3.html?id='+re[i].id+'">\
+                                                        <div class="con_leftImg"><img src="'+re[i].pic+'" alt=""></div>\
+                                                        <div class="co_right">\
+                                                            <div class="right_top">\
+                                                                <strong>'+re[i].title+'</strong></div>\
+                                                            <div class="right_btm">\
+                                                                <span style="display:inline-block;float: left;">￥</span>\
+                                                                <span class="moery">'+re[i].now_money+'</span>\
+                                                                <span class="iconfont addbtn icongwc1"></span>\
+                                                            </div>\
+                                                            <div style="clear:both"></div>\
+                                                        </div>\
+                                                    </a></li>');
+                    }
+                    mySwiper.update(); // 重新计算高度;
+                }
+            });
+        }
+    }
+
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        scrollbar: '.swiper-scrollbar',
+        slidesPerView: 'auto',
+        mousewheelControl: true,
+        freeMode: true,
+        onTouchMove: function (swiper) { //手动滑动中触发
+            var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide-active')[0].offsetHeight;
+        },
+        onTouchEnd: function (swiper) {
+            var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide-active')[0].offsetHeight;
+            // var identName = $('.swiper-slide-active')[0].dataset; // 判断每个页面的data-attrs
+            var identName = document.getElementsByClassName('swiper-slide-active')[0];
+
+            // 上拉加载
+            if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                // console.log("已经到达底部！");
+
+            }
+            return false;
+        }
+    });
+
+    // mySwiper2滑动不用了但不能注释
+    var mySwiper2 = new Swiper('.swiper-container2', {
+        onTransitionEnd: function (swiper) {
+            mySwiper.update();
+        }
+    });
+
+    // 切换页面
+    $('.tab').on('click','a',function () {
+        var tabId = $(this).attr('data-id'); //当前tabs的ID
+        var identName = $('.tab a.active').text(); // tab的text
+
+        $('.onordercon ul').eq(0).html(''); //清空
+        $(this).addClass('active').siblings('a').removeClass('active');
+        ajax_common(tabId);
+        mySwiper.update();// 重新计算高度;
+    });
+
+    // 公共获取数据方法
+    function ajax_common(tabId) {
+        $.ajax({
+            url : "{:url('goods/get_list')}", //页面初始加载
+            data : {
+                'tabId' : tabId,
+            },
+            type : 'POST',
+            dataType : 'json',
+            success : function(re){
+                for (var i in re) {
+                    $(".onordercon ul").eq(0).append('<li data-dityId="'+re[i].id+'" data-ditygId="'+re[i].gid+'"><a href="/home/goods/content3.html?id='+re[i].id+'">\
+                                                        <div class="con_leftImg"><img src="'+re[i].pic+'" alt=""></div>\
+                                                        <div class="co_right">\
+                                                            <div class="right_top">\
+                                                                <strong>'+re[i].title+'</strong></div>\
+                                                            <div class="right_btm">\
+                                                                <span style="display:inline-block;float: left;">￥</span>\
+                                                                <span class="moery">'+re[i].now_money+'</span>\
+                                                                <span class="iconfont addbtn icongwc1"></span>\
+                                                            </div>\
+                                                            <div style="clear:both"></div>\
+                                                        </div>\
+                                                    </a></li>');
+                }
+                mySwiper.update(); // 重新计算高度;
+            }
+        });
+    }
+
+</script>
+</body>
+
+</html>

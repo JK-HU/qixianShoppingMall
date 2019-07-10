@@ -1,0 +1,430 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>{:lang('systemSet')}</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" lay-filter="form-system">
+        <div class="layui-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this">基本信息</li>
+                <li>规格信息</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <input type="hidden" name="id" value="{$goods.id}">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">父级</label>
+                        <div class="layui-input-4">
+                            <select name="gid" lay-verify="required" lay-filter="pid" >
+                                <option value="0">请选择</option>
+                                {volist name="goods_type" id="vo"}
+                                <option value="{$vo.id}" {if $goods.gid == $vo.id} selected {/if}>{$vo.lefthtml}{$vo.title}</option>
+                                {/volist}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-4">
+                            <input type="text" name="title" value="{$goods.title}" lay-verify="required"  class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">原价</label>
+                        <div class="layui-input-4">
+                            <input type="text" name="original_price" value="{$goods.original_price}" lay-verify="required" placeholder="{:lang('pleaseEnter')}原价"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">金额</label>
+                        <div class="layui-input-4">
+                            <input type="text" name="money" value="{$goods.money}" lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">会员价</label>
+                        <div class="layui-input-4">
+                            <input type="text" name="member_price" value="{$goods.member_price}" lay-verify="required" placeholder="{:lang('pleaseEnter')}会员价"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <!--<div class="layui-form-item">
+                        <label class="layui-form-label">预购价格</label>
+                        <div class="layui-input-4">
+                            <input type="text" name="pre_price" value="{$goods.pre_price}" lay-verify="required" placeholder="{:lang('pleaseEnter')}预购价格"
+                                   class="layui-input">
+                        </div>
+                    </div>-->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">推荐</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" id="is_recommended" name="is_recommended" value="{$goods.is_recommended|default='0'}" lay-skin="switch" lay-text="开启|关闭" lay-filter="is_recommended" {if condition="$goods['is_recommended'] eq 1"} checked {/if}>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">包邮</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" id="is_free_shipping" name="is_free_shipping" value="{$goods.is_free_shipping|default='0'}" lay-skin="switch" lay-text="开启|关闭" lay-filter="is_free_shipping" {if condition="$goods['is_free_shipping'] eq 1"} checked {/if}>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" id="shipping_price">
+                        <label class="layui-form-label">运费</label>
+                        <div class="layui-input-4">
+                            <input type="text" name="shipping_price" value="{$goods.shipping_price|default='0'}" lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">正品保证</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" id="is_ggct" name="is_ggct" value="{$goods.is_ggct|default='0'}" lay-skin="switch" lay-text="开启|关闭" lay-filter="is_ggct" {if condition="$goods['is_ggct'] eq 1"} checked {/if}>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">保修</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" id="is_guarantee" name="is_guarantee" value="{$goods.is_guarantee|default='0'}" lay-skin="switch" lay-text="开启|关闭" lay-filter="is_guarantee" {if condition="$goods['is_guarantee'] eq 1"} checked {/if}>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">提供发票</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" id="is_provide_invoices" name="is_provide_invoices" value="{$goods.is_provide_invoices|default='0'}" lay-skin="switch" lay-text="开启|关闭" lay-filter="is_provide_invoices" {if condition="$goods['is_provide_invoices'] eq 1"} checked {/if}>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序</label>
+                        <div class="layui-input-2">
+                            <input type="text" name="sort" value="{$goods.sort}" placeholder="{:lang('pleaseEnter')}排序编号" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">简介</label>
+                        <div class="layui-input-4">
+                            <input type="text" name="introduce" value="{$goods.introduce}" placeholder="{:lang('pleaseEnter')}简介" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">图片</label>
+                        <input type="hidden" name="pic" id="pic" value="{$goods.pic|default=''}">
+                        <div class="layui-input-block">
+                            <div class="layui-upload">
+                                <button type="button" class="layui-btn layui-btn-primary" id="adBtn"><i class="icon icon-upload3"></i>点击上传</button>
+                                <div class="layui-upload-list">
+                                    <img class="layui-upload-img" src="{$goods.pic|default=''}" id="adPic">
+                                    <p id="demoText"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-input-5 layui-form-text">
+                        <label class="layui-form-label">参考费用</label>
+                        <textarea name="reference_cost" id="reference_cost" class="layui-textarea">{$goods.reference_cost|default=''}</textarea>
+                    </div>
+                    <div class="layui-form-item layui-input-5 layui-form-text">
+                        <label class="layui-form-label">图文详情</label>
+                        <script id="content" name="content" type="text/plain">{$goods.content|raw|default=''}</script>
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">库存</label>
+                        <div class="layui-input-4">
+                            <input type="text" name="kucun" value="{$goods.kucun}" placeholder="{:lang('pleaseEnter')}库存"
+                                   id="kucun"   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">规格</label>
+                        <div class="layui-input-4">
+                            <input type="checkbox" id="gg_open" name="gg_open" value="{$goods.gg_open|default=''}" lay-skin="switch" lay-text="开启|关闭" lay-filter="open" {$goods.gg_open == 1 ? 'checked' : '' }>
+                        </div>
+                    </div>
+                    <div id="btn_hidden" style="display:{$goods.gg_open ? 'block' : 'none'}">
+                        <div id="guige">
+                            {foreach $goods.norms as $key => $val}
+                            <div class="guige_list">
+                                <div class="layui-form-item">
+                                    <div class="layui-input-4" data-id="{$key}">
+                                        <input  type="text" name="data[{$key}][title]" value="{$val.title}" placeholder="规格名称" class="layui-input norms_name">
+                                    </div>
+                                    <label class="layui-form-label btn_zi" >增加子分类</label>
+                                    <label class="layui-form-label btn_del" >删除</label>
+                                </div>
+                                <div class="layui-form-item">
+                                    {foreach $val.type as $k => $v}
+                                    <div class="zfl">
+                                        <div class="layui-input-1">
+                                            <input type="text" name="data[{$key}][type][{$k}][title]" value="{$v.title}" placeholder="名称" class="layui-input norms_type_name">
+                                        </div>
+                                        <label class="layui-form-label btn_del_zi">删除</label>
+                                    </div>
+                                    {/foreach}
+                                </div>
+                            </div>
+                            {/foreach}
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button type="button" id="btn_edit" class="layui-btn" data-count="{$count|default=0}">增加规格</button>
+                                <button type="button" id="btn_form" class="layui-btn">确定</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <table class="layui-table" id="table">
+                                <tr id="tr">
+                                    {if !empty($nt_arr)}
+                                    {foreach $goods.norms as $key => $val}
+                                    <td>{$val.title}</td>
+                                    {/foreach}
+                                    <td>数量</td>
+                                    <td>价钱</td>
+                                    <td>会员价</td>
+                                    {/if}
+                                </tr>
+                                {foreach $nt_arr as $index => $item}
+                                <tr>
+                                    {foreach $item.ntid  as $k => $v}
+                                    <td>{$v.title}
+                                        <input type="hidden"  name="datas[{$index}][name][{$k}]" value="{$v.g_name}-{$v.title}" placeholder="颜色" class="layui-input norms_name">
+                                    </td>
+                                    {/foreach}
+                                    <td><input type="text" name="datas[{$index}][num]" value="{$item.num}" placeholder="数量" class="layui-input norms_name"></td>
+                                    <td><input type="text" name="datas[{$index}][money]" value="{$item.money}" placeholder="价格" class="layui-input norms_name"></td>
+                                    <td><input type="text" name="datas[{$index}][member_price]" value="{$item.member_price}" placeholder="会员价" class="layui-input norms_name"></td>
+                                </tr>
+                                {/foreach}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn" lay-submit="auth" lay-filter="auth">立即提交</button>
+                        <!--<input type="submit" class="layui-btn" value="立即提交">-->
+                        <a href="{:url('goods_lists')}" class="layui-btn layui-btn-primary">返回</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+{include file="common/foot"/}
+<script type="text/javascript" src="/static/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/static/ueditor/ueditor.all.js"></script>
+<script>
+    let ue = UE.getEditor('content');
+    layui.use(['form', 'layer','upload','element'], function () {
+        var form = layui.form,layer = layui.layer,upload = layui.upload,$ = layui.jquery,element = layui.element;
+        var arr = new Array();
+        var num = $('#btn_edit').data('count');
+        $('#btn_edit').click(function(){
+            $('#guige').append(
+                    '<div class="guige_list">' +
+                    '<div class="layui-form-item">' +
+                    '<div class="layui-input-4" data-id="'+num+'">' +
+                    '<input type="text" name="data['+num+'][title]" value="" placeholder="规格名称" class="layui-input norms_name">' +
+                    '</div>' +
+                    '<label class="layui-form-label btn_zi">增加子分类</label> ' +
+                    '<label class="layui-form-label btn_del" >删除</label>' +
+                    '</div>' +
+                    '<div class="layui-form-item"> ' +
+                    '</div> ' +
+                    '</div>'
+            );
+            num++;
+        });
+
+        function doExchange(arr, depth)
+        {
+            for (var i = 0; i < arr[depth]['type'].length; i++) {
+                result[depth] = arr[depth]['name']+'-'+arr[depth]['type'][i]
+                if (depth != arr.length - 1) {
+                    doExchange(arr, depth + 1)
+                } else {
+                    results.push(result.join('|'))
+                }
+            }
+        }
+        function test(arr)
+        {
+            results = [];
+            result = [];
+            doExchange(arr, 0);
+            return results;
+//            console.log(results.length, results.join(','));
+        }
+
+        $('#btn_form').click(function(){
+            arr = [];
+            $('.guige_list').each(function(index){
+                var _index  = [];
+                _index['name'] = [];
+                _index['type'] = [];
+                _index['name'] = $(this).find('.norms_name').val();
+                $(this).find('.norms_type_name').each(function(index){
+                    if(!_index['type']){
+                        _index['type'] = [];
+                    }
+                    _index['type'].push($(this).val());
+                });
+                arr.push(_index)
+            });
+            if(arr.length < 1){
+                alert('请添加规格！');
+                return false;
+            }
+            if(arr.length > 1 && arr[0]['type'] < 1){
+                alert('请添加规格！');
+                return false;
+            }
+            var arr1 = test(arr);
+            var str = '';
+            $.each(arr, function(index, value){
+                str += "<td>"+value.name+"</td>";
+            });
+            str += "<td>数量</td><td>价钱</td><td>会员价</td>";
+            $('#tr').html(str);
+            $('#tr').nextAll().remove();
+            var str_tr = '';
+            $.each(arr1, function(index, value){
+                str_tr += "<tr>";
+                var strs= new Array();
+                strs=value.split("|");
+                $.each(strs, function(i, v){
+                    var strs1= new Array();
+                    strs1=v.split("-");
+                    $.each(strs1, function(a,b){
+                        if(a != 0){
+                            str_tr += '<td>' +b+
+                                    '<input type="hidden"  name="datas['+index+'][name]['+i+']" value="'+v+'" placeholder="颜色" class="layui-input norms_name">' +
+                                    '</td>';
+                        }
+                    })
+
+                });
+                str_tr += '<td><input type="text" name="datas['+index+'][num]" value="" placeholder="数量" class="layui-input norms_name"></td>';
+                str_tr += '<td><input type="text" name="datas['+index+'][money]" value="" placeholder="价格" class="layui-input norms_name"></td>';
+                str_tr += '<td><input type="text" name="datas['+index+'][member_price]" value="" placeholder="会员价" class="layui-input norms_name"></td>';
+                str_tr += "</tr>";
+            });
+            $('#table').append(str_tr);
+        });
+        $(document).on("click",'.btn_del',function(){
+            var p = $(this).parent().parent();
+            p.remove();
+        });
+        $(document).on("click",'.btn_del_zi',function(){
+            var p = $(this).parent();
+            p.remove();
+        });
+        $(document).on("click",'.btn_zi',function(){
+            var p = $(this).parent().next();
+            var n = p.children('.zfl').length;
+            var num1 = $(this).prev().data('id');
+            p.append(
+                    '<div class="zfl">' +
+                    '<div class="layui-input-1"> ' +
+                    '<input type="text" name="data['+num1+'][type]['+n+'][title]" value="" placeholder="名称" class="layui-input norms_type_name"> ' +
+                    '</div> ' +
+                    '<label class="layui-form-label btn_del_zi">删除</label>' +
+                    '</div>'
+            );
+        });
+        form.on('submit(auth)', function (data) {
+            // 提交到方法 默认为本身
+            $.post("{:url('edit_goods')}",data.field,function(res){
+                if(res.code > 0){
+                    layer.msg(res.msg,{time:1800,icon:1},function(){
+                        location.href = res.url;
+                    });
+                }else{
+                    layer.msg(res.msg,{time:1800,icon:2});
+                }
+            });
+        });
+        form.on('switch(open)', function(obj){
+            var open = obj.elem.checked===true?1:0;
+            if(open == 1){
+                $('#kucun').attr('disabled',true);
+                $('#kucun').val(0);
+                $('#gg_open').val(open);
+                $('#btn_hidden').show();
+            }else{
+                $('#kucun').attr('disabled',false);
+                $('#btn_hidden').hide();
+                $('#gg_open').val(open);
+            }
+        });
+        // 是否推荐
+        form.on('switch(is_recommended)', function(data){
+            if (data.elem.checked == true) {
+                $('#is_recommended').val(1);
+            } else {
+                $('#is_recommended').val(0);
+            }
+        });
+        // 是否包邮
+        form.on('switch(is_free_shipping)', function(data){
+            if (data.elem.checked == true) {
+                $('#shipping_price').hide();
+                $('#is_free_shipping').val(1);
+            } else {
+                $('#shipping_price').show();
+                $('#is_free_shipping').val(0);
+            }
+        });
+        // 是否正品
+        form.on('switch(is_ggct)', function(data){
+            if (data.elem.checked == true) {
+                $('#is_ggct').val(1);
+            } else {
+                $('#is_ggct').val(0);
+            }
+        });
+        // 是否保修
+        form.on('switch(is_guarantee)', function(data){
+            if (data.elem.checked == true) {
+                $('#is_guarantee').val(1);
+            } else {
+                $('#is_guarantee').val(0);
+            }
+        });
+        // 是否提供发票
+        form.on('switch(is_provide_invoices)', function(data){
+            if (data.elem.checked == true) {
+                $('#is_provide_invoices').val(1);
+            } else {
+                $('#is_provide_invoices').val(0);
+            }
+        });
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#adBtn'
+            ,url: '{:url("UpFiles/upload")}'
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#adPic').attr('src', result); //图片链接（base64）
+                });
+            },
+            done: function(res){
+                if(res.code>0){
+                    $('#pic').val(res.url);
+                }else{
+                    //如果上传失败
+                    return layer.msg('上传失败');
+                }
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst.upload();
+                });
+            }
+        });
+    })
+</script>
+</body>
+</html>

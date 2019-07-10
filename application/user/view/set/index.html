@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/setting.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_setting.css" />
+</head>
+<body>
+<div id="wrap">
+    <!-- 顶部 -->
+    <header class="head">
+        <div class="headcon">
+            <a href="javascript:history.back()">
+                <span><i class="iconfont iconfanhui" style="font-size:20px;vertical-align: middle;color: #adaaaa;"></i> 返回</span>
+            </a>
+            <span class="fanxin">设置</span>
+        </div>
+    </header>
+    <!-- 顶部结束 -->
+    <div class="setting_con">
+        <ul>
+            <li><a href="{:url('user/set/repass')}">修改密码 <span class="iconfont iconxiangyou"></span></a></li>
+            <li><a href="{:url('user/set/question')}">常见问题 <span class="iconfont iconxiangyou"></span></a></li>
+            <li><a href="{:url('user/set/about')}">关于我们 <span class="iconfont iconxiangyou"></span></a></li>
+            <li><a href="javascript:">版本号:&nbsp;&nbsp;v1.0.0 <span class="iconfont iconxiangyou"></span></a></li>
+            <li><a href="{:url('user/index/logout')}" class="nob">退出登录 <span class="iconfont iconxiangyou"></span></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

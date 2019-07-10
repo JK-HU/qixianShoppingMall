@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/integral.css" />
+    <script src="/static/home/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/home/js/swiper-3.4.0.jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/home/css/swiper-3.3.1.min.css" />
+
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .tab {
+            display: flex;
+            line-height: 51px;
+            position: relative;
+            /* top: 51px; */
+            width: 100%;
+            z-index: 99999;
+            border-bottom: 1px #ccc solid;
+            background: #fff;
+        }
+
+        .tab a {
+            width: 50%;
+            background: #fff;
+            text-align: center;
+            color: #000;
+        }
+
+        .tab .active {
+            border-bottom: 1px #f50 solid;
+            color: #f50;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: visible;
+            background: #fff
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            height: calc(115vh - 120px)
+        }
+
+        .swiper-slide {
+            height: auto;
+            background: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .list-group {
+            padding-left: 0;
+            /* margin-bottom: 20px; */
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+
+
+        /* 下拉刷新结束 */
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <header class="head" style="height:51px">
+        <a href="javascript:history.back()">返回</a>
+        <span>积 分</span>
+    </header>
+    <!-- 显示积分背景 -->
+    <div class="bg">
+        <div class="bg_wrap">
+            <div class="show_w">
+                <span class="show_Num">{$integral}</span>
+                <span>可用积分</span>
+            </div>
+            <div class="show_desc">
+                <ul>
+                    <li>
+                        <span class="show_now">{$today_info}</span>
+                        <span>今日获得</span>
+                    </li>
+                    <li>
+                        <span class="show_all">{$total_use}</span>
+                        <span>累计使用</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 显示背景结束 -->
+    <!-- 积分明细 -->
+
+    <div class="container" style="overflow: hidden;margin-top: 245px">
+        <div class="tab">
+            <a class="active" data-attrs="getintgral" href="javascript:;">获得</a>
+            <a data-attrs="useintgral" href="javascript:;">使用</a>
+        </div>
+
+        <!-- swiper2 -->
+        <div class="swiper-container">
+            <!-- <div class="refreshtip">下拉可以刷新</div> -->
+            <div class="swiper-wrapper w">
+                <div class="swiper-slide d" style="padding-top:8px">
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper" id="swiper_data">
+                            <div class="swiper-slide list-group" id="swiper_sli" data-attrs="group_a">
+                                <ul class="groupul">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <!-- 覆盖层 -->
+        <!-- 覆盖层结束 -->
+    </div>
+</div>
+
+<script src="/static/home/js/integral.js"></script>
+<script src="/static/home/js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var loadFlag = true;
+    var onloadnum = 5; //页面加载时获取的个数
+    var swiper_a_num = 0; //上拉或下拉加载时递增的数
+    var swipersize = 5; //上拉或下拉时每次加载的个数
+    var getFlag = true; //获得flag
+    var useFlag = true; //使用flag
+    var attrs_cur = '';
+    // 页面加载
+    document.onreadystatechange = function () {
+        if (document.readyState == 'complete') {
+            var tabAttrs = $('.tab a.active').attr('data-attrs'); //tab选中的属性
+            ajax_common(tabAttrs,swiper_a_num,swipersize);
+            getFlag = false;
+            return false;
+        }
+    }
+
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        scrollbar: '.swiper-scrollbar',
+        slidesPerView: 'auto',
+        mousewheelControl: true,
+        freeMode: true,
+        onTouchMove: function (swiper) { //手动滑动中触发
+            var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+        },
+        onTouchEnd: function (swiper) {
+            var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+            // var identName = $('.swiper-slide-active')[0].dataset; // 判断每个页面的data-attrs
+            var identName = document.getElementsByClassName('swiper-slide-active')[0];
+            var tabAttrs = $('.tab a.active').attr('data-attrs'); //tab选中的属性
+            // 上拉加载
+            if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                // console.log("已经到达底部！");
+                ajax_common(tabAttrs,swiper_a_num,swipersize);
+            }
+            return false;
+        }
+    });
+
+    // mySwiper2滑动不用了但不能注释
+    var mySwiper2 = new Swiper('.swiper-container2', {
+        onTransitionEnd: function (swiper) {
+            mySwiper.update();
+        }
+    });
+
+    // 切换页面
+    $('.tab').on('click', 'a', function () {
+        swiper_a_num = 0;
+        $(this).addClass('active').siblings('a').removeClass('active');
+        var tabAttrs = $('.tab a.active').attr('data-attrs'); //tab选中的属性
+        mySwiper2.slideTo($(this).index(), 500, false);
+        $('.w').css('transform', 'translate3d(0px, 0px, 0px)');
+        $('.swiper-container2 .swiper-slide-active').css('height', 'auto').siblings('.swiper-slide').css('height', '0px');
+
+        if (tabAttrs == 'getintgral') {
+            //if (getFlag) {
+                $('.groupul').eq(0).html(''); //清空
+                ajax_common(tabAttrs,swiper_a_num,swipersize);
+                getFlag = false;
+                return false;
+            //}
+        }
+        if (tabAttrs == 'useintgral') {
+            //if (useFlag) {
+                $('.groupul').eq(0).html(''); //清空
+                ajax_common(tabAttrs,swiper_a_num,swipersize);
+                useFlag = false;
+                return false;
+            //}
+        }
+        mySwiper.update(); // 重新计算高度;
+    });
+
+    /**
+     * 说明,变量名
+     **/
+
+    //上拉,切换页面时用于获取数据
+    function ajax_common(tabAttrs,swiper_a_numd,swipersize) {
+        $.ajax({
+            url : "{:url('integral/get_list')}",
+            type : 'POST',
+            data : {
+                'attrs_cur' : tabAttrs,
+                'swiper_a_num' : swiper_a_numd,
+                'swipersize' : swipersize
+            },
+            success : function(data) {
+                for (var i in data) {
+                    swiper_a_num = swiper_a_num + 1;
+                    $('.groupul').eq(0).append('<li class="groupli">\
+                                            <div class="li_r">\
+                                                <span>'+data[i].reason+'</span>\
+                                                <span class="getTime">'+data[i].create_time+'</span>\
+                                            </div>\
+                                            <div class="li_l">\
+                                                <span class="addintegral">'+data[i].number+'</span>\
+                                            </div></li>');
+                    $("#swiper_sli").eq(0).append($('.groupul'));
+                }
+                $(".loadtip").html('上拉加载更多...');
+                mySwiper.update(); // 重新计算高度;
+            },
+            error : function() {}
+        });
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/pay.css">
+    <link rel="stylesheet" href="/static/home/css/iconfont_pay.css">
+</head>
+<body>
+
+<div id="wrap">
+
+    <header>
+        <a href="javascript:history.back()"><span class="iconfont iconfanhui"></span></a>
+        <span class="iconfont iconzy"></span>
+        <span class="ordertit">支付页面</span>
+    </header>
+    <p class="paystyle">选择支付方式</p>
+
+    <div class="addstimes">
+
+        <div class="addscon">
+            <ul>
+                <li class="payli paya" data-style="wx">
+                    <span class="paylisp"><i class="iconfont iconweixin"></i> 微信支付</span>
+                    <i data-type="wxpay" class="iconfont iconxuanzhong check"></i>
+                    <div style="clear:both"></div>
+                </li>
+                <li class="payli payb" data-style="zfb">
+                    <span class="paylisp"><i class="iconfont iconzhifubao1"></i> 支付宝支付</span>
+                    <i data-type="alipay" class="iconfont iconquan check"></i>
+                    <div style="clear:both"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <button class="nowpay">立即支付</button>
+
+</div>
+<script src="/static/home/js/jquery.js"></script>
+<script>
+    $('.payli').bind('click',function() {
+
+        console.log($(this).attr('data-style'))
+        if ($(this).attr('data-style') == 'wx'){
+            $(this).find('i').eq(1).removeClass('iconfont iconquan');
+            $(this).find('i').eq(1).addClass('iconfont iconxuanzhong');
+            $('.payb').find('i').eq(1).removeClass('iconfont iconxuanzhong');
+            $('.payb').find('i').eq(1).addClass('iconfont iconquan');
+
+            console.log($(this).find('i').eq(1));
+        }
+        if ($(this).attr('data-style') == 'zfb'){
+            $(this).find('i').eq(1).removeClass('iconfont iconquan');
+            $('.paya').find('i').eq(1).removeClass('iconfont iconxuanzhong');
+            $('.paya').find('i').eq(1).addClass('iconfont iconquan');
+            $(this).find('i').eq(1).addClass('iconfont iconxuanzhong');
+            console.log($(this).find('i').eq(1));
+        }
+    });
+
+    // 立即支付
+    $('.nowpay').on('click', function(){
+        let type = $('.iconxuanzhong').data('type');
+        console.log(type);
+        if (type === 'wxpay') {
+            location.href = "/api/pay/wxpay.html?id={$order_id}&type=h5&the_type=shop"
+        }
+
+        if (type === 'alipay') {
+            location.href = "/api/pay/alipay.html?id={$order_id}&type=wap&the_type=shop"
+        }
+    });
+</script>
+</body>
+</html>

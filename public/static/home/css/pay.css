@@ -1,0 +1,152 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+ul,li{list-style: none;padding: 0;margin: 0}
+p,h1,h2,h3,h4,h5{padding: 0;margin: 0}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+html{
+    background: #f4f4f4;
+}
+
+#wrap{
+    max-width: 1200px;
+    height: auto;
+    background-color: rgb(244, 244, 244);
+    overflow: hidden;
+}
+header{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    background: #fff;
+    position: relative;
+
+}
+header a{
+    width: auto;
+    height: auto;
+    display: inline-block;
+   
+}
+header a .iconfanhui{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
+    transform: translateY(-15.6px);
+
+}
+header .iconzy{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    margin-top: 15px;
+    transform: translateY(-3.6px);
+
+}
+header .ordertit{
+    display: block;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.paystyle{
+    margin: 0;
+    padding: 5px 5px 5px 15px;
+    font-size: 13px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* 支付 */
+
+.addstimes{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.addstimes .addscon{
+    width: 95%;
+    height: auto;
+    border-bottom: 1px solid #efefef;
+    margin: 0 auto 0 auto;
+}
+.addstimes .addscon ul{
+    width: 100%;
+    height: auto;
+    display: block;
+    color: #333;
+}
+.addstimes .addscon ul li{
+    width: 96%;
+    padding: 15px 0;
+    margin: 0 auto 0 auto;
+
+}
+.addstimes .addscon ul li:nth-child(1){
+    border-bottom: 1px solid #e4e3e3;
+}
+.addstimes .addscon ul li .paylisp{
+    margin-left: 15px;
+}
+.addstimes .addscon ul li .check{
+    float: right;
+    margin: 7px 18px 0 0;
+
+}
+.addstimes .addscon ul li .paylisp i{
+    font-size: 27px;
+    vertical-align: sub;
+    margin-right: 6px;
+}
+
+/* 支付宝和微信的颜色 */
+.iconweixin{
+    color: rgb(68,175,53);
+}
+.iconzhifubao1{
+    color: rgb(15,162,236);
+}
+/* 支付宝和微信的颜色结束 */
+
+/* 立即支付 */
+.nowpay{
+    width: 88%;
+    height: 45px;
+    display: block;
+    text-align: center;
+    line-height: 45px;
+    margin: 20px auto 0 auto;
+    border: none;
+    font-size:18px;
+    background: #f52548;
+    color: #fff;
+    border-radius: 25px;
+}

@@ -1,0 +1,230 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+ul,li{list-style: none;padding: 0;margin: 0;}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+#wrap{
+    max-width: 100%;
+    height: auto;
+    background-color: #f4f4f4;
+    overflow: hidden;
+}
+.head{
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e4e0e0;
+    z-index: 9999;
+}
+.head .headcon{
+    width: 96%;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    position: relative;
+}
+.head .headcon > a{
+    width: auto;
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    top: 1px;
+    left: 0;
+}
+.head .headcon > a > span{
+    display: inline-block;
+    font-size: 14px;
+    color: #1d1c1c;
+}
+.head .headcon .fanxin{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tab a > i{
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+    margin-top: 13px;
+}
+.tab a > span{
+    display: block;
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* 没有订单 */
+
+.onorder{
+    width: 100%;
+    height: 580px;
+    display: block;
+}
+.onorder > span{
+    display: block;
+}
+.onorder > span:nth-child(1){
+    width: 180px;
+    height: 131px;
+    line-height: 160px;
+    margin: 10rem auto 0 auto;
+    font-size: 4.6rem;
+    color: #b7b7b7;
+}
+.onorder > span:nth-child(2){
+    width: 70%;
+    height: 21px;
+    line-height: 30px;
+    margin: auto;
+    font-size: 14px;
+    color: #b7b7b7;
+}
+.onorder > span:nth-child(3){
+    width: 70%;
+    height: 21px;
+    line-height: 30px;
+    margin: auto;
+    font-size: 14px;
+    color: #b7b7b7;
+    
+}
+
+/* 没有订单结束 */
+
+/* 有订单列表 */
+.order_wrap{
+    width: 96%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    background: #fff;
+}
+.order_wrap .order_wrap_title{
+    width: 92%;
+    height: 45px;
+    line-height: 45px;
+    margin: 0 auto 0 auto;
+    font-size: 13px;
+    border-bottom: 1px solid #e4e4e4;
+}
+.order_wrap .order_wrap_title .title_id{
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    color: #8c8888;
+    float: left;
+}
+.order_wrap .order_wrap_title .title_id::before{
+    content: '服务订单: ';
+    display: inline-block;
+    color: #8c8888;
+}
+.order_wrap .order_wrap_title .title_tips{
+    display: inline-block;
+    width: 60px;
+    height: 100%;
+    color: #f50;
+    float: right;
+}
+
+.order_wrap .order_wrap_con{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.order_wrap .order_wrap_con .order_con_tit{
+    width: 93%;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 auto 0 auto;
+    color: #000;
+    font-size: 17px;
+    text-align: left;
+}
+.order_wrap .order_wrap_con .order_con_time{
+    width: 93%;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 auto 0 auto;
+    color: rgb(111, 110, 110);
+    font-size: 14px;
+    text-align: left;
+}
+.order_wrap .order_wrap_con .order_con_time i{
+    font-size: 20px;
+    vertical-align: middle;
+}
+.order_wrap .order_wrap_con .order_con_time span{
+
+}
+.order_wrap .order_wrap_con .order_con_adress{
+    width: 93%;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 auto 0 auto;
+    color: rgb(111, 110, 110);
+    font-size: 14px;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: left;
+}
+.order_wrap .order_wrap_con .order_con_adress i{
+    font-size: 20px;
+    vertical-align: middle;
+}
+.order_wrap .order_wrap_con .order_con_adress span{}
+
+.order_wrap .order_wrap_order_dele{
+    width: 93%;
+    height: 55px;
+    line-height: 55px;
+    margin: 0 auto 0 auto;
+    text-align: right;
+
+}
+.order_wrap .order_wrap_order_dele .dele_order,.order_wrap .order_wrap_order_dele .comment_order{
+    font-size: 12px;
+    padding: 5px 14px;
+    border: 1px solid #d2cfcf;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 没有订单列表 */
+

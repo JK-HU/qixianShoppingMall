@@ -1,0 +1,16 @@
+CREATE TABLE `mtt_debris` (`id` int(6) NOT NULL AUTO_INCREMENT,`type_id` int(6) DEFAULT NULL COMMENT '碎片分类ID',`title` varchar(120) DEFAULT NULL COMMENT '标题',`content` text COMMENT '内容',`addtime` int(13) DEFAULT NULL COMMENT '添加时间',`sort` int(11) DEFAULT '50' COMMENT '排序',`url` varchar(120) DEFAULT '' COMMENT '链接',`pic` varchar(120) DEFAULT '' COMMENT '图片',PRIMARY KEY (`id`)) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+CREATE TABLE `mtt_debris_type` (`id` int(11) NOT NULL AUTO_INCREMENT,`title` varchar(120) DEFAULT NULL,`sort` int(1) DEFAULT '50',PRIMARY KEY (`id`)) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+INSERT INTO `mtt_auth_rule` VALUES ('196', 'Template', '模板管理', '1', '1', '0', 'icon-embed2', '', '0', '7', '1481857304', '0', '1');
+INSERT INTO `mtt_auth_rule` VALUES ('197', 'Template/index', '模板管理', '1', '1', '0', '', '', '196', '1', '1481857540', '0', '1');
+INSERT INTO `mtt_auth_rule` VALUES ('198', 'Template/insert', '操作-添存', '1', '1', '0', '', '', '197', '2', '1481857587', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('202', 'Template/add', '操作-添加', '1', '1', '0', '', '', '197', '1', '1481859447', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('252', 'Template/edit', '操作-编辑', '1', '1', '0', '', '', '197', '3', '1497428906', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('253', 'Template/update', '操作-改存', '1', '1', '0', '', '', '197', '4', '1497428951', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('254', 'Template/delete', '操作-删除', '1', '1', '0', '', '', '197', '5', '1497429018', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('255', 'Template/images', '媒体文件管理', '1', '1', '0', '', '', '197', '6', '1497429157', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('256', 'Template/imgDel', '操作-文件删除', '1', '1', '0', '', '', '255', '1', '1497429217', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('203', 'Debris/index', '碎片管理', '1', '1', '0', '', '', '196', '2', '1484797759', '0', '1');
+INSERT INTO `mtt_auth_rule` VALUES ('204', 'Debris/edit', '操作-编辑', '1', '1', '0', '', '', '203', '2', '1484797849', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('205', 'Debris/add', '操作-添加', '1', '1', '0', '', '', '203', '1', '1484797878', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('257', 'Debris/del', '操作-删除', '1', '1', '0', '', '', '203', '3', '1497429416', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('272', 'Debris/type', '碎片分类', '1', '1', '1', '', '', '196', '3', '1504082720', '0', '1');

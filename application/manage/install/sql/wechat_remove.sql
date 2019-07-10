@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS `mtt_wx_auth`;
+DROP TABLE IF EXISTS `mtt_wx_config`;
+DROP TABLE IF EXISTS `mtt_wx_default_replay`;
+DROP TABLE IF EXISTS `mtt_wx_fans`;
+DROP TABLE IF EXISTS `mtt_wx_follow_replay`;
+DROP TABLE IF EXISTS `mtt_wx_key_replay`;
+DROP TABLE IF EXISTS `mtt_wx_media`;
+DROP TABLE IF EXISTS `mtt_wx_media_item`;
+DROP TABLE IF EXISTS `mtt_wx_menu`;
+DROP TABLE IF EXISTS `mtt_wx_user`;
+DROP TABLE IF EXISTS `mtt_wx_user_msg`;
+DROP TABLE IF EXISTS `mtt_wx_user_msg_replay`;
+DELETE FROM `mtt_auth_rule` WHERE `mtt_auth_rule`.`id` in(206,207,208,209,212,213,214,215,258,259,260,261,262,263,273);

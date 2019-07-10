@@ -1,0 +1,2 @@
+INSERT INTO `mtt_auth_rule` (`id`, `href`, `title`, `type`, `status`, `authopen`, `icon`, `condition`, `pid`, `sort`,`addtime`, `zt`, `menustatus`) VALUES (305, 'System/baidu_map', '地图配置', 1, 1, 0, '', '', 1, 50, 1553307797, NULL, 1);
+INSERT INTO `mtt_config` (`id`, `name`, `value`, `inc_type`, `desc`) VALUES (100, 'bdmap_key', 'false', 'map', '0');

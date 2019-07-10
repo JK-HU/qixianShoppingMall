@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>选择城市</title>
+    <link rel="stylesheet" href="/static/home/css/region.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont.css" />
+</head>
+
+<body>
+
+<div class="wrap">
+    <!-- 顶部 -->
+    <header class="head">
+        <div class="headcon">
+            <a href="/">
+                <span><i class="iconfont iconfanhui" style="font-size:20px;vertical-align: middle;color: #adaaaa;"></i> 返回</span>
+            </a>
+            <span>选择地区</span>
+
+        </div>
+    </header>
+    <!-- 顶部结束 -->
+
+    <!-- 搜索框 -->
+    <div class="search">
+        <span class="iconfont iconsousuo isearch"></span>
+        <input type="text" name="" id="search" placeholder="区域名称或首字母" />
+        <div class="cancel">取消</div>
+    </div>
+    <!-- 搜索框结束 -->
+
+    <div class="con">
+        <!-- 定位地区部分 -->
+        <div class="local_area">
+            <span>定位地区</span>
+            <ul>
+                <li>瑶海区</li>
+            </ul>
+
+        </div>
+        <!-- 定位地区部分结束 -->
+
+        <!-- 热门地区 -->
+
+        <div class="hot_area">
+            <span>热门地区</span>
+            <ul>
+                <li>海港区</li>
+                <li>川汇区</li>
+            </ul>
+        </div>
+        <!-- 热门地区结束 -->
+
+        <!-- 选择地区 -->
+
+        <div class="area">
+            {volist name="list" id="vo"}
+            <p>{$vo.name}</p>
+            <ul>
+                {volist name="$vo['sub']" id="vs"}
+                <li>{$vs.name}</li>
+                {/volist}
+            </ul>
+            <div style="clear:both"></div>
+            {/volist}
+        </div>
+    </div>
+    <!-- 选择地区 -->
+
+    <!-- 请求地址 -->
+    <div class="cover" style="display:none">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+<script src="/static/home/js/jquery.min.js"></script>
+<script src="/static/home/js/region.js"></script>
+</body>
+</html>

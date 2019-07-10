@@ -1,0 +1,315 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+ul,li{list-style: none;padding: 0;margin: 0;}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+html{
+    background: #f4f4f4;
+}
+
+#wrap{
+    max-width: 100%;
+    height: auto;
+    background-color: #f4f4f4;
+    overflow: hidden;
+}
+.head{
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    /* border-bottom: 1px solid #e4e0e0; */
+    z-index: 9999;
+}
+.head .headcon{
+    width: 96%;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    position: relative;
+}
+.head .headcon > a{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    position: absolute;
+    top: 1px;
+    left: 0;
+}
+.head .headcon > a > span{
+    display: inline-block;
+}
+
+.head .headcon .fanxin{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+}
+.head .headcon .edit{
+    display: block;
+    width: auto;
+    line-height: 45px;
+    float: right;
+    margin-right: 10px;
+    font-size: 13px;
+} 
+
+/* 商品列表 */
+.storeList{
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+}
+.storeList .store_l_content{
+    width: 95%;
+    height: auto;
+    margin: 0 auto 141px auto;
+    display: block;
+}
+.storeList .store_l_content ul{
+    width: 100%;
+    height: auto;
+}
+.storeList .store_l_content ul li{
+    width: 100%;
+    height: auto;
+    padding: 15px 0 15px 0;
+    margin-bottom: 15px;
+    background: #fff;
+    display: flex;
+}
+
+.storeList .store_l_content ul li .iconflag{
+    flex: 2;
+    line-height: 85px;
+    text-align: center;
+    font-size: 16px;
+    color: #f52548;
+}
+.storeList .store_l_content ul li .iconxz{
+    color: #f52548;
+} 
+.storeList .store_l_content ul li .store_l_c_r{
+    flex: 16;
+}
+.storeList .store_l_content ul li .store_l_c_r .con_leftImg{
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+.storeList .store_l_content ul li .store_l_c_r .con_leftImg img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 4px;
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right{
+    float: left;
+    width: 67%;
+    height: 100%;
+    padding-left: 9px;
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_top{
+    font-size: 13px;
+    
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_top span{
+    display: block;
+    margin-bottom: 4px;
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_top .right_top_gg{
+    font-size: 12px;
+    color: #999;
+
+} 
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_btm{
+    display: flex;
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_btm .btm_moeny{
+    flex: 1;
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_btm .btm_moeny .money_unitPrise{
+    display: block;
+    font-size: 12px;
+    color: #000;
+    margin-bottom: 3px;
+    width: 120px;
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_btm .btm_moeny .money_unitPrise .unitPrise_mon{
+    color: #f52548;
+
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_btm .btm_moeny .money_total{
+    display: block;
+    font-size: 12px;
+    color: #000;
+    width: 125px;
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_btm .btm_moeny .money_total .total_mon{
+    color: #f52548;
+}
+
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_btm .btm_btn{
+    flex: 1;
+    text-align: right;
+    line-height: 40px;
+    font-size: 15px;
+    display: inline-flex;
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_btm .btm_btn .iconjia{
+    margin: 6px 0 0 5px;
+    font-size: 18px;
+    color: #f52548;
+    width: 25px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.storeList .store_l_content ul li .store_l_c_r .co_right .right_btm .btm_btn .iconjian{
+    margin: 6px 5px 0 0;
+    font-size: 18px;
+    color: #f52548;
+    width: 25px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 55px;
+    position: fixed;
+    bottom: 0;
+    background-color: #fdf7f7;
+    box-shadow: 0px 0px 14px 0px rgba(193, 183, 183, 0.8);
+}
+
+.footer > ul{
+    width: 97%;
+    height: 100%;
+    margin: auto;
+    display: block;
+}
+
+.footer > ul > li{
+    width: 20%;
+    text-align: center;
+    float: left;
+    margin-top: 4px;
+}
+.footer > ul > li > a{
+    position: relative;
+    display: inline-block;
+    width: 67%;
+    height: 100%;
+}
+.footer > ul > li > a > i{
+    display: block;
+    font-size: 26px;
+    color: #aba6a6;
+    margin-bottom: 3px;
+}
+.footer > ul > li > a > span{
+    display: block;
+    font-size: 12px;
+    color: #000;
+}
+.footer ul li a .yuyue_g_num{
+    position: absolute;
+    top: 2px;
+    right: -28%;
+    width: auto;
+    height: 17px;
+    line-height: 16px;
+    display: block;
+    background-color: red;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 10px;
+    padding: 1px 3px;
+}
+
+/* 底部icon */
+.iconindex,.iconicon--copy,.iconwode{
+    color: #9c9494;
+    font-size: 29px;
+
+}
+
+/* 底部支付 */
+.totalNum{
+    position: fixed;
+    bottom: 54px;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    float: left;
+}
+.totalNum .allelection{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    margin-right: 4px;
+    float: left;
+}
+.totalNum .allelection > span{
+    width: 24px;
+    height: 100%;
+    display: inline-block;
+    color: #f52548;
+}
+.totalNum .total_txt {
+    width: 48%;
+    height: 100%;
+    text-align: left;
+    line-height: 50px;
+    float: left;
+}
+.totalNum .total_txt > span{
+    color: #f52548;
+}
+.totalNum .total_txt .total_t_money::before{
+    content: '￥';
+    display: inline-block;
+    color: #f52548;
+}
+.totalNum .payment{
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    background-color: #f52548;
+    color: #fff;
+    float: right;
+}
+
+
+
+
+
+
+
+
+

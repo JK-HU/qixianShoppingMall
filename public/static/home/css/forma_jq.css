@@ -1,0 +1,217 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    background: #fff;
+}
+ul,li{list-style: none;padding: 0;margin: 0;}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+#wrap{
+    max-width: 100%;
+    height: auto;
+    background-color: #f4f4f4;
+    overflow: hidden;
+}
+.head{
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e4e0e0;
+    z-index: 9999;
+}
+.head .headcon{
+    width: 96%;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    position: relative;
+}
+.head .headcon > a{
+    position: absolute;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    left: 0;
+}
+.head .headcon > a > span{
+    display: inline-block;
+}
+.head .headcon > a > span:nth-child(1){
+    
+    
+    font-size: 23px;
+    color: #1d1c1c;
+}
+.head .headcon > a > span:nth-child(2){
+    
+    font-size: 23px;
+    color: #827c7c;
+}
+.head .headcon .cj{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* container */
+.container{
+    margin-top: 105px !important;
+}
+.swiper-wrapper{
+    background: #fff !important;
+
+}
+
+/* container结束 */
+
+
+
+
+/* 排序栏 */
+
+
+/* 排序栏结束 */
+
+
+/* 内容 */
+.con{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding-bottom: 10px;
+    background: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 13px;
+}
+.con:nth-child(1){
+    margin-top: 0;
+}
+.con:last-child{
+    margin-bottom: 60px;
+}
+.con > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #fff
+}
+.con > a > .conimg{
+    width: 96%;
+    height: 13rem;
+    margin: auto;
+}
+.con > a > .conimg > img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.con > a > .conc{
+    width: 93%;
+    height: auto;
+    padding: 0px 6px 0 6px;
+    margin: auto;
+}
+.con > a > .conc > span{
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.con > a > .conc > span:nth-child(1){
+    margin-top: 10px;
+    color: #000;
+    font-size: 16px;
+}
+.con > a > .conc > span:nth-child(2) {
+    color: rgb(245, 37, 72);
+    font-size: 1.1rem;
+}
+
+.tipnomore{
+    width: 60%;
+    height: 20px;
+    line-height: 20px;
+    color: rgb(139, 138, 138);
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* 排序栏 */
+
+.sort{
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    background: #fff;
+    font-size: 15px;
+    border-bottom: 1px solid #efefef;
+}
+.sortli{
+    width: 100%;
+    height: 185px;
+    display: block;
+    position: fixed;
+    background: #fff;
+    z-index: 9999;
+}
+.sortli > ul{
+    width: 100%;
+    height: 100%;
+}
+.sortli > ul > li{
+    width: 95%;
+    height: 45px;
+    line-height: 45px;
+    text-align: left;
+    margin: auto;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+.sortli > ul > li > i{
+    float: right;
+    margin-right: 20px;
+}
+.sortli > ul > li:last-child{
+    border-bottom: none;
+}
+.cover{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(53, 53, 53, 0.6);
+    z-index:6666;
+}
+.arrows{
+    margin-left: 3px;
+    font-weight: bold;
+}
+
+/* 排序栏结束 */

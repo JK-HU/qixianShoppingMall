@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" style="overflow: scroll">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable"> 
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/placeorder.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_xdqy.css" />
+
+    <link href="/static/home/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/home/css/framework7.ios.min.css" rel="stylesheet">
+    <link href="/static/home/css/framework7.ios.colors.min.css" rel="stylesheet">
+</head>
+<body style="overflow: scroll">
+<div id="wrap">
+    <header>
+        <a href="javascript:history.back(-1)"><span class="iconfont iconfanhui"></span></a>
+        <span onclick="javascript:location.href='/'" class="iconfont iconzy"></span>
+        <span class="ordertit">预约下单</span>
+    </header>
+    <!-- 订单详情视图 -->
+    <div class="orderview">
+        {volist name="goods_infos" id="vo"}
+        <input type="hidden" class="goods_id" value="{$vo.goods_id}">
+        <input type="hidden" class="type_id" value="{$vo.type_id}">
+        <input type="hidden" class="norms" value="{$vo.norms}">
+        <input type="hidden" class="title" value="{$vo.goods_title}">
+        <div class="viewcon">
+            <div class="viewr"><img src="{$vo.pic}" alt="{$vo.title}"></div>
+            <div class="viewl">
+                <div id="vltop" class="vltop" style="height:35px;line-height: 35px;flex:none">{$vo.title}</div>
+                <div class="vlbt">
+                    <div style="color:#666;font-size:12px;">{$vo.norms}</div>
+                    <div style="color:#666;font-size:12px;">运费：{if condition="$vo['is_free_shipping'] eq 1"}包邮{else}{$vo.shipping_price}{/if}</div>
+                    <div class="vl_l">￥<span id="monval" class="monval">{$vo.money}</span>元/件</div>
+                    <div class="vl_r">数量: x<span class="monsize">{$vo.number}</span></div>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+        {/volist}
+    </div>
+    <!-- 订单详情结束 -->
+
+    <!-- 地址+时间 -->
+    <div class="addstimes">
+        <div class="addscon">
+            <a href="javascript:">
+                <div class="conr">
+                    <span class="iconfont icondizhi"></span>
+                    <span>地址</span>
+                </div>
+                <div class="conl">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <input type="text" placeholder="请选择城市" readonly id="location" name="location" style="width:96%" />
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="iconfont icongengduo citydz"></span>
+            </a>
+            <a href="javascript:">
+                <div class="conr">
+                    <span class="iconfont icondizhi"></span>
+                    <span>详细地址</span>
+                </div>
+                <div class="conl" >
+                    <input class="conlipt" data-xxadress="servertime" placeholder="街道,小区" />
+                </div>
+                <span class="iconfont icongengduo"></span>
+            </a>
+            {if condition="$only_goods eq false"}
+            <a href="javascript:" class="times_A">
+                <div class="conr">
+                    <span class="iconfont iconshijian"></span>
+                    <span>时间</span>
+                </div>
+                <div class="conl"><input style="display:inline-block" data-spType="{if condition="$only_goods eq false"}server{else}commodity{/if}" class="conlipt ptime" type="datetime-local" data-servertime="servertime" placeholder="请选择服务时间" /></div>
+                <span class="iconfont icongengduo"></span>
+            </a>
+            {/if}
+        </div>
+    </div>
+    <!-- 地址+时间结束 -->
+
+    <!-- 联系人+电话号码 -->
+    <div class="addstimes">
+        <div class="addscon">
+            <a href="javascript:">
+                <div class="conr">
+                    <span class="iconfont iconlianxiren"></span>
+                    <span>联系人</span>
+                </div>
+                <div class="conl"><input class="conlipt pname" data-name="name" placeholder="请输入联系人姓名" /></div>
+                <span class="iconfont icongengduo"></span>
+            </a>
+            <a href="javascript:">
+                <div class="conr">
+                    <span class="iconfont iconshouji"></span>
+                    <span>联系电话</span>
+                </div>
+                <div class="conl"><input class="conlipt pphone" data-phone="phone" placeholder="请输入联系人电话号码" /></div>
+                <span class="iconfont icongengduo"></span>
+            </a>
+        </div>
+    </div>
+    <!-- 联系人+电话号码结束 -->
+    {if condition="$user_use_integral neq 0"}
+    <div class="addstimes">
+        <div class="addscon" style="line-height: 44px;" data-integral='1'>
+            <input style="position: relative;top:2px;" id="Deduction_integral_input" type="checkbox" name="use_integral" value="1">使用 <b class="integral_nums">{$user_use_integral}</b> 积分抵扣 <b class="Deduction_money">{$consume_integral_price}</b> 元
+        </div>
+    </div>
+    {/if}
+    {if condition="count($coupon_info) > 0"}
+    <div class="addstimes">
+        <div class="addscon" style="line-height: 44px;" data-coupon="{$coupon_info.mcid}">
+            <input style="position: relative;top:2px;" id="Deduction_coupon_input" type="checkbox" name="use_coupon" value="1">使用 <b>满{$coupon_info.satisfy_price}抵扣{$coupon_info.discount_price}</b> 优惠券抵扣 <b class="Deduction_coupon">{$coupon_info.discount_price}</b> 元
+        </div>
+    </div>
+    {/if}
+
+    <!-- 备注 -->
+    <div class="addstimes" style="height: auto">
+        <div class="addscon" style="height: auto;padding: 2px;">
+            <span style="display: inline-block;width: auto;line-height: 30px">备注:</span>
+            <input type="text" class="remark" placeholder="请在这里写下您的建议" />
+        </div>
+    </div>
+    <!-- 备注结束 -->
+
+
+    <!-- 上传照片 -->
+    <div class="iploadimg">
+        <p>上传照片 , 更加方便了解您的需求</p>
+        <!-- <div class="deposit">
+            <img src="/static/home/images/find3.jpg" alt="" />
+            <i class="iconfont iconshanchu deleimg"></i>
+        </div> -->
+        <form>
+            <label for="updataimg">
+                <input type="file" name='updataimg' id="updataimg" hidden />
+                <i class="iconfont iconshangchuan"></i>
+            </label>
+        </form>
+    </div>
+    <!-- 上传照片结束 -->
+
+    <!-- 底部 -->
+    <div class="ft_order">
+        <div class="orderpri">
+            共<span class="ordernum">1</span>件 合计 : ￥<span class="orderpriceNum">{$all_goods_price}</span>
+        </div>
+        <button id="subMess">支付订单</button>
+    </div>
+</div>
+
+<script>
+    var the_id = "{$the_id}";
+    var the_type = "{$the_type}";
+
+    window.onload = function() {
+
+        /*
+        commodity 商品 隐藏
+        server 服务 显示必须填写,suborder.js中 也是用server判断时间的
+        */
+
+        if ($('.ptime').attr('data-spType') == 'commodity'){
+            $('.times_A').attr('style','display:none');
+        }
+        if ($('.ptime').attr('data-spType') == 'server'){
+            $('.times_A').attr('style','display:block');
+        }
+
+
+    }
+    
+</script>
+
+<script src="/static/home/js/jquery.min.js"></script>
+<script src="/static/home/js/suborder.js"></script>
+<script src="/static/home/js/framework7.min.js"></script>
+<script src="/static/home/js/regionsObject2.js"></script>
+<script src="/static/home/js/cityPicker.js"></script>
+
+
+
+</body>
+</html>

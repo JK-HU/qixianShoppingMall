@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/atmosphere.css">
+    <link rel="stylesheet" href="/static/home/css/swiper.min.css">
+</head>
+<body>
+
+<div id="wrap">
+
+    <!-- head -->
+    <header class="head">
+        <div class="head_wrap">
+            <a href="javascript:history.back(-1)">返回 </a>
+            <span>甲醛治理</span>
+            <div style="clear:both"></div>
+        </div>
+    </header>
+    <!-- header结束 -->
+
+    <!-- 轮播开始 -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {volist name="banner_list" id="vo"}
+            <div class="swiper-slide" onclick="javascript:location.href='{$vo.url}')}'"><img src="{$vo.pic}" alt=""></div>
+            {/volist}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- 轮播结束 -->
+
+    <!-- 轮播图下四个导航 -->
+    <div class="nav">
+        <ul>
+            {volist name="type_list" id="vo"}
+            <li>
+                <a href="{:url('goods/list3', ['id'=>$vo['id']])}">
+                    <span><img src="{$vo.image}" alt=""></span>
+                    <span>{$vo.title}</span>
+                </a>
+            </li>
+            {/volist}
+        </ul>
+    </div>
+    <!-- 轮播图下四个导航结束 -->
+    <!-- 模块2 -->
+    <div class="modulb">
+        <div class="modulcon">
+            <div class="modull">
+                <span>推荐有奖</span>
+                <span>不小心就捡到好处</span>
+            </div>
+            <div class="modulr">
+                <span>辅材集市</span>
+                <span>工长采购神奇</span>
+            </div>
+        </div>
+    </div>
+    <!-- 模块2结束 -->
+</div>
+
+<script src="/static/home/js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+</script>
+
+</body>
+</html>

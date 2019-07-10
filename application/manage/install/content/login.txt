@@ -1,0 +1,18 @@
+    /**
+     * 第三方登录
+     * @return mixed|\think\response\Json
+     */
+    public function login(){
+        if(Request::isAjax()) {
+            $datas = input('post.');
+            foreach ($datas as $k=>$v){
+                Db::name('config')->where([['name','=',$k],['inc_type','=','login']])->update(['value'=>$v]);
+            }
+            return json(['code' => 1, 'msg' => '登录信息设置成功!', 'url' => url('system/login')]);
+        }else{
+            $login = Db::name('config')->where('inc_type','login')->select();
+            $info = convert_arr_kv($login,'name','value');
+            $this->assign('info', json_encode($info,true));
+            return $this->fetch();
+        }
+    }

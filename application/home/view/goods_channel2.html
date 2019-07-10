@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/intellHome.css">
+    <link rel="stylesheet" href="/static/home/css/swiper.min.css">
+    <link rel="stylesheet" href="/static/home/css/iconfont_znju.css">
+</head>
+<body>
+<div id="wrap">
+
+    <header class="head" style="height:51px">
+        <div class="headcon">
+            <a href="javascript:history.back(-1)"><span class="iconfont iconfanhui">返回</span></a>
+            <span class="cj">智能家居</span>
+        </div>
+    </header>
+
+    <!-- 轮播开始 -->
+    <div class="swiper-container" style="margin-top:52px">
+        <div class="swiper-wrapper">
+            {volist name="banner_list" id="vo"}
+            <div class="swiper-slide" onclick="javascript:location.href='{$vo.url}')}'"><img src="{$vo.pic}" alt=""></div>
+            {/volist}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- 轮播结束 -->
+
+    <!-- 品质保证 -->
+    <div class="quality">
+        <ul>
+            {volist name="type_list" id="vo"}
+            <li class="navli">
+                <a href="{:url('goods/list5', ['id'=>$vo['id']])}">
+                    <span><img src="{$vo.image}" alt=""></span>
+                    <span>{$vo.title}</span>
+                </a>
+            </li>
+            {if condition="$key neq 0 && $key%5 eq 0"}</ul><ul style="height:85px">{/if}
+            {/volist}
+        </ul>
+    </div>
+    <!-- 品质保证结束 -->
+
+
+    <!-- 产品内容区 -->
+    <div class="firstifical">
+        <p>智能家居 | 优惠有礼</p>
+        <div class="ificalcon">
+            <div class="ificalleft">
+                <!-- <span>互动砸屏 互动球池</span>
+                <span>大型商场,游乐场</span> -->
+                {volist name="banner_list2" id="vo"}
+                <a href="{$vo.url}">
+                    <img src="{$vo.pic}" alt="">
+                </a>
+                {/volist}
+            </div>
+            <div class="ificalright">
+                {volist name="banner_list3" id="vo"}
+                <div class="{if condition='$key eq 0'}rightTop{else}rightTop{/if}">
+                    <a href="{$vo.url}">
+                        <!-- <span>专享65折</span>
+                        <span>享受权利</span> -->
+                        <img src="{$vo.pic}" alt="">
+                    </a>
+                </div>
+                {/volist}
+            </div>
+        </div>
+    </div>
+    <!-- 产品内容区结束 -->
+
+    <!-- 第一个广告通栏 -->
+    <div class="fancon">
+        {volist name="banner_list4" id="vo"}
+        <div class="fanb" style="background: url({$vo.pic})">
+            <a href="{$vo.url}"><span>{$vo.title}<br />{$vo.title}</span></a>
+        </div>
+        {/volist}
+    </div>
+    <!-- 第一个广告通栏结束 -->
+
+    <!-- 单个产品内容区 -->
+    {volist name="recommended_list" id="vo"}
+    <div class="product">
+        <div class="product_con">
+            <a href="javascript:">
+                <div class="pro_con_l">
+                    <img src="{$vo.pic}" alt="">
+                </div>
+                <div class="pro_con_r">
+                    <span class="pro_r_tit">{$vo.title}</span>
+                    <span class="pro_r_des">{:str_cut($vo['introduce'], 12)}</span>
+                    <span class="pro_r_prise">{$vo.money}</span>
+                    <span class="pro_r_buy">立即抢购</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    {/volist}
+    <!-- 单个产品内容区结束 -->
+
+    <div class="product_fun_list">
+        <a href="javascript:">
+            <div class="product_fun_list_content">
+                <div class="list_con_tit"><strong>教育机器人</strong></div>
+                <!-- 商品 -->
+                {volist name="list" id="vo" offset="0" length="1"}
+                <div class="pro_pro" onclick="location.href='{:url('goods/content3', ['id'=>$vo['id']])}'">
+                    <div class="pro_pro_r">
+                        <img src="{$vo.pic}" alt="">
+                    </div>
+                    <div class="pro_pro_l">
+                        <span class="pro_pro_tit">新品</span>
+                        <span class="pro_pro_des">{$vo.title}</span>
+                        <span class="pro_pro_desc">{:str_cut($vo['introduce'], 12)}</span>
+                        <span class="pro_pro_prise">{$vo.money}</span>
+                    </div>
+                </div>
+                {/volist}
+                <div class="pro_pro_content">
+                    {volist name="list" id="vo" offset="1" length="1"}
+                    <div class="content_r" onclick="location.href='{:url('goods/content3', ['id'=>$vo['id']])}'">
+                        <img src="{$vo.pic}" alt="">
+                        <span class="content_r_tit"><strong>{$vo.title}</strong></span>
+                        <span class="content_r_descript">{:str_cut($vo['introduce'], 12)}</span>
+                        <span class="content_r_prise"><strong>{$vo.money}</strong></span>
+
+                    </div>
+                    {/volist}
+                    {volist name="list" id="vo"  offset="2" length="1"}
+                    <div class="content_l" onclick="location.href='{:url('goods/content3', ['id'=>$vo['id']])}'">
+                        <img src="{$vo.pic}" alt="">
+                        <span class="content_r_tit"><strong>{$vo.title}</strong></span>
+                        <span class="content_r_descript">{:str_cut($vo['introduce'], 12)}</span>
+                        <span class="content_r_prise"><strong>{$vo.money}</strong></span>
+                    </div>
+                    {/volist}
+                </div>
+                <!-- 商品结束 -->
+            </div>
+        </a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="/static/home/js/intellHome.js"></script>
+<script src="/static/home/js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay:true,
+        pagination: {
+            el : '.swiper-pagination',
+
+        },
+
+    });
+    document.onload = function() {
+        var bullet = document.getElementsByClassName('.swiper-pagination-bullet');
+        console.log(bullet)
+    }
+
+
+
+</script>
+
+</body>
+</html>

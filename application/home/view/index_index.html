@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/index.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfontb.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_gwc.css" />
+    <link rel="stylesheet" href="/static/home/css/swiper.css" />
+</head>
+<body>
+
+<div id="wrap">
+    <div class="top_bg">
+
+        <!-- head -->
+        <header class="head">
+            <div class="head_wrap">
+                <div class="area"><a href="{:url('region')}">地区选择 <i class="iconfont icondiqu"></i></a></div>
+                <div class="search"><i class="iconfont iconsousuo" style="position:absolute;top:50%;transform:translateY(-50%);left:15px;color:#fff"></i><input type="text" class="search_ipt" placeholder="请输入商品名称"></div>
+                <div style="clear:both"></div>
+            </div>
+        </header>
+
+        <!-- 轮播图 -->
+
+        <!-- <div class="swiper banner"> -->
+
+        <section class="pc-banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {volist name="banner" id="vo"}
+                    <div class="swiper-slide swiper-slide-center none-effect" >
+                        <a href="{$vo.url}">
+                            <img src="{$vo.pic}">
+                        </a>
+                        <div class="layer-mask"></div>
+                    </div>
+                    {/volist}
+                </div>
+                <!-- <div class="button">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div> -->
+            </div>
+        </section>
+        <!-- </div> -->
+        <!-- 轮播图结束 -->
+
+        <!-- nav导航 -->
+        <div class="nav">
+            <ul class="nava">
+                <li class="navali">
+                    <a href="{:url('goods/list1', ['id'=>1])}">
+                        <span><img src="/static/home/images/ban1.png" alt=""></span>
+                        <span class="lifont">家政保洁</span>
+                    </a>
+                </li>
+                <li class="navali">
+                    <a href="{:url('goods/list1', ['id'=>18])}">
+                        <span><img src="/static/home/images/ban2.png" alt=""></span>
+                        <span class="lifont"> 家电清洗</span>
+                    </a>
+                </li>
+                <li class="navali">
+                    <a href="{:url('goods/channel1', ['id'=>5])}">
+                        <span><img src="/static/home/images/ban3.png" alt=""></span>
+                        <span class="lifont">甲醛治理</span>
+                    </a>
+                </li>
+                <li class="navali">
+                    <a href="{:url('goods/list2', ['id'=>2])}">
+                        <span><img src="/static/home/images/ban4.png" alt=""></span>
+                        <span class="lifont">旧房翻新</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nava">
+                <li class="navali">
+                    <a href="{:url('goods/channel2', ['id'=>20])}">
+                        <span><img src="/static/home/images/ban5.png" alt=""></span>
+                        <span class="lifont">智能家居</span>
+                    </a>
+                </li>
+                <li class="navali">
+                    <a href="{:url('goods/list1', ['id'=>19])}">
+                        <span><img src="/static/home/images/ban6.png" alt=""></span>
+                        <span class="lifont">汽车修养</span>
+                    </a>
+                </li>
+                <li class="navali">
+                    <a href="{:url('goods/list4', ['id'=>11])}">
+                        <span><img src="/static/home/images/ban7.png" alt=""></span>
+                        <span class="lifont">辅材集市</span>
+                    </a>
+                </li>
+                <li class="navali">
+                    <a href="javascript:void(0);">
+                        <span><img src="/static/home/images/ban8.png" alt=""></span>
+                        <span class="lifont">便民服务</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- nav导航结束 -->
+
+        <!-- 轮播图下的产品图 -->
+
+        {volist name="$banner8" id="vo"}
+        <div class="productimg">
+            <a href="{$vo.url}"><img src="{$vo.pic}" alt=""></a>
+        </div>
+        {/volist}
+        <!-- 轮播图下的产品图结束 -->
+
+        <!-- 产品图下4个模块 -->
+        <div class="firstModul">
+            {volist name="$banner9" id="vo"}
+            <a href="{$vo.url}">
+                <div class="modul modula">
+                    <span>{$vo.name}</span>
+                    <span>{$vo.content}</span>
+                    <div class="img"><img src="{$vo.pic}" alt=""></div>
+                </div>
+            </a>
+            {/volist}
+        </div>
+
+
+        <!-- 产品图下4个模块结束 -->
+
+
+
+
+    </div>
+
+    <!-- 内容wrap -->
+
+    <div class="arcticleWrap">
+
+        <!-- 广告通栏 -->
+        {volist name="$banner10" id="vo"}
+        <div class="fancon">
+            <div class="fana" style="background: url({$vo.pic})">
+                <a href="{$vo.url}"><span>{$vo.name}<br />{$vo.content}</span></a>
+            </div>
+        </div>
+        {/volist}
+        <!-- 广告通栏结束 -->
+
+
+        <!-- 第一个模块3个分类 -->
+
+        <div class="firstifical">
+            <p>欢迎入驻 | 优惠有礼</p>
+            <div class="ificalcon">
+                {volist name="$banner11" id="vo" offset="0" length="1"}
+                <div class="ificalleft" onclick="location.href='{$vo.url}'" style="background-image: url({$vo.pic}) {$vo.bg_color}">
+                    <span>{$vo.name}</span>
+                    <span>{$vo.content}</span>
+                </div>
+                {/volist}
+                {volist name="$banner11" id="vo" offset="2" length="2"}
+                <div class="ificalright">
+                    <div class="rightTop" style="background-image: url({$vo.pic}) {$vo.bg_color}">
+                        <a href="{$vo.url}">
+                            <span>{$vo.name}</span>
+                            <span>{$vo.content}</span>
+                        </a>
+                    </div>
+                    <div class="rightBtm" style="background-image: url({$vo.pic}) {$vo.bg_color}">
+                        <a href="{$vo.url}">
+                            <span>{$vo.name}</span>
+                            <span>{$vo.content}</span>
+                        </a>
+                    </div>
+                </div>
+                {/volist}
+            </div>
+        </div>
+        <!-- 第一个模块3个分类结束 -->
+
+        <!-- 第二个广告通栏 -->
+        {volist name="$banner12" id="vo"}
+        <div class="fancon">
+            <div class="fanb" >
+                <a href="{$vo.url}"><span>{$vo.name}<br />{$vo.content}</span></a>
+            </div>
+        </div>
+        {/volist}
+        <!-- 第二个广告通栏结束 -->
+
+        <!-- 第二个模块 -->
+        <div class="secifical">
+            <p>欢迎入驻 | 优惠有礼</p>
+            <div class="secificalcon">
+                {volist name="$banner13" id="vo" offset="0" length="1"}
+                <div class="seca" style="background-image: url({$vo.pic})">
+                    <a href="{$vo.url}">
+                        <span>{$vo.name}</span>
+                    </a>
+                </div>
+                {/volist}
+                {volist name="$banner13" id="vo" offset="1" length="1"}
+                <div class="secb" style="background-image: url({$vo.pic})">
+                    <a href="{$vo.url}">
+                        <span>{$vo.name}</span>
+                    </a>
+                </div>
+                {/volist}
+                {volist name="$banner13" id="vo" offset="2" length="1"}
+                <div class="secc" style="background-image: url({$vo.pic})">
+                    <a href="{$vo.url}">
+                        <span>{$vo.name}</span>
+                    </a>
+                </div>
+                {/volist}
+            </div>
+        </div>
+        <!-- 第二个模块结束 -->
+
+
+        <!-- 第三个广告通栏 -->
+        {volist name="$banner14" id="vo"}
+        <div class="fancon">
+            <div class="fanc" style="background-image: url({$vo.pic})">
+                <a href="{$vo.url}"><span>{$vo.name}<br />{$vo.content}</span></a>
+            </div>
+        </div>
+        {/volist}
+        <!-- 第三个广告通栏结束 -->
+
+        <!-- 第三个模块4个分类 -->
+
+        <div class="typescon">
+            <p>全新体验 | 更多服务</p>
+            <div class="types">
+                {volist name="$banner15" id="vo" offset="0" length="1"}
+                <div class="type_l" style="background-image: {$vo.bg_color}">
+                    <a href="{$vo.url}">
+                        <span>{$vo.name} &nbsp;&nbsp;&nbsp;&nbsp;<i class="iconfont iconjishicaisex"></i></span>
+                        <span>{$vo.content}</span>
+                    </a>
+                </div>
+                {/volist}
+                {volist name="$banner15" id="vo" offset="1" length="1"}
+                <div class="type_r" style="background-image: {$vo.bg_color}">
+                    <a href="{$vo.url}">
+                        <span>{$vo.name} &nbsp;&nbsp;&nbsp;&nbsp;<i class="iconfont iconmianfei"></i></span>
+                        <span>{$vo.content}</span>
+                    </a>
+                </div>
+                {/volist}
+            </div>
+            <div class="typesb">
+                {volist name="$banner15" id="vo" offset="2" length="1"}
+                <div class="type_l" style="background-image: {$vo.bg_color}">
+                    <a href="{$vo.url}">
+                        <span>{$vo.name} &nbsp;&nbsp;&nbsp;&nbsp;<i class="iconfont iconzhineng"></i></span>
+                        <span>{$vo.content}</span>
+                    </a>
+                </div>
+                {/volist}
+                {volist name="$banner15" id="vo" offset="3" length="1"}
+                <div class="type_r" style="background-image: {$vo.bg_color}">
+                    <a href="{$vo.url}">
+                        <span>{$vo.name} &nbsp;&nbsp;&nbsp;&nbsp;<i class="iconfont iconbianmin2"></i></span>
+                        <span>{$vo.content} </span>
+                    </a>
+                </div>
+                {/volist}
+            </div>
+
+        </div>
+
+        <!-- 4个分类结束 -->
+
+
+        <!-- 图片+文字 -->
+
+        <!-- <div class="imgtxt">
+            <div class="imgcon">
+                <img src="/static/home/images/a3.jpg" alt="" />
+                <span>卫生间套餐 - 简约风情</span>
+            </div>
+        </div> -->
+
+        <!-- 图片+文字结束 -->
+
+
+        <!-- 商品 -->
+
+        <div class="commodity">
+            <div class="comwrap">
+                {volist name="$recommended_list" id="vo" key="k"}
+                <div class='{if condition="$k neq 0 && $mod eq 0"}com_l{else/}com_r{/if}'>
+                    <a href="{:url('goods/content2', ['id'=>$vo['id']])}">
+                        <div class='{if condition="$k neq 0 && $mod eq 0"}com_l_img{else/}com_r_img{/if}'><img src="{$vo.pic}" /></div>
+                        <div class='{if condition="$k neq 0 && $mod eq 0"}com_l_description{else/}com_r_description{/if}'>{:str_cut($vo['title'], 12)}</div>
+                        <div class='{if condition="$k neq 0 && $mod eq 0"}com_l_buy{else/}com_r_buy{/if}'>
+                            <span>￥{$vo.money}元</span>
+                            <button>立即预约</button>
+                        </div>
+                        <div style="clear:both"></div>
+                    </a>
+                </div>
+                {if condition="$k == 2"}</div><div class="comwrap">{/if}
+                {/volist}
+            </div>
+        </div>
+        <!-- 商品结束 -->
+
+    </div>
+
+    <!-- 内容wrap结束 -->
+
+    <!-- footer -->
+    {include file="common/footer" /}
+    <!-- footer结束 -->
+
+
+
+</div>
+
+<script src="/static/home/js/jquery.min.js"></script>
+<script src="/static/home/js/swiper.min.js"></script>
+<script src="/static/home/js/index.js"></script>
+<script type="text/javascript">
+
+    window.onload = function() {
+        var swiper = new Swiper('.swiper-container',{
+            autoplay: true,
+            delay: 100, //轮播切换时间
+            speed: 500,
+            autoplayDisableOnInteraction: true, //触碰图片后时候轮播
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 2,
+            spaceBetween : 220,//控制间距
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+
+            // prevButton: '.swiper-button-prev',
+            // nextButton: '.swiper-button-next',
+
+            // onInit: function(swiper) {
+            //     swiper.slides[2].className = "swiper-slide swiper-slide-active";
+            // },
+
+
+            // breakpoints: {
+            //     668: {
+            //         slidesPerView: 2,
+            //     }
+            // }
+        });
+    }
+
+
+</script>
+</body>
+</html>

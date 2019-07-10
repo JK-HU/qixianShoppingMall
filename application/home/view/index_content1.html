@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/order.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_con.css" />
+</head>
+<body>
+<div id="wrap">
+    <!-- 顶部 -->
+    <header class="head">
+        <div class="headcon">
+            <a href="index.html" style="left:0"><span class="iconfont iconfanhui"></span></a>
+            <a href="index.html" style="left:8%"><span class="iconfont iconhome"></span></a>
+            <span class="fanxin">订单详情</span>
+        </div>
+    </header>
+    <div class="card">
+        <div class="card_img"><img src="/static/home/images/bj_rc.jpg" alt=""></div>
+        <div class="card_con">
+            <div class="con_r">
+                <span style="width:83%">{$info.title}</span>
+                <span>￥{$info.money}/m&sup2;</span>
+                <span>￥{$info.original_price}/m&sup2;</span>
+            </div>
+            <div class="con_l"><img src="/static/home/images/detail3.png" alt=""></div>
+        </div>
+    </div>
+    <!-- 参考费用 -->
+    <div class="reference">
+        <p>参考费用</p>
+        <div class="refercon">
+            {volist name="reference_list" id="vo"}
+            <div class="refers">
+                <span>{$vo.name}</span>
+                <span>￥{$vo.price}</span>
+            </div>
+            {/volist}
+        </div>
+    </div>
+    <!-- 参考费用结束 -->
+    <!-- 图文详情 -->
+    <div class="tu">
+        <span class="tutxt">图文详情</span>
+        <div class="tucon">
+            {$info.content|raw}
+        </div>
+    </div>
+    <!-- 图文详情结束 -->
+    <!-- 预约按钮 -->
+    <div class="yuyue">
+        <button>联系客服</button>
+        <button onclick="location.href='{:url('order/add', ['id'=>$info['id']])}'">{$info.pre_price}元预购</button>
+    </div>
+    <!-- 预约按钮结束 -->
+</div>
+</body>
+</html>

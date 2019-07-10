@@ -1,0 +1,154 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>编辑门店</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" id="the-form">
+        <input type="hidden" name="id" id="id" value="{$info.id|default=''}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">门店名称</label>
+            <div class="layui-input-2">
+                <input type="text" name="title" value="{$info.title|default=''}" lay-verify="required" placeholder="{:lang('pleaseEnter')}门店名称" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">门店Logo</label>
+            <input type="hidden" name="logo" id="logo" value="{$info.logo|default=''}">
+            <div class="layui-input-block">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-primary" id="adBtn"><i class="icon icon-upload3"></i>点击上传</button>
+                    <div class="layui-upload-list">
+                        <img class="layui-upload-img" src="{$info.logo|default=''}" id="adLogo">
+                        <p id="demoText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">保证金</label>
+            <div class="layui-input-1">
+                <input type="text" name="money" value="{$info.money|default=''}" lay-verify="required" placeholder="{:lang('pleaseEnter')}门店保证金" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">省市区</label>
+            <div class="layui-input-inline">
+                <select name="province" lay-filter="province">
+                    <option value="">请选择省</option>
+                    {volist name="$province" id="vo"}
+                    <option {if condition="isset($info['province']) && $vo['id'] eq $info['province']"}selected{/if} value="{$vo.id}">{$vo.name}</option>
+                    {/volist}
+                </select>
+            </div>
+            <div class="layui-input-inline" >
+                <select name="city" id="city" lay-filter="city">
+                    {if condition="isset($info['city'])"}
+                    <option value="{$info['city']}" selected>{$city}</option>
+                    {/if}
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="district" id="district" lay-filter="s3">
+                    {if condition="isset($info['district'])"}
+                    <option value="{$info['district']}" selected>{$district}</option>
+                    {/if}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">详细地址</label>
+            <div class="layui-input-4">
+                <input type="text" name="address" value="{$info.address|default=''}" lay-verify="required" placeholder="{:lang('pleaseEnter')}详细地址" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">门店简介</label>
+            <div class="layui-input-4">
+                <textarea name="introduction" id="introduction" class="layui-textarea">{$info.introduction|default=''}</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
+                <a href="{:url('index')}" class="layui-btn layui-btn-primary">{:lang('back')}</a>
+            </div>
+        </div>
+    </form>
+</div>
+{include file="common/foot"/}
+<script>
+    layui.use(['form', 'layer','upload'], function () {
+        var form = layui.form, layer = layui.layer,$= layui.jquery, upload = layui.upload;
+        form.on('select(province)', function(data) {
+            var pid = data.value;
+            var loading = layer.load(1, {shade: [0.1, '#fff']});
+            $.get("{:url('getRegion')}?pid=" + pid, function (data) {
+                layer.close(loading);
+                var html='<option value="">请选择市</option>';
+                $.each(data, function (i, value) {
+                    html += '<option value="'+value.id+'">'+value.name+'</option>';
+                });
+                $('#city').html(html);
+                $('#district').html('<option value="">请选择县/区</option>');
+                form.render()
+            });
+        });
+        form.on('select(city)', function(data) {
+            var pid = data.value;
+            var loading = layer.load(1, {shade: [0.1, '#fff']});
+            $.get("{:url('getRegion')}?pid=" + pid, function (data) {
+                layer.close(loading);
+                var html='<option value="">请选择县/区</option>';
+                $.each(data, function (i, value) {
+                    html += '<option value="'+value.id+'">'+value.name+'</option>';
+                });
+                $('#district').html(html);
+
+                form.render()
+            });
+        });
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#adBtn'
+            ,url: '{:url("UpFiles/upload")}'
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#adLogo').attr('src', result); //图片链接（base64）
+                });
+            },
+            done: function(res){
+                if(res.code>0){
+                    $('#logo').val(res.url);
+                }else{
+                    //如果上传失败
+                    return layer.msg('上传失败');
+                }
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst.upload();
+                });
+            }
+        });
+        form.on('submit(submit)', function (data) {
+            // 提交到方法 默认为本身
+            var loading = layer.load(1, {shade: [0.1, '#fff']});
+            $.post("", $('#the-form').serialize(), function (res) {
+                layer.close(loading);
+                if (res.code > 0) {
+                    layer.msg(res.msg, {time: 1800, icon: 1}, function () {
+                        location.href = res.url;
+                    });
+                } else {
+                    layer.msg(res.msg, {time: 1800, icon: 2});
+                }
+            });
+        })
+    });
+</script>
+</body>
+</html>

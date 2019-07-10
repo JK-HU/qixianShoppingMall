@@ -1,0 +1,75 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>{$title}</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" id="the-form">
+        <input type="hidden" name="id" id="id" value="{$express_code.id}">
+        <input type="hidden" name="order_id" value="{$order.id}">
+        <div class="layui-form-item">
+            <input type="hidden" name="id" value="{$express_code.id}">
+            <label class="layui-form-label">发货状态</label>
+            <div class="layui-input-3" style="margin:0 0 0 0">
+                <div class="layui-input-block">
+                    <input type="radio" name="send_type" {if $order.send_type == 1}checked{/if} lay-filter="send_type"  value="1" title="快递发货">
+                    <input type="radio" name="send_type" {if $order.send_type == 2}checked{/if} lay-filter="send_type"  value="2" title="不需发货">
+                </div>
+            </div>
+        </div>
+        <div style="display:{$order.send_type == 1 ? 'block' : 'none'}" id="btn_div">
+            <div class="layui-form-item">
+                <label class="layui-form-label">物流选择</label>
+                <div class="layui-input-inline">
+                    <select name="express_id" lay-filter="province" >
+                        {foreach $express as $key => $val}
+                        <option {if $val['id'] == $express_code['express_id']}selected{/if}
+                        value="{$val.id}">{$val.name}</option>
+                        {/foreach}
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">订单编号</label>
+                <div class="layui-input-4">
+                    <input type="text" name="code" value="{$express_code.code}" placeholder="{:lang('pleaseEnter')}编号"
+                           class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+{include file="common/foot"/}
+<script>
+    layui.use(['form', 'layer'], function () {
+        var form = layui.form, layer = layui.layer,$= layui.jquery;
+        form.on('submit(submit)', function (data) {
+            // 提交到方法 默认为本身
+            var loading = layer.load(1, {shade: [0.1, '#fff']});
+            $.post("", $('#the-form').serialize(), function (res) {
+                layer.close(loading);
+                if (res.code > 0) {
+                    layer.msg(res.msg, {time: 1800, icon: 1}, function () {
+                        window.parent.location.reload();
+                    });
+                } else {
+                    layer.msg(res.msg, {time: 1800, icon: 2});
+                }
+            });
+        });
+        form.on('radio(send_type)', function (data) {
+            var id = data.value;
+            if(id == 1){
+                $('#btn_div').show();
+            }else{
+                $('#btn_div').hide();
+            }
+        });
+    });
+</script>
+</body>
+</html>

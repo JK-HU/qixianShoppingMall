@@ -1,0 +1,108 @@
+{include file="common/head"/}
+<div class="admin-main">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>编辑分类</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane">
+        <input type="hidden" name="id" value="{$goods_type.id}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">父级</label>
+            <div class="layui-input-4">
+                <select name="pid" lay-verify="required" lay-filter="pid">
+                    <option value="0">默认顶级</option>
+                    {volist name="arr" id="vo"}
+                    <option value="{$vo.id}" {$vo['id'] == $goods_type['pid'] ? 'selected' : ''}>{$vo.lefthtml}{$vo.title}</option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">名称</label>
+            <div class="layui-input-4">
+                <input type="text" name="title" value="{$goods_type.title}" lay-verify="required"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">类型</label>
+            <div class="layui-input-4">
+                <select name="type_id" lay-verify="required" lay-filter="pid">
+                    <option value="1"{$goods_type.type_id == 1 ? 'selected' : ''}>服务</option>
+                    <option value="2" {$goods_type.type_id == 2 ? 'selected' : ''}>商品</option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-2">
+                <input type="text" name="sort" value="{$goods_type.sort}" placeholder="{:lang('pleaseEnter')}排序编号" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">图片</label>
+            <input type="hidden" name="image" id="image" value="{$goods_type.image|default=''}">
+            <div class="layui-input-block">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-primary" id="adBtn"><i class="icon icon-upload3"></i>点击上传</button>
+                    <div class="layui-upload-list">
+                        <img class="layui-upload-img" src="{$goods_type.image|default=''}" id="adPic">
+                        <p id="demoText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" lay-submit="" lay-filter="auth">立即提交</button>
+                <a href="{:url('goods_type')}" class="layui-btn layui-btn-primary">返回</a>
+            </div>
+        </div>
+    </form>
+</div>
+{include file="common/foot"/}
+<script>
+    layui.use(['form', 'layer','upload'], function () {
+        var form = layui.form,layer = layui.layer,upload = layui.upload,$ = layui.jquery,element = layui.element;
+        form.on('submit(auth)', function (data) {
+            // 提交到方法 默认为本身
+            $.post("{:url('edit_goods_type')}",data.field,function(res){
+                if(res.code > 0){
+                    layer.msg(res.msg,{time:1800,icon:1},function(){
+                        location.href = res.url;
+                    });
+                }else{
+                    layer.msg(res.msg,{time:1800,icon:2});
+                }
+            });
+        });
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#adBtn'
+            ,url: '{:url("UpFiles/upload")}'
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#adPic').attr('src', result); //图片链接（base64）
+                });
+            },
+            done: function(res){
+                if(res.code>0){
+                    $('#image').val(res.url);
+                }else{
+                    //如果上传失败
+                    return layer.msg('上传失败');
+                }
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst.upload();
+                });
+            }
+        });
+    })
+</script>
+</body>
+</html>

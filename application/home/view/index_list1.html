@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <script src="/static/home/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/home/js/swiper-3.4.0.jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="/static/home/css/swiper-3.2.7.min.css" /> -->
+    <link rel="stylesheet" href="/static/home/css/listcon.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_con.css" />
+    <link rel="stylesheet" type="text/css" href="/static/home/css/swiper-3.3.1.min.css" />
+
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .tab {
+            display: flex;
+            line-height: 51px;
+            position: fixed;
+            top: 51px;
+            width: 100%;
+            z-index: 99999;
+            border-bottom: 1px #ccc solid;
+            background: #fff;
+        }
+
+        .tab a {
+            width: 100%;
+            background: #fff;
+            text-align: center;
+            color: #000;
+        }
+
+        .tab .active {
+            border-bottom: 1px #f50 solid;
+            color: #f50;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: hidden;
+            background: #fff
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            height: calc(125vh - 120px)
+        }
+        .swiper-slide {
+            height: auto;
+            background: rgb(255, 255, 255);
+
+            padding-bottom: 6rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .list-group {
+            padding-left: 0;
+            /* margin-bottom: 20px; */
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+
+        /* 下拉刷新结束 */
+    </style>
+</head>
+<body>
+<div id='wrap'>
+    <!-- 顶部 -->
+    <header class="head">
+        <div class="headcon">
+            <a href="index.html"><span class="iconfont iconfanhui"></span></a>
+            <a href="index.html" style="left:9%"><span class="iconfont iconhome"></span></a>
+            <span class="cj">除甲醛套餐</span>
+        </div>
+    </header>
+    <div class="container">
+        <div class="tab">
+            <a class="active" href="javascript:;">家政保洁</a>
+        </div>
+        <!-- swiper2 -->
+        <div class="swiper-container">
+            <!-- <div class="refreshtip">下拉可以刷新</div> -->
+            <div class="swiper-wrapper w" style="margin-top: 132px;">
+                <div class="swiper-slide d">
+                    <!-- <div class="init-loading list-group-item text-center" style="display: none;">下拉可以刷新</div> -->
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide list-group">
+                                <!-- <div class="slidCon">
+                                    <a href="order.html">
+                                        <div class="cona"><img src="/static/home/images/bj_rc.jpg" alt=""></div>
+                                        <div class="conb">
+                                            <span>日常保洁</span>
+                                            <span>服务质量有保障</span>
+                                            <span>￥80.00/次</span>
+                                            <span>￥80.00(会员专享)</span>
+                                        </div>
+                                        <div class="conc">
+                                            <button>立即预约</button>
+                                        </div>
+                                    </a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="loadtip">上拉加载更多</div> -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <!-- 覆盖层 -->
+        <!-- 覆盖层结束 -->
+    </div>
+</div>
+
+<script src="/static/home/js/oldhouse_con.js"></script>
+<script src="/static/home/js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/home/js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var loadFlag = true;
+    var onloadnum = 5; //页面加载时获取的个数
+    var swipernum = 0; //上拉或下拉加载时递增的数
+    var swipersize = 3; //上拉或下拉时每次加载的个数
+
+    // 页面加载
+    document.onreadystatechange = function() {
+        if (document.readyState == 'complete'){
+            console.log()
+            $.ajax({
+                url : "{:url('get_list')}",
+                type : 'POST',
+                dataType : 'json',
+                data : {
+                    'id' : {$type_id},
+                    'swipernum' : 0,
+                    'onloadnum' : onloadnum, //页面加载时获取的个数
+                },
+                success : function(data) {
+                    for (var i in data) {
+                        swipernum =  swipernum + 1;
+                        $(".list-group").eq(mySwiper2.activeIndex).append(`<div class="slidCon"><a href="/home/goods/content1.html?id=${data[i].id}">
+                                                <div class="cona"><img src="${data[i].pic}" alt=""></div>
+                                                    <div class="conb">
+                                                        <span>${data[i].title}</span>
+                                                        <span>${data[i].introduce}</span>
+                                                        <span>￥${data[i].money}/次</span>
+                                                        <span>￥${data[i].member_price}(会员专享)</span>
+                                                    </div>
+                                                <div class="conc">
+                                                    <button>立即预约</button>
+                                                </div>
+                                            </a>
+                                        </div>`);
+                    }
+                    // $(".loadtip").html('上拉加载更多...');
+                    mySwiper.update(); // 重新计算高度;
+                },
+                error : function(data) {
+                    alert('信息获取失败!');
+                }
+            });
+        }
+    };
+
+    // 页面加载结束
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        scrollbar: '.swiper-scrollbar',
+        slidesPerView: 'auto',
+        mousewheelControl: true,
+        freeMode: true,
+        onTouchMove: function (swiper) { //手动滑动中触发
+            var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+            // if (mySwiper.translate < 50 && mySwiper.translate > 0) {
+            //     $(".init-loading").html('下拉刷新...').show();
+            // } else if (mySwiper.translate > 50) {
+            //     $(".init-loading").html('释放刷新...').show();
+            // }
+        },
+        onTouchEnd: function (swiper) {
+            var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+            // 上拉加载
+            if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                // console.log("已经到达底部！");
+
+                if (loadFlag) {
+                    $(".loadtip").html('正在加载...');
+                } else {
+                    $(".loadtip").html('没有更多啦！');
+                }
+                $.ajax({
+                    url : "{:url('get_list')}",
+                    type : 'POST',
+                    dataType : 'json',
+                    data : {
+                        'id' : {$type_id},
+                        'onloadnum' : swipersize,
+                        'swipernum' : swipernum,
+                    },
+                    success : function(data) {
+                        for (var i in data) {
+                            swipernum =  swipernum + 1;
+                            $(".list-group").eq(mySwiper2.activeIndex).append(`<div class="slidCon"><a href="/home/goods/content1.html?id=${data[i].id}">
+                                                    <div class="cona"><img src="${data[i].pic}" alt=""></div>
+                                                    <div class="conb">
+                                                        <span>${data[i].title}</span>
+                                                        <span>${data[i].introduce}</span>
+                                                        <span>￥${data[i].money}/次</span>
+                                                        <span>￥${data[i].member_price}(会员专享)</span>
+                                                    </div>
+                                                    <div class="conc">
+                                                        <button>立即预约</button>
+                                                    </div>
+                                                </a>
+                                            </div>`);
+                        }
+                        $(".loadtip").html('上拉加载更多...');
+                        mySwiper.update(); // 重新计算高度;
+                    },
+                    error : function(data) {
+
+                    }
+                });
+
+            }
+
+            return false;
+        }
+    });
+
+    var mySwiper2 = new Swiper('.swiper-container2', {
+        onTransitionEnd: function (swiper) {
+            $('.w').css('transform', 'translate3d(0px, 0px, 0px)')
+            $('.swiper-container2 .swiper-slide-active').css('height', 'auto').siblings('.swiper-slide')
+                .css('height', '0px');
+            mySwiper.update();
+
+            $('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass(
+                'active');
+        }
+    });
+    $('.tab a').click(function () {
+        $(this).addClass('active').siblings('a').removeClass('active');
+        mySwiper2.slideTo($(this).index(), 500, false)
+        $('.w').css('transform', 'translate3d(0px, 0px, 0px)')
+        $('.swiper-container2 .swiper-slide-active').css('height', 'auto').siblings('.swiper-slide').css(
+            'height', '0px');
+        mySwiper.update();
+    });
+</script>
+</body>
+</html>

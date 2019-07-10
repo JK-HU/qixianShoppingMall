@@ -1,0 +1,53 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>评价{:lang('list')}</legend>
+    </fieldset>
+    <div class="demoTable">
+        <div class="layui-inline">
+            <input class="layui-input" name="key" id="key" placeholder="{:lang('pleaseEnter')}关键字">
+        </div>
+        <button class="layui-btn" id="search" data-type="reload">搜索</button>
+        <a href="{:url('order/evaluateList', ['id'=>$id, 'order_id'=>$order_id])}" class="layui-btn">刷新评论列表</a>
+    </div>
+    <table class="layui-table" id="list" lay-filter="list"></table>
+</div>
+<script type="text/html" id="topBtn">
+    订单编号：{$order_id}
+</script>
+{include file="common/foot"/}
+<script>
+    layui.use(['table','form'], function() {
+        var table = layui.table,form = layui.form, $ = layui.jquery;
+        var tableIn = table.render({
+            id: 'order',
+            elem: '#list',
+            url: '{:url("evaluateList")}',
+            method: 'post',
+            toolbar: '#topBtn',
+            defaultToolbar:'',
+            page: true,
+            cols: [[
+                {checkbox:true,fixed: true},
+                {field: 'id', title: '{:lang("id")}', width: 80, fixed: true},
+                {field: 'mobile', title: '用户', width: 150},
+                {field: 'star_class', title: '星级', width: 80},
+                {field: 'content', title: '评价内容', width: 400},
+                {field: 'create_time', title: '评论时间', width: 200},
+            ]],
+            limit: 10 //每页默认显示的数量
+        });
+
+        //搜索
+        $('#search').on('click', function() {
+            var key = $('#key').val();
+            if($.trim(key)==='') {
+                layer.msg('{:lang("pleaseEnter")}关键词！',{icon:0});
+                return;
+            }
+            tableIn.reload({ page: {page: 1},where: {key: key}});
+        });
+    });
+</script>
+</body>
+</html>

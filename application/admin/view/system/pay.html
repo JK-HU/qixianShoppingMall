@@ -1,0 +1,201 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>支付配置</legend>
+    </fieldset>
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">微信支付</li>
+            <li>支付宝</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form layui-form-pane" lay-filter="form-login">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开启状态</label>
+                        <div class="layui-input-2">
+                            <div class="layui-input-block" style="margin-left:10px;">
+                                <input type="radio" name="wxpay_isopen" value="true" title="开启">
+                                <input type="radio" name="wxpay_isopen" value="false" title="关闭">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">AppID</label>
+                        <div class="layui-input-4">
+                            <input type="text" lay-verify="required" name="wxpay_appid" placeholder="请填写公众号AppID" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">AppSecret</label>
+                        <div class="layui-input-4">
+                            <input type="text" lay-verify="required" name="wxpay_appsecret" placeholder="请填写公众号AppSecret" value="" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">支付密钥</label>
+                        <div class="layui-input-4">
+                            <input type="text" lay-verify="required" name="wxpay_appkey" placeholder="请填写商户支付密钥" value="" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">商户号</label>
+                        <div class="layui-input-4">
+                            <input type="text" lay-verify="required" name="wxpay_merchantid" placeholder="请填写商户号" value="" class="layui-input">
+                        </div>
+                    </div>
+                    <!--<div class="layui-form-item">
+                        <label class="layui-form-label">签名类型</label>
+                        <div class="layui-input-4">
+                            <select name="type_id" lay-verify="required">
+                                <option value="HMAC-SHA256">HMAC-SHA256</option>
+                                <option value="md5">MD5</option>
+                            </select>
+                        </div>
+                    </div>-->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">CERT证书</label>
+                        <input type="hidden" name="wxpay_sslcertpath" id="wxpay_sslcertpath">
+                        <div class="layui-input-block">
+                            <div class="layui-upload">
+                                <button type="button" class="layui-btn layui-btn-primary" id="adCert"><i class="icon icon-upload3"></i>点击上传</button>
+                                <div class="layui-upload-list">
+                                    <p id="demoTextCert"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">KEY密钥</label>
+                        <input type="hidden" name="wxpay_sslkeypath" id="wxpay_sslkeypath">
+                        <div class="layui-input-block">
+                            <div class="layui-upload">
+                                <button type="button" class="layui-btn layui-btn-primary" id="adKey"><i class="icon icon-upload3"></i>点击上传</button>
+                                <div class="layui-upload-list">
+                                    <p id="demoTextKey"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">{:lang('reset')}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="layui-tab-item">
+                <form class="layui-form layui-form-pane" lay-filter="form-login">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开启状态</label>
+                        <div class="layui-input-2">
+                            <div class="layui-input-block" style="margin-left:10px;">
+                                <input type="radio" name="alipay_isopen" value="true" title="开启">
+                                <input type="radio" name="alipay_isopen" value="false" title="关闭">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">AppID</label>
+                        <div class="layui-input-4">
+                            <input type="text" lay-verify="required" name="alipay_appid" placeholder="请填写支付宝AppID" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">商户私钥</label>
+                        <div class="layui-input-4">
+                            <textarea name="alipay_private_key" id="alipay_private_key" cols="30" rows="10" class="layui-textarea" placeholder="请填写商户私钥"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">支付宝公钥</label>
+                        <div class="layui-input-4">
+                            <textarea name="alipay_public_key" id="alipay_public_key" cols="30" rows="10" class="layui-textarea" placeholder="请填写支付宝公钥"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">{:lang('reset')}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="common/foot"/}
+<script>
+    layui.use(['form', 'layer', 'upload', 'element'], function () {
+        let form = layui.form,layer = layui.layer,$= layui.jquery, upload = layui.upload, element=layui.element;
+        let info = {$info|raw};
+        form.val("form-login", info);
+        info.cert_url_show && $('#demoTextCert').html(info.cert_url_show);
+        info.key_url_show && $('#demoTextKey').html(info.key_url_show);
+        //提交监听
+        form.on('submit(submit)', function (data) {
+            loading =layer.load(1, {shade: [0.1,'#fff']});
+            $.post("{:url('system/pay')}",data.field,function(res){
+                layer.close(loading);
+                if (res.code > 0) {
+                    layer.msg(res.msg,{icon: 1, time: 1000},function(){
+                        location.href = res.url;
+                    });
+                } else {
+                    layer.msg(res.msg,{icon: 2, time: 1000});
+                }
+            });
+        });
+        // cert证书上传
+        let uploadInstCert = upload.render({
+            elem: '#adCert'
+            ,accept:'file'
+            ,ext: '.pem'
+            ,url: '{:url("UpFiles/cert")}'
+            ,done: function(res){
+                if (res.code == 0)
+                {
+                    $('#wxpay_sslcertpath').val(res.url);
+                    $('#demoTextCert').html(res.url_show);
+                } else {
+                    return layer.msg('上传失败');
+                }
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoTextCert');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInstCert.upload();
+                });
+            }
+        });
+        // key证书上传
+        let uploadInstKey = upload.render({
+            elem: '#adKey'
+            ,accept:'file'
+            ,ext: '.pem'
+            ,url: '{:url("UpFiles/cert")}'
+            ,done: function(res){
+                if (res.code == 0)
+                {
+                    $('#wxpay_sslkeypath').val(res.url);
+                    $('#demoTextKey').html(res.url_show);
+                } else {
+                    return layer.msg('上传失败');
+                }
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoTextKey');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInstKey.upload();
+                });
+            }
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/mine.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_wode.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_gwc.css" />
+</head>
+<body>
+
+<div id="wrap">
+    <!-- 头部部分 -->
+
+    <div class="head">
+        <div class="head_bg"></div>
+        <div class="loginImg">
+            {if condition="$user['mobile'] eq false"}
+                <a href="{:url('login')}">
+                    <img src="/static/home/images/logo.jpg" alt="">
+                    登录/注册
+                </a>
+            {else}
+                <a href="javascript:;">
+                    <img src="/static/home/images/logo.jpg" alt="">{$user.mobile}
+                </a>
+            {/if}
+        </div>
+
+        <!-- 设置和客服 -->
+        <div class="setting">
+            <a href="{:url('set/index')}" class="iconfont iconshezhi"></a>
+            <a href="javascript:alert('数据暂时没有录入')" class="iconfont iconkefu"></a>
+        </div>
+        <!-- 设置和客服结束 -->
+    </div>
+    <!-- 头部部分结束 -->
+
+    <div class="fun">
+        <ul>
+            <!--<li>
+                <a href="wallet.html">
+                    {if condition="$user eq false"}
+                    <span class="coa">0.00</span>
+                    {else}
+                    <span class="coa">{$user.money}</span>
+                    {/if}
+                    <span>钱包</span>
+                </a>
+            </li>-->
+            <li style="width:49%">
+                <a href="{:url('integral/index')}">
+                    {if condition="$user eq false"}
+                    <span class="cob">0</span>
+                    {else}
+                    <span class="cob">{$user.integral|default='0'}</span>
+                    {/if}
+                    <span>积分</span>
+                </a>
+            </li>
+            <li style="width:49%">
+                <a href="{:url('coupon/index')}">
+                    {if condition="$user eq false"}
+                    <span class="coc">0</span>
+                    {else}
+                    <span class="coc">{$user.coupon}</span>
+                    {/if}
+                    <span>优惠券</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 会员图片 -->
+    <div class="vipImg">
+        <a href="{:url('user/member/index')}">
+            <span class="iconfont iconhuiyuan"></span>
+            {if condition="$vip_info eq false"}
+            <span>立即成为会员</span>
+            <span class="vipopen">开通会员</span>
+            {else}
+            <span>会员到期时间：{$vip_info.expires_time|date='Y-m-d'}</span>
+            {/if}
+        </a>
+    </div>
+    <!-- 会员图片结束 -->
+
+    <!-- 领取优惠卷 -->
+    <div class="vipImg" style="background-image: linear-gradient(to right, #fff8bc 41%, #ffecb5 100%);position: relative;">
+        <a href="{:url('user/coupon/getList')}">
+            <span style="margin-left:10px"></span>
+            <span style="font-size:15px;margin-left:0">你优惠，我优惠，来了就优惠</span>
+            <span class="vipopen" style="position:absolute;right:22px;top:57%;transform: translateY(-50%);">领取优惠卷</span>
+        </a>
+    </div>
+    <!-- 领取优惠卷结束 -->
+
+    <!-- 订单 -->
+    <div class="order">
+        <p style="position:relative;border-bottom: 1px dashed #eee">服务订单 <a href="{:url('serorder/index')}" style="position:absolute;display:block;right:0;top: 0;color:#9e9d9d;font-size: 13px;">更多</a></p>
+        <div class="con">
+            <ul>
+                <li>
+                    <a href="{:url('serorder/index', ['tid' => 0])}">
+                        <span class="iconfont iconquanbudingdan"></span>
+                        <span>全部订单</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('serorder/index', ['tid' => 1])}">
+                        <span class="iconfont icondaifukuan"></span>
+                        <span>待付款</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('serorder/index', ['tid' => 3])}">
+                        <span class="iconfont icondaifuwu"></span>
+                        <span>待服务</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('serorder/index', ['tid' => 4])}">
+                        <span class="iconfont icondaipingjia"></span>
+                        <span>待评价</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('serorder/index', ['tid' => 5])}">
+                        <span class="iconfont iconyiwancheng"></span>
+                        <span>已完成</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="order" style="margin-top:1rem">
+        <p style="position:relative;border-bottom: 1px dashed #eee">商城订单 <a href="{:url('serorder/mall_list')}" style="position:absolute;display:block;right:0;top: 0;color:#9e9d9d;font-size: 13px">更多</a></p>
+
+        <div class="con">
+            <ul>
+                <li>
+                    <a href="{:url('serorder/mall_list', ['tid'=>0])}">
+                        <span class="iconfont iconquanbudingdan"></span>
+                        <span>全部订单</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('serorder/mall_list', ['tid'=>1])}">
+                        <span class="iconfont icondaifukuan"></span>
+                        <span>待支付</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('serorder/mall_list', ['tid'=>3])}">
+                        <span class="iconfont icondaifuwu"></span>
+                        <span>待收货</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('serorder/mall_list', ['tid'=>4])}">
+                        <span class="iconfont iconyiwancheng"></span>
+                        <span>已完成</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('serorder/mall_list', ['tid'=>5])}">
+                        <span class="iconfont iconyiquxiao"></span>
+                        <span>已取消</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- 订单结束 -->
+
+    <!-- footer -->
+    {include file="common/footer"/}
+    <!-- footer结束 -->
+</div>
+</body>
+</html>

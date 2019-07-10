@@ -1,0 +1,202 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+ul,li{list-style: none;padding: 0;margin: 0;}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+/* icon */
+.iconfont{
+    vertical-align: middle;
+}
+
+#wrap{
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto 0 auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+.head{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0,0);
+    z-index: 9999;
+    text-align: center;
+    color: #fff;
+}
+.head > span:nth-child(1){
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+.iconreturn{
+    font-size: 23px !important;
+}
+
+.showsucess{
+    max-width: 1200px;
+    height: 202px;
+    line-height: 248px;
+    background: rgb(235,106,101);
+    text-align: center;
+
+}
+.showsucess .iconchenggongbiaoqing,.showsucess .iconshibaibiaoqing{
+    font-size: 4rem;
+    color: #fff;
+}
+
+/* 提示 */
+.tips{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.tips span{
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    color: rgb(252,110,36);
+}
+.tips a{
+    padding: 4px 11px;
+    color: #fff;
+    background: rgb(252,110,36);
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 2px;
+    
+}
+.tips .gohome{
+    margin-right: 16px;
+}
+.tips .looks{
+    margin-left: 16px;
+}
+
+/* 猜你喜欢 */
+.likes{
+    width: 100%;
+    height: auto;
+}
+.likes .liketitle{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.likes .liketitle .likespan{
+    display: inline-block;
+    margin: 0 10px 0 10px;
+    font-size: 15px;
+    vertical-align: middle;
+}
+.likes .liketitle .iconxing{
+    color: rgb(239,102,109);
+    font-size: 12px;
+}
+
+/* card */
+.cardcon{
+    width: 100%;
+    height: auto;
+}
+.cardcon .card{
+    width: 96%;
+    height: auto;
+    margin: 0 auto 0 auto;
+    display: flex;
+}
+.cardcon .card .fl,.cardcon .card .fr{flex: 1;}
+
+.cardcon .card .fl .cardimg{
+    height: 156px;
+}
+.cardcon .card .fl .cardimg img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.cardcon .card .fl .con{
+    height: 100px;
+
+}
+.cardcon .card .fl .con p{
+    margin: 10px auto 0 auto;
+    padding: 0;
+}
+.cardcon .card .fl .con .contxt{
+
+}
+.cardcon .card .fl .con .contxt span:nth-child(1){
+    font-size: 13px;
+    color: rgb(218,116,67);
+}
+.cardcon .card .fl .con .contxt span:nth-child(2){
+    font-size: 11px;
+    color: #666;
+    margin-left: 11px
+}
+
+
+
+.cardcon .card .fr .cardimg{
+    height: 156px;
+}
+.cardcon .card .fr .cardimg img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.cardcon .card .fr .con{
+    height: 100px;
+}
+.cardcon .card .fr .con p{
+    margin: 10px auto 0 auto;
+    padding: 0;
+}
+.cardcon .card .fr .con .contxt{}
+
+.cardcon .card .fr .con .contxt span:nth-child(1){
+    font-size: 13px;
+    color: rgb(218,116,67);
+}
+.cardcon .card .fr .con .contxt span:nth-child(2){
+    font-size: 11px;
+    color: #666;
+    margin-left: 11px
+}
+
+ 
+
+
+
+
+
+
+
+
+

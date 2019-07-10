@@ -1,0 +1,13 @@
+CREATE TABLE `mtt_link` (`link_id` int(5) NOT NULL AUTO_INCREMENT,`name` varchar(50) NOT NULL COMMENT '链接名称',`url` varchar(200) NOT NULL COMMENT '链接URL',`type_id` tinyint(4) DEFAULT NULL COMMENT '所属栏目ID',`qq` varchar(20) NOT NULL COMMENT '联系QQ',`sort` int(5) NOT NULL DEFAULT '50' COMMENT '排序',`addtime` int(11) NOT NULL COMMENT '添加时间',`open` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0禁用1启用',PRIMARY KEY (`link_id`)) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+CREATE TABLE `mtt_message` (`message_id` int(11) NOT NULL AUTO_INCREMENT,`title` varchar(200) DEFAULT '' COMMENT '留言标题',`tel` varchar(15) NOT NULL DEFAULT '' COMMENT '留言电话',`addtime` varchar(15) NOT NULL COMMENT '留言时间',`open` tinyint(2) NOT NULL DEFAULT '0' COMMENT '1=审核 0=不审核',`ip` varchar(50) DEFAULT '' COMMENT '留言者IP',`content` longtext NOT NULL COMMENT '留言内容',`name` varchar(60) NOT NULL DEFAULT '' COMMENT '用户名',`email` varchar(50) NOT NULL COMMENT '留言邮箱',PRIMARY KEY (`message_id`)) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+CREATE TABLE `mtt_donation` (`id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',`name` varchar(120) NOT NULL DEFAULT '' COMMENT '用户名',`money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '捐赠金额',`addtime` varchar(15) NOT NULL,PRIMARY KEY (`id`)) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+INSERT INTO `mtt_auth_rule` VALUES ('28', 'Function', '网站功能', '1', '1', '0', 'icon-cog', '', '0', '6', '1447231590', '1', '1');
+INSERT INTO `mtt_auth_rule` VALUES ('31', 'Link/index', '友情链接', '1', '1', '0', '', '', '28', '2', '1447232183', '0', '1');
+INSERT INTO `mtt_auth_rule` VALUES ('32', 'Link/add', '操作-添加', '1', '1', '0', '', '', '31', '1', '1447639935', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('249', 'Link/edit', '操作-编辑', '1', '1', '0', '', '', '31', '2', '1497427694', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('250', 'Link/linkState', '操作-状态', '1', '1', '0', '', '', '31', '3', '1497427734', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('251', 'Link/del', '操作-删除', '1', '1', '0', '', '', '31', '4', '1497427780', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('48', 'Message/index', '留言管理', '1', '1', '0', '', '', '28', '1', '1451267354', '0', '1');
+INSERT INTO `mtt_auth_rule` VALUES ('247', 'Message/del', '操作-删除', '1', '1', '0', '', '', '48', '1', '1497427449', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('248', 'Message/delall', '操作-删除全部', '1', '1', '0', '', '', '48', '2', '1497427534', '0', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('265', 'Donation/index', '捐赠管理', '1', '1', '0', '', '', '28', '5', '1498101716', '0', '1');

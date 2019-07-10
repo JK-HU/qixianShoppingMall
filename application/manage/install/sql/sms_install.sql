@@ -1,0 +1,4 @@
+INSERT INTO `mtt_auth_rule` (`id`, `href`, `title`, `type`, `status`, `authopen`, `icon`, `condition`, `pid`, `sort`, `addtime`, `zt`, `menustatus`) VALUES (295, 'System/sms', '短信配置', 1, 1, 1, '', '', 1, 50, 1551493395, NULL, 1);
+INSERT INTO `mtt_config` (`id`, `name`, `value`, `inc_type`, `desc`) VALUES (96, 'alisms_isopen', 'false', 'sms', '0');
+INSERT INTO `mtt_config` (`id`, `name`, `value`, `inc_type`, `desc`) VALUES (97, 'alisms_accesskeyid', '', 'sms', '0'),(98, 'alisms_accesskeysecret', '', 'sms', '0');
+INSERT INTO `mtt_config` (`id`, `name`, `value`, `inc_type`, `desc`) VALUES (99, 'alisms_sign', '', 'sms', '0');

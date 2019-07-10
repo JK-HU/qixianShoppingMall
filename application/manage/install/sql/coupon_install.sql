@@ -1,0 +1,6 @@
+CREATE TABLE `mtt_coupon` ( `id` int(10) unsigned NOT NULL AUTO_INCREMENT, `discount_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '优惠金额', `satisfy_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '满足金额', `times` longtext COMMENT '过期时间', `num` int(11) NOT NULL DEFAULT '0' COMMENT '总量', `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态', `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',`over_time` int(11) NOT NULL DEFAULT '0' COMMENT '过期时间',PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='优惠券表';
+CREATE TABLE `mtt_mycoupon` (`id` int(10) unsigned NOT NULL AUTO_INCREMENT,`uid` int(11) NOT NULL DEFAULT '0' COMMENT '用户id',`cid` int(11) NOT NULL DEFAULT '0' COMMENT '优惠券id',`status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '状态',PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='我的优惠券';
+INSERT INTO `mtt_auth_rule` VALUES ('333', 'coupon', '优惠券管理', '1', '1', '1', 'icon-list', '', '0', '50', '1556607692', null, '1');
+INSERT INTO `mtt_auth_rule` VALUES ('334', 'coupon/index', '优惠券列表', '1', '1', '1', '', '', '333', '50', '1556607785', null, '1');
+INSERT INTO `mtt_auth_rule` VALUES ('335', 'coupon/edit', '增加/编辑优惠券', '1', '1', '1', '', '', '334', '50', '1556614617', null, '0');
+INSERT INTO `mtt_auth_rule` VALUES ('336', 'coupon/delete', '删除优惠券', '1', '1', '1', '', '', '334', '50', '1556614637', null, '0');

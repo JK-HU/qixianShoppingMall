@@ -1,0 +1,1115 @@
+2019-05-23 14:47:26：
+------ 接收回调开始 ------
+2019-05-23 14:47:26：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[37]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[tidck5yg37jbh7wb14arvrrlmp7d4wt9]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052314471726187]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[20D7F3B299908EE3CE3FFF56B688A12CFCDF279F2238C5FF061DB9A1EEC31BD4]]></sign>
+<time_end><![CDATA[20190523144725]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000298201905234187770247]]></transaction_id>
+</xml>
+2019-05-23 14:47:26：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '37',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'tidck5yg37jbh7wb14arvrrlmp7d4wt9',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052314471726187',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '20D7F3B299908EE3CE3FFF56B688A12CFCDF279F2238C5FF061DB9A1EEC31BD4',
+  'time_end' => '20190523144725',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000298201905234187770247',
+)
+2019-05-23 14:47:26：
+------ 接收回调并处理结束 ------
+2019-05-23 14:49:12：
+------ 接收回调开始 ------
+2019-05-23 14:49:12：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[36]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[i53cmthswgdpm8px5e7pn0fvrb10x2y9]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052314450057881]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[618E44DA253EBA8A18D5DBFCD94BEAA1365E21982777EEE474779ECEAF5060E1]]></sign>
+<time_end><![CDATA[20190523144509]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000292201905238391797159]]></transaction_id>
+</xml>
+2019-05-23 14:49:12：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '36',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'i53cmthswgdpm8px5e7pn0fvrb10x2y9',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052314450057881',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '618E44DA253EBA8A18D5DBFCD94BEAA1365E21982777EEE474779ECEAF5060E1',
+  'time_end' => '20190523144509',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000292201905238391797159',
+)
+2019-05-23 14:49:12：
+------ 接收回调并处理结束 ------
+2019-05-23 14:49:39：
+------ 接收回调开始 ------
+2019-05-23 14:49:39：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[34]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[q9y51kz6xbb5zyr5vp9ejya81ob4auc2]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052314351325430]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[707D850BD934E2C78C677DFA7294210ECBA35312DD9038AC68EE572CEA0B4249]]></sign>
+<time_end><![CDATA[20190523143534]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000308201905236980876559]]></transaction_id>
+</xml>
+2019-05-23 14:49:39：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '34',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'q9y51kz6xbb5zyr5vp9ejya81ob4auc2',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052314351325430',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '707D850BD934E2C78C677DFA7294210ECBA35312DD9038AC68EE572CEA0B4249',
+  'time_end' => '20190523143534',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000308201905236980876559',
+)
+2019-05-23 14:49:39：
+------ 接收回调并处理结束 ------
+2019-05-23 14:55:44：
+------ 接收回调开始 ------
+2019-05-23 14:55:44：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[35]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[ji80u4i9psp9bf6y4s2l66qevo5cc7o1]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052314413357355]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CC8F9044729BAB9C1DA9C1B528BE36F56DA05A80D6DE6E9D2212DDE53977F869]]></sign>
+<time_end><![CDATA[20190523144141]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000294201905233645296853]]></transaction_id>
+</xml>
+2019-05-23 14:55:44：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '35',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'ji80u4i9psp9bf6y4s2l66qevo5cc7o1',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052314413357355',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'CC8F9044729BAB9C1DA9C1B528BE36F56DA05A80D6DE6E9D2212DDE53977F869',
+  'time_end' => '20190523144141',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000294201905233645296853',
+)
+2019-05-23 14:55:44：
+------ 接收回调并处理结束 ------
+2019-05-23 15:05:37：
+------ 接收回调开始 ------
+2019-05-23 15:05:37：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[33]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[g61gxvv4nd3zokrzyo7zl41x3o1b5s0n]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052314312314901]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EE9588F8BE938FC682BC8B995CBA48E75484AA3DD418060353B0F2EE316DE7C6]]></sign>
+<time_end><![CDATA[20190523143131]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000289201905230680952144]]></transaction_id>
+</xml>
+2019-05-23 15:05:37：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '33',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'g61gxvv4nd3zokrzyo7zl41x3o1b5s0n',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052314312314901',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'EE9588F8BE938FC682BC8B995CBA48E75484AA3DD418060353B0F2EE316DE7C6',
+  'time_end' => '20190523143131',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000289201905230680952144',
+)
+2019-05-23 15:05:37：
+------ 接收回调并处理结束 ------
+2019-05-23 15:06:50：
+------ 接收回调开始 ------
+2019-05-23 15:06:50：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[38]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[5gv0qozivahhgtobxgv44u36igcq5nbf]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052315064069991]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[608098A7C78E6D84287054218B75FC528D796E995F3DA424BF9F07247169F395]]></sign>
+<time_end><![CDATA[20190523150649]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000306201905239845925174]]></transaction_id>
+</xml>
+2019-05-23 15:06:50：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '38',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => '5gv0qozivahhgtobxgv44u36igcq5nbf',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052315064069991',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '608098A7C78E6D84287054218B75FC528D796E995F3DA424BF9F07247169F395',
+  'time_end' => '20190523150649',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000306201905239845925174',
+)
+2019-05-23 15:06:50：
+------ 接收回调并处理结束 ------
+2019-05-23 15:35:35：
+------ 接收回调开始 ------
+2019-05-23 15:35:35：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[39]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[g1t3u8rboh0rsfip5cmnw41rqzinizu5]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052315352511159]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[330022A7284797078E45D95CF31CC88F80EBAFB209B73924E21C2E3470E8A286]]></sign>
+<time_end><![CDATA[20190523153535]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000298201905234130219142]]></transaction_id>
+</xml>
+2019-05-23 15:35:35：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '39',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'g1t3u8rboh0rsfip5cmnw41rqzinizu5',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052315352511159',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '330022A7284797078E45D95CF31CC88F80EBAFB209B73924E21C2E3470E8A286',
+  'time_end' => '20190523153535',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000298201905234130219142',
+)
+2019-05-23 15:35:35：
+------ 接收回调并处理结束 ------
+2019-05-23 15:53:03：
+------ 接收回调开始 ------
+2019-05-23 15:53:03：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[41]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[gdqkmqaiw5obeoc8xjcess9zem9qv1in]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052315525241100]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[71CDDED5BF158363972B9C144D2A4DC0004804D87B92F131C67E21488EA2DA8D]]></sign>
+<time_end><![CDATA[20190523155301]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000289201905235564193895]]></transaction_id>
+</xml>
+2019-05-23 15:53:03：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '41',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'gdqkmqaiw5obeoc8xjcess9zem9qv1in',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052315525241100',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '71CDDED5BF158363972B9C144D2A4DC0004804D87B92F131C67E21488EA2DA8D',
+  'time_end' => '20190523155301',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000289201905235564193895',
+)
+2019-05-23 15:53:03：
+------ 接收回调并处理结束 ------
+2019-05-23 15:54:51：
+------ 接收回调开始 ------
+2019-05-23 15:54:51：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[42]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[5xwsr51fpo3tdo69hfe1eeb244u33j3c]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052315544368782]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F53FD73FDBBDE3C129AA04925896B3E02BC5D2868924B695BEA5777F58C87E59]]></sign>
+<time_end><![CDATA[20190523155451]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000289201905231889865296]]></transaction_id>
+</xml>
+2019-05-23 15:54:51：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '42',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => '5xwsr51fpo3tdo69hfe1eeb244u33j3c',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052315544368782',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'F53FD73FDBBDE3C129AA04925896B3E02BC5D2868924B695BEA5777F58C87E59',
+  'time_end' => '20190523155451',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000289201905231889865296',
+)
+2019-05-23 15:55:08：
+------ 接收回调开始 ------
+2019-05-23 15:55:08：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[42]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[5xwsr51fpo3tdo69hfe1eeb244u33j3c]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052315544368782]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F53FD73FDBBDE3C129AA04925896B3E02BC5D2868924B695BEA5777F58C87E59]]></sign>
+<time_end><![CDATA[20190523155451]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000289201905231889865296]]></transaction_id>
+</xml>
+2019-05-23 15:55:08：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '42',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => '5xwsr51fpo3tdo69hfe1eeb244u33j3c',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052315544368782',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'F53FD73FDBBDE3C129AA04925896B3E02BC5D2868924B695BEA5777F58C87E59',
+  'time_end' => '20190523155451',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000289201905231889865296',
+)
+2019-05-23 15:55:08：
+------ 接收回调并处理结束 ------
+2019-05-23 15:55:53：
+------ 接收回调开始 ------
+2019-05-23 15:55:53：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[42mhgody7pj2jbwbjn4g7uw1sk57hhrx]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052315554584523]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F0D16F043A9A1637FCC2C1DF62ADC3BAC92DAE0353D01A27BB9A42AAE0FED431]]></sign>
+<time_end><![CDATA[20190523155553]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000302201905233599920428]]></transaction_id>
+</xml>
+2019-05-23 15:55:53：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '43',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => '42mhgody7pj2jbwbjn4g7uw1sk57hhrx',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052315554584523',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'F0D16F043A9A1637FCC2C1DF62ADC3BAC92DAE0353D01A27BB9A42AAE0FED431',
+  'time_end' => '20190523155553',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000302201905233599920428',
+)
+2019-05-23 15:56:09：
+------ 接收回调开始 ------
+2019-05-23 15:56:09：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[42mhgody7pj2jbwbjn4g7uw1sk57hhrx]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052315554584523]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F0D16F043A9A1637FCC2C1DF62ADC3BAC92DAE0353D01A27BB9A42AAE0FED431]]></sign>
+<time_end><![CDATA[20190523155553]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000302201905233599920428]]></transaction_id>
+</xml>
+2019-05-23 15:56:09：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '43',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => '42mhgody7pj2jbwbjn4g7uw1sk57hhrx',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052315554584523',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'F0D16F043A9A1637FCC2C1DF62ADC3BAC92DAE0353D01A27BB9A42AAE0FED431',
+  'time_end' => '20190523155553',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000302201905233599920428',
+)
+2019-05-23 15:56:09：
+------ 接收回调并处理结束 ------
+2019-05-23 15:56:47：
+------ 接收回调开始 ------
+2019-05-23 15:56:47：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[d2d5mvevj41wazskpfmh5t9gddqi5puw]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052315564026657]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[885598302B9B1BBDE2D617B1EA58FED72C6D52DF4954D84D7736802BF374168A]]></sign>
+<time_end><![CDATA[20190523155646]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000302201905232040007780]]></transaction_id>
+</xml>
+2019-05-23 15:56:47：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '44',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'd2d5mvevj41wazskpfmh5t9gddqi5puw',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052315564026657',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '885598302B9B1BBDE2D617B1EA58FED72C6D52DF4954D84D7736802BF374168A',
+  'time_end' => '20190523155646',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000302201905232040007780',
+)
+2019-05-23 15:57:03：
+------ 接收回调开始 ------
+2019-05-23 15:57:03：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[d2d5mvevj41wazskpfmh5t9gddqi5puw]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052315564026657]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[885598302B9B1BBDE2D617B1EA58FED72C6D52DF4954D84D7736802BF374168A]]></sign>
+<time_end><![CDATA[20190523155646]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000302201905232040007780]]></transaction_id>
+</xml>
+2019-05-23 15:57:03：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '44',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'd2d5mvevj41wazskpfmh5t9gddqi5puw',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052315564026657',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '885598302B9B1BBDE2D617B1EA58FED72C6D52DF4954D84D7736802BF374168A',
+  'time_end' => '20190523155646',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000302201905232040007780',
+)
+2019-05-23 15:57:03：
+------ 接收回调并处理结束 ------
+2019-05-23 16:27:12：
+------ 接收回调开始 ------
+2019-05-23 16:27:12：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[fb6dttotun3prh7gazkrqoayqjw6x42o]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052316270330259]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[37636C521DFF30EF8782CEA60768A18A3F9545927256456A21230C83D7A9121E]]></sign>
+<time_end><![CDATA[20190523162712]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000308201905238074183388]]></transaction_id>
+</xml>
+2019-05-23 16:27:12：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '45',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'fb6dttotun3prh7gazkrqoayqjw6x42o',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052316270330259',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '37636C521DFF30EF8782CEA60768A18A3F9545927256456A21230C83D7A9121E',
+  'time_end' => '20190523162712',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000308201905238074183388',
+)
+2019-05-23 16:27:28：
+------ 接收回调开始 ------
+2019-05-23 16:27:28：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[fb6dttotun3prh7gazkrqoayqjw6x42o]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052316270330259]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[37636C521DFF30EF8782CEA60768A18A3F9545927256456A21230C83D7A9121E]]></sign>
+<time_end><![CDATA[20190523162712]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000308201905238074183388]]></transaction_id>
+</xml>
+2019-05-23 16:27:28：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '45',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'fb6dttotun3prh7gazkrqoayqjw6x42o',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052316270330259',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '37636C521DFF30EF8782CEA60768A18A3F9545927256456A21230C83D7A9121E',
+  'time_end' => '20190523162712',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000308201905238074183388',
+)
+2019-05-23 16:27:28：
+------ 接收回调并处理结束 ------
+2019-05-23 16:28:46：
+------ 接收回调开始 ------
+2019-05-23 16:28:46：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[46]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[vngw16ysjfbqmvqxvv6xnivtyya1yb41]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052316283817956]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[AAE95882ED8C2D5BD5E146FAF131500BDF556E8D1935F92C85615B3D796299E6]]></sign>
+<time_end><![CDATA[20190523162845]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000301201905233701777442]]></transaction_id>
+</xml>
+2019-05-23 16:28:46：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '46',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'vngw16ysjfbqmvqxvv6xnivtyya1yb41',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052316283817956',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'AAE95882ED8C2D5BD5E146FAF131500BDF556E8D1935F92C85615B3D796299E6',
+  'time_end' => '20190523162845',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000301201905233701777442',
+)
+2019-05-23 16:29:02：
+------ 接收回调开始 ------
+2019-05-23 16:29:02：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[46]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[vngw16ysjfbqmvqxvv6xnivtyya1yb41]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052316283817956]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[AAE95882ED8C2D5BD5E146FAF131500BDF556E8D1935F92C85615B3D796299E6]]></sign>
+<time_end><![CDATA[20190523162845]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000301201905233701777442]]></transaction_id>
+</xml>
+2019-05-23 16:29:02：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '46',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'vngw16ysjfbqmvqxvv6xnivtyya1yb41',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052316283817956',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'AAE95882ED8C2D5BD5E146FAF131500BDF556E8D1935F92C85615B3D796299E6',
+  'time_end' => '20190523162845',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000301201905233701777442',
+)
+2019-05-23 16:29:02：
+------ 接收回调并处理结束 ------
+2019-05-23 16:31:21：
+------ 接收回调开始 ------
+2019-05-23 16:31:21：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[47]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[voa5huep5a3f4ca45byko5ftxqq1nci3]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019052316311397239]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[30D7FE53757317CEA05F806D3C79822B4DB2D83D69BE50FDF6BF0180444DC560]]></sign>
+<time_end><![CDATA[20190523163120]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000308201905235651447334]]></transaction_id>
+</xml>
+2019-05-23 16:31:21：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '47',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'voa5huep5a3f4ca45byko5ftxqq1nci3',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019052316311397239',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '30D7FE53757317CEA05F806D3C79822B4DB2D83D69BE50FDF6BF0180444DC560',
+  'time_end' => '20190523163120',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000308201905235651447334',
+)
+2019-05-23 16:31:21：
+------ 接收回调并处理结束 ------
+2019-05-28 19:44:41：
+------ 接收回调开始 ------
+2019-05-28 19:44:41：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[49]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[35vk4r1ch0iuoousixahde9rstj7h8cv]]></nonce_str>
+<openid><![CDATA[oZzGlwfGkaV260seA2dg6TIYUwR4]]></openid>
+<out_trade_no><![CDATA[member2019052819442536285]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[694C19EDC25FB76E5CFC3540EAA536DC64EC6A2FFC4D7CA98C19B7E8E601DF15]]></sign>
+<time_end><![CDATA[20190528194441]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000308201905289309301664]]></transaction_id>
+</xml>
+2019-05-28 19:44:41：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '49',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'Y',
+  'mch_id' => '1459661602',
+  'nonce_str' => '35vk4r1ch0iuoousixahde9rstj7h8cv',
+  'openid' => 'oZzGlwfGkaV260seA2dg6TIYUwR4',
+  'out_trade_no' => 'member2019052819442536285',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '694C19EDC25FB76E5CFC3540EAA536DC64EC6A2FFC4D7CA98C19B7E8E601DF15',
+  'time_end' => '20190528194441',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000308201905289309301664',
+)
+2019-05-28 19:44:41：
+------ 接收回调并处理结束 ------
+2019-05-28 19:45:12：
+------ 接收回调开始 ------
+2019-05-28 19:45:12：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[50]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[c2aj7ivjjr841708lumaqslryiirzbbb]]></nonce_str>
+<openid><![CDATA[oZzGlwfGkaV260seA2dg6TIYUwR4]]></openid>
+<out_trade_no><![CDATA[member2019052819445992140]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[5318A9BB5F04CCA6B4D9CF68750595C2CF91151219D98703F577B7FA6A86BE24]]></sign>
+<time_end><![CDATA[20190528194511]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000303201905280268505372]]></transaction_id>
+</xml>
+2019-05-28 19:45:12：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '50',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'Y',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'c2aj7ivjjr841708lumaqslryiirzbbb',
+  'openid' => 'oZzGlwfGkaV260seA2dg6TIYUwR4',
+  'out_trade_no' => 'member2019052819445992140',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '5318A9BB5F04CCA6B4D9CF68750595C2CF91151219D98703F577B7FA6A86BE24',
+  'time_end' => '20190528194511',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000303201905280268505372',
+)
+2019-05-28 19:45:12：
+------ 接收回调并处理结束 ------
+2019-06-13 14:43:41：
+------ 接收回调开始 ------
+2019-06-13 14:43:41：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[100]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[ubzwrbi6xxiywwpu93d4po1bpcnqkqwr]]></nonce_str>
+<openid><![CDATA[oZzGlwdseofm3qMlmRAHx-zC_seQ]]></openid>
+<out_trade_no><![CDATA[2019061314430752427]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F8E477033CF8C951AC80A83991E335B2F8A31864550E58A8F5203A0B30EBD870]]></sign>
+<time_end><![CDATA[20190613144340]]></time_end>
+<total_fee>100</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000299201906136758571651]]></transaction_id>
+</xml>
+2019-06-13 14:43:41：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '55',
+  'bank_type' => 'CFT',
+  'cash_fee' => '100',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'Y',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'ubzwrbi6xxiywwpu93d4po1bpcnqkqwr',
+  'openid' => 'oZzGlwdseofm3qMlmRAHx-zC_seQ',
+  'out_trade_no' => '2019061314430752427',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'F8E477033CF8C951AC80A83991E335B2F8A31864550E58A8F5203A0B30EBD870',
+  'time_end' => '20190613144340',
+  'total_fee' => '100',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000299201906136758571651',
+)
+2019-06-13 14:43:41：
+------ 接收回调并处理结束 ------
+2019-06-20 09:10:27：
+------ 接收回调开始 ------
+2019-06-20 09:10:27：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[75]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[sibqcy1wujbe8tzpgw6qddd3dymqm05y]]></nonce_str>
+<openid><![CDATA[oZzGlwRBsc0v-yxENwSrSo9ke468]]></openid>
+<out_trade_no><![CDATA[2019062009101836444]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C686F083E9E0B86F5EE95EE7767F4B570CEB3EF3EAFC6661C0362F6CA8493AA9]]></sign>
+<time_end><![CDATA[20190620091026]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000296201906208875883984]]></transaction_id>
+</xml>
+2019-06-20 09:10:27：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '75',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'Y',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'sibqcy1wujbe8tzpgw6qddd3dymqm05y',
+  'openid' => 'oZzGlwRBsc0v-yxENwSrSo9ke468',
+  'out_trade_no' => '2019062009101836444',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'C686F083E9E0B86F5EE95EE7767F4B570CEB3EF3EAFC6661C0362F6CA8493AA9',
+  'time_end' => '20190620091026',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000296201906208875883984',
+)
+2019-06-20 09:10:27：
+------ 接收回调并处理结束 ------
+2019-06-21 15:13:50：
+------ 接收回调开始 ------
+2019-06-21 15:13:50：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[94]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[5t1vijk8r4kf7kwjygd5v2wb01i4wds2]]></nonce_str>
+<openid><![CDATA[oZzGlwfLbRvoH5rSDqFsDpB6qqZE]]></openid>
+<out_trade_no><![CDATA[2019062115133983624]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[AF0324FAF9B51B32AA68CC2FDBF17DC30B90D1B47171A1987A4CE3E8DE3F20E2]]></sign>
+<time_end><![CDATA[20190621151349]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000298201906215285450626]]></transaction_id>
+</xml>
+2019-06-21 15:13:50：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '94',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1459661602',
+  'nonce_str' => '5t1vijk8r4kf7kwjygd5v2wb01i4wds2',
+  'openid' => 'oZzGlwfLbRvoH5rSDqFsDpB6qqZE',
+  'out_trade_no' => '2019062115133983624',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => 'AF0324FAF9B51B32AA68CC2FDBF17DC30B90D1B47171A1987A4CE3E8DE3F20E2',
+  'time_end' => '20190621151349',
+  'total_fee' => '1',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000298201906215285450626',
+)
+2019-06-21 15:13:51：
+------ 接收回调并处理结束 ------
+2019-06-21 16:08:12：
+------ 接收回调开始 ------
+2019-06-21 16:08:12：
+接收XML:
+<xml><appid><![CDATA[wxea2a43b8f716a439]]></appid>
+<attach><![CDATA[95]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[4200]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1459661602]]></mch_id>
+<nonce_str><![CDATA[boqnt22y0l68wc5neztcp2ecm3vv28cj]]></nonce_str>
+<openid><![CDATA[oZzGlwdseofm3qMlmRAHx-zC_seQ]]></openid>
+<out_trade_no><![CDATA[2019062116075098387]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0FFD413A36676D66F027E9956C005AE7FBFD091BF7A1C5BC3345D359661E9BFE]]></sign>
+<time_end><![CDATA[20190621160811]]></time_end>
+<total_fee>4200</total_fee>
+<trade_type><![CDATA[MWEB]]></trade_type>
+<transaction_id><![CDATA[4200000301201906219525282439]]></transaction_id>
+</xml>
+2019-06-21 16:08:12：
+处理后XML:
+array (
+  'appid' => 'wxea2a43b8f716a439',
+  'attach' => '95',
+  'bank_type' => 'CFT',
+  'cash_fee' => '4200',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'Y',
+  'mch_id' => '1459661602',
+  'nonce_str' => 'boqnt22y0l68wc5neztcp2ecm3vv28cj',
+  'openid' => 'oZzGlwdseofm3qMlmRAHx-zC_seQ',
+  'out_trade_no' => '2019062116075098387',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '0FFD413A36676D66F027E9956C005AE7FBFD091BF7A1C5BC3345D359661E9BFE',
+  'time_end' => '20190621160811',
+  'total_fee' => '4200',
+  'trade_type' => 'MWEB',
+  'transaction_id' => '4200000301201906219525282439',
+)
+2019-06-21 16:08:12：
+------ 接收回调并处理结束 ------

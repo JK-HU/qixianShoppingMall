@@ -1,0 +1,215 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+ul,li{list-style: none;padding: 0;margin: 0;}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+#wrap{
+    max-width: 100%;
+    height: auto;
+    background: #eee;
+    overflow: hidden;
+}
+
+/* header开始 */
+.head{
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    /* background-color: rgba(148, 150, 150, 0.83); */
+    background-color: #fff;
+    border-bottom: 1px solid #e4e0e0;
+    z-index: 9999;
+}
+.head .head_wrap{
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+.head .head_wrap > a{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 20px;
+}
+.head .head_wrap > span {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+
+}
+.head .head_wrap .area{
+    width: 27%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+    float: right;
+    color: #fff;
+}
+.head .head_wrap .area > a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+/* header结束 */
+
+
+/* 轮播开始 */
+.swiper-container{
+    width: 100%;
+    height: 228px;
+    margin-top: 51px !important;
+}
+.swiper-pagination{
+    width: 200px;
+    height: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+
+.swiper-slide > img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+/* 轮播结束 */
+
+/* 导航 */
+
+.nav{
+    width: 100%;
+    height: 115px;
+   background: #fff;
+    margin-bottom: 10px;
+
+}
+.nav > ul{
+    width: 96%;
+    height: 100%;
+    margin: auto;
+}
+.nav > ul > li{
+    width: 33.333%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+.nav > ul > li > a{
+    width: 100%;
+    height: 100%;
+    color: #000;
+    display: inline-block;
+}
+.nav > ul > li > a > span{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.nav > ul > li > a > span > img{
+    width: 100%;
+    height: 100%
+}
+.nav > ul > li > a > span:nth-child(1){
+    width: 60px;
+    height: 60px;
+    margin: 18px auto 6px auto;
+
+}
+/* 导航结束 */
+
+
+
+/* 模块2 */
+
+.modulb{
+    width: 100%;
+    height: 78px;
+    padding-bottom: 24px;
+    background: #fff;
+    overflow: hidden;
+}
+.modulb .modulcon{
+    width: 96%;
+    height: 78px;
+    display: flex;
+    margin: auto;
+    padding-top: 13px;
+
+}
+
+.modulb .modulcon .modull{
+    flex: 1;
+    border-radius: 5px;
+    margin-right: 10px;
+    background:#ade0ff;
+}
+.modulb .modulcon .modull > span {
+    display: block;
+    margin-left: 20px;
+}
+.modulb .modulcon .modull > span:nth-child(1){
+    margin-bottom: 8px;
+    margin-top: 14px;
+    color:#789ce0;
+    font-size: 17px;
+    font-weight: 550;
+}
+.modulb .modulcon .modull > span:nth-child(2){
+    font-size: 13px;
+    color: #656161;
+
+}
+.modulb .modulcon .modulr{
+    flex: 1;
+    background:#ade0ff;
+}
+.modulb .modulcon .modulr > span{
+    display: block;
+    margin-left: 20px;
+}
+.modulb .modulcon .modulr > span:nth-child(1){
+    margin-bottom: 8px;
+    margin-top: 14px;
+    color:#789ce0;
+    font-size: 17px;
+    font-weight: 550;
+}
+.modulb .modulcon .modulr > span:nth-child(2){
+    font-size: 13px;
+    color: #656161;
+}
+
+
+
+
+/* 模块2结束 */
+
+

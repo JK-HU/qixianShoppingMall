@@ -1,0 +1,306 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+ul,li{list-style: none;padding: 0;margin: 0;}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+#wrap{
+    max-width: 1200px;
+    height: auto;
+    background-color: rgb(244, 244, 244);
+    overflow:scroll;
+}
+header{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 10px;
+    background: #fff;
+    position: relative;
+
+}
+header a{
+    width: auto;
+    height: auto;
+    display: inline-block;
+   
+}
+header a .iconfanhui{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
+    transform: translateY(-5.6px);
+
+}
+header .iconzy{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    margin-top: 15px;
+    transform: translateY(-3.6px);
+
+}
+header .ordertit{
+    display: block;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    line-height: 45px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+/* 订单视图 */
+.orderview{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    margin-bottom: 10px;
+}
+.orderview .viewcon{
+    width: 95%;
+    height: auto;
+    margin: auto;
+    display: flex;
+}
+.orderview .viewcon .viewr{
+    flex: 1;
+
+}
+.orderview .viewcon .viewr img{
+    width: 82px;
+    height: 60px;
+    display: block;
+    margin-top: 30px;
+    transform: translateY(-15px);
+}
+.orderview .viewcon .viewl{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+.orderview .viewcon .viewl .vltop{
+    flex: 1;
+    line-height: 45px;
+    font-size: 17px;
+}
+.orderview .viewcon .viewl .vlbt{
+    flex: 1;
+}
+.orderview .viewcon .viewl .vlbt .vl_l{
+    display: inline-block;
+    width: 50%;
+    color: #ff4c4c;
+    font-size: 17px;
+    float: left;
+}
+.orderview .viewcon .viewl .vlbt .vl_l .monval{}
+.orderview .viewcon .viewl .vlbt .vl_r{
+    display: inline-block;
+    width: 50%;
+    color: #7f8699;
+    text-align: right;
+}
+.orderview .viewcon .viewl .vlbt .vl_r .monsize{}
+
+/* 地址+时间 */
+.addstimes{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.addstimes .addscon{
+    width: 95%;
+    height: 43px;
+    border-bottom: 1px solid #efefef;
+    margin: 0 auto 0 auto;
+}
+.addstimes .addscon a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #333;
+    position: relative;
+}
+.addstimes .addscon a .conr{
+    width: 30%;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+.addstimes .addscon a .conr span{
+    display: inline-block;
+    font-size: 16px;
+}
+.addstimes .addscon a .conl{
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    z-index: 999;
+    float: left;
+}
+.addstimes .addscon a .conl .conlipt{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+}
+.addstimes .addscon a .icongengduo{
+    display: inline-block;
+    line-height: 43px;
+    position: absolute;
+    right: 13px;
+    /* float: right; */
+}
+
+/* 上传照片 */
+.iploadimg{
+    width: 100%;
+    height: auto;
+    padding: 10px 1px 4rem 1px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.iploadimg .deposit{
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    /* line-height: 90px; */
+    margin-top: 40px;
+    margin-left: 6px;
+    display: inline-block;
+    position: relative;
+    float: left;
+}
+.iploadimg .deposit img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.iploadimg .deposit .deleimg{
+    display: block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    color: #fff;
+    background-color: #f72222b3;
+    border-radius: 2px;
+}
+.iploadimg p{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #666;
+    left: 13px;
+    position: absolute;
+}
+.iploadimg form{
+    width: auto;
+    height: 100%;
+    display: block;
+    margin-top: 40px;
+    margin-left: 10px;
+    float: left;
+}
+.iploadimg form label{
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+    display: inline-block;
+}
+.iploadimg form label i{
+    font-size: 4rem;
+}
+
+/* 底部 */
+.ft_order{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    z-index: 99999;
+    box-shadow: 0px -1px 13px 1px rgb(234, 234, 234);
+}
+.ft_order .orderpri{
+    width: 65%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+.ft_order button{
+    width: 35%;
+    height: 50px;
+    background: #ff4c4c;
+    color: #fff;
+    float: right;
+    border: none;
+}
+
+/* 遮盖层 */
+.cover{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.22);
+    z-index: 99999;
+}
+/* 地区 */
+
+/* 留言 */
+.remark{
+    display: inline-block;
+    width: 85%;
+    height: 57px;
+    box-shadow: none;
+    border: 1px solid #eee;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

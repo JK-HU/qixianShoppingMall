@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/user/css/coupon.css" />
+    <script src="/static/user/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/user/js/swiper-3.4.0.jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/user/css/listcon.css" />
+    <link rel="stylesheet" href="/static/user/css/swiper-3.2.7.min.css" />
+    <link rel="stylesheet" href="/static/user/css/iconfont.css" />
+    <link rel="stylesheet" href="/static/user/css/iconfont_coupon.css" />
+
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+            background-color: rgb(244, 244, 244);
+        }
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .tab {
+            display: flex;
+            line-height: 51px;
+            position: fixed;
+            top: 52px;
+            width: 100%;
+            z-index: 99999;
+            border-bottom: 1px #ccc solid;
+            background: #fff;
+        }
+
+        .tab a {
+            width: 33%;
+            background: #fff;
+            text-align: center;
+            color: #000;
+        }
+
+        .tab .active {
+            border-bottom: 1px #f50 solid;
+            color: #f50;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: visible;
+            background: rgb(244, 244, 244);
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            height: calc(103vh - 120px)
+        }
+
+        .swiper-slide {
+            height: auto;
+            background: rgb(244, 244, 244)
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .list-group {
+            padding-left: 0;
+            margin-top: 40px;
+            margin-bottom: 70px;
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: rgba(255, 255, 255, 0);
+            /* border: 1px solid #ddd; */
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+
+
+        /* 下拉刷新结束 */
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="wrap">
+        <!-- 顶部 -->
+        <header class="head" style="height:51px;line-height:51px;">
+            <div class="headcon">
+                <a href="{:url('index/index')}">
+                    <span><i class="iconfont iconfanhui"
+                            style="font-size:20px;vertical-align: middle;color: #adaaaa;"></i>返回</span>
+                </a>
+                <span class="fanxin">我的优惠券</span>
+            </div>
+        </header>
+        <!-- 顶部结束 -->
+        <!-- 订单 -->
+        <div class="container">
+
+            <div class="tab">
+                <a class="active" href="javascript:;"><i class="iconfont iconyhj active"></i><span>未使用</span></a>
+                <a href="javascript:;"><i class="iconfont iconyhj_yy"></i><span>已使用</span></a>
+                <a href="javascript:;"><i class="iconfont iconyhj_gq"></i> <span>已过期</span> </a>
+
+            </div>
+
+
+            <!-- swiper2 -->
+
+            <div class="swiper-container" style="margin-top:100px;">
+                <!-- <div class="refreshtip">下拉可以刷新</div> -->
+                <div class="swiper-wrapper w" style="background:rgb(244,244,244)">
+                    <div class="swiper-slide d">
+
+                        <div class="swiper-container2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide list-group" data-attrs='wsy'>
+
+                                    <!-- 没有订单显示的 -->
+                                    <div class="onorder" style="display:none">
+                                        <span class="iconfont iconzwyhj"></span>
+                                        <span>每月都有惊喜的优惠卷~</span>
+                                        <span>快去挑选心仪的服务!</span>
+                                    </div>
+                                    <!-- 没有订单显示的结束 -->
+
+                                    <!--优惠券主体开始-->
+                                    
+                                    <!--优惠券主体结束-->
+
+
+                                </div>
+                                <div class="swiper-slide list-group" data-attrs='ysy'>
+
+                                    <!-- 没有订单显示的 -->
+                                    <div class="onorder" style="display:none">
+                                        <span class="iconfont iconzwyhj"></span>
+                                        <span>每月都有惊喜的优惠卷~</span>
+                                        <span>快去挑选心仪的服务!</span>
+                                    </div>
+                                    <!-- 没有订单显示的结束 -->
+
+                                </div>
+                                <div class="swiper-slide list-group" data-attrs='ygq'>
+
+                                    <!-- 没有订单显示的 -->
+                                    <div class="onorder" style="display:none">
+                                        <span class="iconfont iconzwyhj"></span>
+                                        <span>每月都有惊喜的优惠卷~</span>
+                                        <span>快去挑选心仪的服务!</span>
+                                    </div>
+                                    <!-- 没有订单显示的结束 -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+        <!-- 订单结束 -->
+
+    </div>
+
+
+
+
+    <script src="/static/user/js/mallorder.js"></script>
+    <script src="/static/user/js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/user/js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+        var loadFlag = true;
+        var onloadnum = 5; //页面加载时获取的个数
+        var swipernum = 0; //上拉或下拉加载时递增的数
+        var swipersize = 3; //上拉或下拉时每次加载的个数
+
+
+        // 页面加载
+        document.onreadystatechange = function () {
+            if (document.readyState == 'complete') {
+                var identName = $('.tab a.active').text(); // tab的text
+                var tabId = $('.tab a.active').attr('data-id'); //tab选中的索引,从0开始
+                ajax_common(identName, 0, onloadnum, 1);
+                return false;
+
+            }
+        }
+
+
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            scrollbar: '.swiper-scrollbar',
+            slidesPerView: 'auto',
+            mousewheelControl: true,
+            freeMode: true,
+            onTouchMove: function (swiper) { //手动滑动中触发
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+
+            },
+            onTouchEnd: function (swiper) {
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+                var identName = document.getElementsByClassName('swiper-slide-active')[0];
+                // 上拉加载
+                if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+// console.log("已经到达底部！");
+                    if (loadFlag) {
+                        $(".loadtip").html('正在加载...');
+                    } else {
+                        $(".loadtip").html('没有更多啦！');
+                    }
+                    ajax_common(identName, swipernum, swipersize, 2);
+                }
+                return false;
+            }
+        });
+        var mySwiper2 = new Swiper('.swiper-container2', {
+            onTransitionEnd: function (swiper) {
+                $('.w').css('transform', 'translate3d(0px, 0px, 0px)')
+                $('.swiper-container2 .swiper-slide-active').css('height', 'auto').siblings('.swiper-slide').css('height', '0px');
+                mySwiper.update();
+                $('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
+                var identName = $('.swiper-slide-active').eq(1).attr('data-attrs'); // 判断每个页面的data-attrs
+                swipernum = 0; //上拉或下拉加载时递增的数
+                swipersize = 3; //上拉或下拉时每次加载的个数
+                ajax_common(identName, 0, 5, 1);
+            }
+        });
+        $('.tab a').click(function () {
+
+            $(this).addClass('active').siblings('a').removeClass('active');
+            mySwiper2.slideTo($(this).index(), 500, false)
+
+            $('.w').css('transform', 'translate3d(0px, 0px, 0px)')
+            $('.swiper-container2 .swiper-slide-active').css('height', 'auto').siblings('.swiper-slide').css(
+                'height', '0px');
+            var identName = $('.swiper-slide-active').eq(1).attr('data-attrs'); // 判断每个页面的data-attrs
+            swipernum = 0; //上拉或下拉加载时递增的数
+            swipersize = 3; //上拉或下拉时每次加载的个数
+            ajax_common(identName, 0, 5, 1);
+
+            mySwiper.update();
+        });
+
+        // 公共方法
+        function ajax_common(tabId, num, size, type) {
+            var status = 0;
+            if(tabId == 'wsy'){
+                status = 0;
+            }else if(tabId == 'ysy'){
+                status = 1;
+            }else if(tabId == 'ygq'){
+                status = 2;
+            }
+             $.ajax({
+                 url : "{:url('coupon/index')}",
+                 type : 'POST',
+                 data : {
+                     'swipernum' : num,
+                     'onloadnum' : size,
+                     'status' : status,
+                 },
+                  success : function(res) {
+                      console.log(res);
+                      var the_detail = '';
+                      if(type == 1){
+                          $(".list-group").eq(mySwiper2.activeIndex).html('');
+                      }
+                      if(tabId == 'ysy') {
+                          the_detail = '<span class="particulars">详情</span>';
+                      }
+                      for (var i in res.data) {
+                          swipernum =  swipernum + 1;
+                          $(".list-group").eq(mySwiper2.activeIndex).append('<div class="coupon-bigbox"> ' +
+                                  '<div class="coupon-box2"> ' +
+                                  '<span class="coupon-semicircle1"></span> ' +
+                                  '<span class="coupon-semicircle2"></span> ' +
+                                  '<span class="coupon-line"></span> ' +
+                                  '<div class="coupon-box3"> ' +
+                                  '<span class="coupon-text1">'+res.data[i].status_name+'</span> ' +
+                                  '<span class="coupon-text2 tcolor-gray">'+res.data[i].discount_price+'</span> ' +
+                                  '<span class="coupon-text3">满'+res.data[i].satisfy_price+'元使用</span> ' +
+                                  '</div><div class="coupon-box4"> ' +
+                                  '<span class="coupon-text4 tcolor-gray">满'+res.data[i].satisfy_price+'减'+res.data[i].discount_price+'</span> ' +
+                                  '<span class="coupon-text4 tcolor-gray">全场通用</span> ' +
+                                  '<span class="coupon-text5">'+res.data[i].over_time+'到期 ' +the_detail+
+                                  '</div></div> ' +
+                                  '<div class="coupon-box5" style="display: none;"> ' +
+                                  '<span class="coupon-line2"></span> ' +
+//                                  '<span class="coupon-text6 tcolor-gray">现金券号：565855316</span> ' +
+                                  '<span class="coupon-text6 tcolor-gray">使用时间：'+res.data[i].use_time+'</span> ' +
+                                  '</div></div>');
+                      }
+                      mySwiper.update(); // 重新计算高度;
+                  },
+                  error : function() {}
+             });
+        }
+
+        $(document).on('click','.particulars',function () {
+            $(this).parent(".coupon-text5").parent(".coupon-box4")
+                .parent(".coupon-box2").next(".coupon-box5").toggle();
+            $(this).parent(".coupon-text5").parent(".coupon-box4")
+                .parent(".coupon-box2").parent(".coupon-bigbox").toggleClass("h-190");
+            $(this).parent(".coupon-text5").parent(".coupon-box4")
+                .parent(".coupon-box2").parent(".coupon-bigbox").siblings(".coupon-bigbox").removeClass("h-190");
+            $(this).parent(".coupon-text5").parent(".coupon-box4").parent(".coupon-box2").parent(".coupon-bigbox").siblings(".coupon-bigbox").find(".coupon-box5").hide("fast");
+        });
+    </script>
+
+</body>
+
+</html>

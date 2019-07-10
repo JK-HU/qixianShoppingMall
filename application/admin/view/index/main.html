@@ -1,0 +1,188 @@
+{include file="common/head"/}
+<style>
+    body {
+        background-color: #f2f2f2;
+    }
+</style>
+<div class="admin-main layui-anim layui-anim-upbit">
+    <div class="layui-card">
+        <div class="layui-row">
+            <div class="layui-col-xs12 layui-col-sm3 layui-col-md3" style="background: #f2f2f2">
+                <div class="layui-row" style="width: 90%;height:90%;margin:0 auto;background-color: #fff;padding:10px;">
+                    <div class="layui-col-md3">
+                        <i class="layui-icon layui-icon-form" style="font-size:63px;"></i>
+                    </div>
+                    <div class="layui-col-md9" style="padding:10px;">
+                        今日订单总数<br><span style="font-size:18px;">{$statistics.today_order}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm3 layui-col-md3" style="background: #f2f2f2">
+                <div class="layui-row" style="width: 90%;height:90%;margin:0 auto;background-color: #fff;padding:10px;">
+                    <div class="layui-col-md3">
+                        <i class="layui-icon layui-icon-rmb" style="font-size:63px;"></i>
+                    </div>
+                    <div class="layui-col-md9" style="padding:10px;">
+                        今日销售总额<br><span style="font-size:18px;">{$statistics.today_money}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm3 layui-col-md3" style="background: #f2f2f2">
+                <div class="layui-row" style="width: 90%;height:90%;margin:0 auto;background-color: #fff;padding:10px;">
+                    <div class="layui-col-md3">
+                        <i class="layui-icon layui-icon-template-1" style="font-size:63px;"></i>
+                    </div>
+                    <div class="layui-col-md9" style="padding:10px;">
+                        昨日销售总额<br><span style="font-size:22px;">{$statistics.yesterday_money}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm3 layui-col-md3" style="background: #f2f2f2">
+                <div class="layui-row" style="width: 90%;height:90%;margin:0 auto;background-color: #fff;padding:10px;">
+                    <div class="layui-col-md3">
+                        <i class="layui-icon layui-icon-chart-screen" style="font-size:63px;"></i>
+                    </div>
+                    <div class="layui-col-md9" style="padding:10px;">
+                        近7天销售总额<br><span style="font-size:18px;">{$statistics.week_money}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-card">
+        <div class="layui-card-header">待处理事务</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                    <div class="layui-row">
+                        <div class="layui-col-md8">待付款订单</div>
+                        <div class="layui-col-md4">{$statistics.order1}</div>
+                    </div>
+                </div>
+                <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                    <div class="layui-row">
+                        <div class="layui-col-md8">待处理订单</div>
+                        <div class="layui-col-md4">{$statistics.order2}</div>
+                    </div>
+                </div>
+                <div class="layui-col-xs12 layui-col-sm12 layui-col-md4">
+                    <div class="layui-row">
+                        <div class="layui-col-md8">已完成订单</div>
+                        <div class="layui-col-md4">{$statistics.order3}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-card">
+        <div class="layui-card-header">用户总览</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <div class="layui-col-xs6 layui-col-sm4 layui-col-md2">
+                    <div class="layui-row" style="padding:10px 0;">
+                        <div class="layui-col-md12" style="color:red;font-size:33px;text-align: center">{$statistics.today_user}</div>
+                        <div class="layui-col-md12" style="text-align: center;padding-top:5px;">今日新增</div>
+                    </div>
+                </div>
+                <div class="layui-col-xs6 layui-col-sm4 layui-col-md2">
+                    <div class="layui-row" style="padding:10px 0;">
+                        <div class="layui-col-md12" style="color:red;font-size:33px;text-align: center">{$statistics.yesterday_user}</div>
+                        <div class="layui-col-md12" style="text-align: center;padding-top:5px;">昨日新增</div>
+                    </div>
+                </div>
+                <div class="layui-col-xs6 layui-col-sm4 layui-col-md2">
+                    <div class="layui-row" style="padding:10px 0;">
+                        <div class="layui-col-md12" style="color:red;font-size:33px;text-align: center">{$statistics.week_user}</div>
+                        <div class="layui-col-md12" style="text-align: center;padding-top:5px;">近7日新增</div>
+                    </div>
+                </div>
+                <div class="layui-col-xs6 layui-col-sm4 layui-col-md2">
+                    <div class="layui-row" style="padding:10px 0;">
+                        <div class="layui-col-md12" style="color:red;font-size:33px;text-align: center">{$statistics.month_user}</div>
+                        <div class="layui-col-md12" style="text-align: center;padding-top:5px;">本月新增</div>
+                    </div>
+                </div>
+                <div class="layui-col-xs6 layui-col-sm4 layui-col-md2">
+                    <div class="layui-row" style="padding:10px 0;">
+                        <div class="layui-col-md12" style="color:red;font-size:33px;text-align: center">{$statistics.total_user}</div>
+                        <div class="layui-col-md12" style="text-align: center;padding-top:5px;">用户总数</div>
+                    </div>
+                </div>
+                <div class="layui-col-xs6 layui-col-sm4 layui-col-md2">
+                    <div class="layui-row" style="padding:10px 0;">
+                        <div class="layui-col-md12" style="color:red;font-size:33px;text-align: center">{$statistics.member_user}</div>
+                        <div class="layui-col-md12" style="text-align: center;padding-top:5px;">会员用户</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="admin-main layui-anim layui-anim-upbit">
+    <div class="table-responsive">
+        <table class="layui-table" lay-even lay-skin="line">
+            <colgroup>
+                <col width="40%">
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th class="text-center" colspan="2">{:lang('systemInfo')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>网站域名</td>
+                <td>{$config.url}</td>
+            </tr>
+            <tr>
+                <td>网站目录</td>
+                <td>{$config.document_root}</td>
+            </tr>
+            <tr>
+                <td>服务器操作系统</td>
+                <td>{$config.server_os}</td>
+            </tr>
+            <tr>
+                <td>服务器端口</td>
+                <td>{$config.server_port}</td>
+            </tr>
+            <tr>
+                <td>服务器IP</td>
+                <td>{$config.server_ip}</td>
+            </tr>
+            <tr>
+                <td>WEB运行环境</td>
+                <td>{$config.server_soft}</td>
+            </tr>
+            <tr>
+                <td>MySQL数据库版本</td>
+                <td>{$config.mysql_version}</td>
+            </tr>
+            <tr>
+                <td>运行PHP版本</td>
+                <td>{$config.php_version}</td>
+            </tr>
+
+            <tr>
+                <td>最大上传限制</td>
+                <td>{$config.max_upload_size}</td>
+            </tr>
+            <tr>
+                <td>MTTPHP版本</td>
+                <td>{:config('version')}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->
+{include file="common/foot"/}
+<script>
+    layui.use('table', function() {
+        var table = layui.table;
+    })
+</script>
+</body>
+</html>

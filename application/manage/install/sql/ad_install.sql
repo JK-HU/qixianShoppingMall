@@ -1,0 +1,14 @@
+CREATE TABLE `mtt_ad` (`ad_id` int(11) NOT NULL AUTO_INCREMENT,`name` varchar(50) NOT NULL DEFAULT '' COMMENT '广告名称',`type_id` tinyint(5) NOT NULL COMMENT '所属位置',`pic` varchar(200) NOT NULL DEFAULT '' COMMENT '广告图片URL',`url` varchar(200) NOT NULL DEFAULT '' COMMENT '广告链接',`addtime` int(11) NOT NULL COMMENT '添加时间',`sort` int(11) NOT NULL COMMENT '排序',`open` tinyint(2) NOT NULL COMMENT '1=审核  0=未审核',`content` varchar(225) DEFAULT '' COMMENT '广告内容',PRIMARY KEY (`ad_id`),KEY `plug_ad_adtypeid` (`type_id`)) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='广告表';
+CREATE TABLE `mtt_ad_type` (`type_id` tinyint(5) NOT NULL AUTO_INCREMENT,`name` varchar(50) NOT NULL DEFAULT '' COMMENT '广告位名称',`sort` int(11) NOT NULL COMMENT '广告位排序',PRIMARY KEY (`type_id`)) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='广告分类';
+INSERT INTO `mtt_auth_rule` VALUES ('296', 'ad', '广告管理', '1', '1', '0', 'icon-list', '', '0', '50', '1553156901', null, '1');
+INSERT INTO `mtt_auth_rule` VALUES ('45', 'Ad/index', '广告管理', '1', '1', '0', '', '', '296', '3', '1450314297', '1', '1');
+INSERT INTO `mtt_auth_rule` VALUES ('46', 'Ad/type', '广告位管理', '1', '1', '0', '', '', '296', '4', '1450314324', '1', '1');
+INSERT INTO `mtt_auth_rule` VALUES ('170', 'Ad/add', '操作-添加', '1', '1', '0', '', '', '45', '1', '1461550835', '1', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('171', 'Ad/edit', '操作-修改', '1', '1', '0', '', '', '45', '2', '1461550835', '1', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('173', 'Ad/del', '操作-删除', '1', '1', '0', '', '', '45', '5', '1461550835', '1', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('174', 'Ad/adOrder', '操作-排序', '1', '1', '0', '', '', '45', '4', '1461550835', '1', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('175', 'Ad/editState', '操作-状态', '1', '1', '0', '', '', '45', '3', '1461550835', '1', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('176', 'Ad/addType', '操作-添加', '1', '1', '0', '', '', '46', '1', '1461550835', '1', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('178', 'Ad/delType', '操作-删除', '1', '1', '0', '', '', '46', '4', '1461550835', '1', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('179', 'Ad/typeOrder', '操作-排序', '1', '1', '0', '', '', '46', '3', '1461550835', '1', '0');
+INSERT INTO `mtt_auth_rule` VALUES ('183', 'Ad/editType', '操作-修改', '1', '1', '0', '', '', '46', '2', '1461834988', '1', '0');

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/payment.css">
+    <link rel="stylesheet" href="/static/home/css/iconfont_yysuccess.css" />
+</head>
+<body>
+
+<div id='wrap'>
+
+    <header class="head">
+        <span class="iconfont iconfh"></span>
+        <span>支付结果</span>
+    </header>
+
+    <div class="showsucess">
+        {if condition="$status eq 'success'"}
+        <i class="iconfont iconchenggongbiaoqing"></i>
+        {else}
+        <i class="iconfont iconshibaibiaoqing"></i>
+        {/if}
+    </div>
+
+
+    <!-- 提示信息 -->
+    <div class="tips">
+        <span>支付成功</span>
+        <a class="gohome" href="/">返回首页</a>
+        <a class="looks" href="{:url('user/index/index')}">查看订单</a>
+    </div>
+
+    <!-- 猜你喜欢 -->
+    <div class="likes">
+        <div class="liketitle">
+            <span class="iconfont iconxing"></span>
+            <span class="iconfont iconxing"></span>
+            <span class="iconfont iconxing"></span>
+            <span class="likespan">猜你喜欢</span>
+            <span class="iconfont iconxing"></span>
+            <span class="iconfont iconxing"></span>
+            <span class="iconfont iconxing"></span>
+        </div>
+
+        <!-- card -->
+        <div class="cardcon">
+            <div class="card">
+                {volist name="$recommended_list" id="vo"}
+                <div class="fl flexs" style="margin-right:12px" onclick="location.href='{:url('goods/content2', ['id'=>$vo['id']])}'">
+                    <div class="cardimg"><img src="{$vo.pic}" alt=""></div>
+                    <div class="con">
+                        <p>{$vo.title}</p>
+                        <div class="contxt">
+                            <span>￥{$vo.money}/平米</span>
+                            <span>立即抢购</span>
+                        </div>
+                    </div>
+                </div>
+                {/volist}
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

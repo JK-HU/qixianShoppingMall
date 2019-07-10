@@ -1,0 +1,75 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>短信服务配置</legend>
+    </fieldset>
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">阿里云短信</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form layui-form-pane" lay-filter="form-login">
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开启状态</label>
+                        <div class="layui-input-3">
+                            <div class="layui-input-block">
+                                <input type="radio" name="alisms_isopen" value="true" title="开启">
+                                <input type="radio" name="alisms_isopen" value="false" title="关闭">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">accessKeyId</label>
+                        <div class="layui-input-4">
+                            <input type="text" lay-verify="required" name="alisms_accesskeyid" placeholder="accessKeyId" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">accessKeySecret</label>
+                        <div class="layui-input-4">
+                            <input type="text" lay-verify="required" name="alisms_accesskeysecret" placeholder="accessKeySecret" value="" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">短信签名</label>
+                        <div class="layui-input-4">
+                            <input type="text" lay-verify="required" name="alisms_sign" placeholder="请填写短信签名" value="" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">{:lang('reset')}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="common/foot"/}
+<script>
+    layui.use(['form', 'layer'], function () {
+        var form = layui.form,layer = layui.layer,$= layui.jquery;
+        form.val("form-login", {$info|raw})
+        //提交监听
+        form.on('submit(submit)', function (data) {
+            loading =layer.load(1, {shade: [0.1,'#fff']});
+            $.post("{:url('system/sms')}",data.field,function(res){
+                layer.close(loading);
+                if(res.code > 0){
+                    layer.msg(res.msg,{icon: 1, time: 1000},function(){
+                        location.href = res.url;
+                    });
+                }else{
+                    layer.msg(res.msg,{icon: 2, time: 1000});
+                }
+            });
+        })
+    })
+</script>
+</body>
+</html>

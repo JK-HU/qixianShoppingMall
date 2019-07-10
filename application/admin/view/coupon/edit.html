@@ -1,0 +1,106 @@
+{include file="common/head"/}
+<div class="admin-main">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>编辑分类</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane">
+        <input type="hidden" name="id" value="{$coupon.id}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">优惠价格</label>
+            <div class="layui-input-4">
+                <input type="number" name="discount_price" value="{$coupon.discount_price}" placeholder="单位（元）" lay-verify="required"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">满足价格</label>
+            <div class="layui-input-4">
+                <input type="number" name="satisfy_price" value="{$coupon.satisfy_price}" placeholder="单位（元）*不填则无消费金额限制"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">过期时间</label>
+            <div class="layui-input-4">
+                <input type="text" class="layui-input" id="test1" name="times" value="{$coupon['times']}" placeholder="点击选择" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">总量</label>
+            <div class="layui-input-4">
+                <input type="number" name="num" value="{$coupon.num}" lay-verify="required"  class="layui-input" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-4">
+                <input type="checkbox" id="status" name="status" value="{$coupon.status|default=''}" lay-skin="switch" lay-text="开启|关闭" lay-filter="open" {$coupon.status == 1 ? 'checked' : '' }>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" lay-submit="" lay-filter="auth">立即提交</button>
+                <a href="{:url('index')}" class="layui-btn layui-btn-primary">返回</a>
+            </div>
+        </div>
+    </form>
+</div>
+{include file="common/foot"/}
+<script>
+    layui.use(['form', 'layer','upload', 'laydate'], function () {
+        var form = layui.form,layer = layui.layer,upload = layui.upload,$ = layui.jquery,element = layui.element,laydate = layui.laydate;;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test1' //指定元素
+            ,type: 'datetime'
+            ,range: '~'
+        });
+        form.on('switch(open)', function(obj){
+            var open = obj.elem.checked===true?1:0;
+            if(open == 1){
+                $('#status').val(open);
+            }else{
+                $('#status').val(open);
+            }
+        });
+        form.on('submit(auth)', function (data) {
+            // 提交到方法 默认为本身
+            $.post("{:url('edit')}",data.field,function(res){
+                if(res.code == 0){
+                    layer.msg(res.msg,{time:1800,icon:1},function(){
+                        location.href = "{:url('index')}";
+                    });
+                }else{
+                    layer.msg(res.msg,{time:1800,icon:2});
+                }
+            });
+        });
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#adBtn'
+            ,url: '{:url("UpFiles/upload")}'
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#adPic').attr('src', result); //图片链接（base64）
+                });
+            },
+            done: function(res){
+                if(res.code>0){
+                    $('#image').val(res.url);
+                }else{
+                    //如果上传失败
+                    return layer.msg('上传失败');
+                }
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst.upload();
+                });
+            }
+        });
+    })
+</script>
+</body>
+</html>

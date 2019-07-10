@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/listContent.css">
+    <link rel="stylesheet" href="/static/home/css/swiper.min.css">
+    <link rel="stylesheet" href="/static/home/css/iconfont_serorder.css">
+    <script src="/static/home/js/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+    <header class="head" style="height:51px">
+        <div class="headcon">
+            <a href="javascript:history.back()"><span class="iconfont iconfanhui">返回</span></a>
+            <span class="cj">{$info.title}</span>
+        </div>
+    </header>
+
+    <!-- 轮播开始 -->
+    <div class="swiper-container" style="margin-top:52px">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{$info.pic}" alt=""></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- 轮播结束 -->
+
+    <!-- 描述 -->
+    <div class="description">
+        <span class="desc_con" data-commodityID="{$info.id}" data-commoditygID="{$info.gid}">
+            <strong>{$info.title}</strong>
+            <span class="money_id" style="display: none">{$info.id}</span>
+            <span class="money_gid" style="display: none">{$info.gid}</span>
+        </span>
+        <span class="desc_prise moery">{$info.money}</span>
+        <div class="introduce">
+            <span>快递:{if condition="$info.is_free_shipping eq 1"}包邮{else}{$info.shipping_price}{/if}</span>
+            <span>销量:{$info.sale_count}件</span>
+        </div>
+        <div class="ensure">
+            {if condition="$info.is_ggct eq 1"}<span><strong>正品保证</strong></span>{/if}
+            {if condition="$info.is_guarantee eq 1"}<span><strong>保修</strong></span>{/if}
+            {if condition="$info.is_provide_invoices eq 1"}<span><strong>发票</strong></span>{/if}
+        </div>
+    </div>
+    <!-- 描述结束 -->
+
+    <!-- 选择规格数量 -->
+    <div class="addbtn chioceproduct">
+        <span>请选择 数量</span>
+    </div>
+    <!-- 选择规格数量结束 -->
+
+    <!-- 产品内容简介 -->
+    <div class="ductImg">
+        <p>产品简介</p>
+        {$info.content|raw}
+    </div>
+    <!-- 产品内容简介结束 -->
+
+
+    <!-- 底部 -->
+    <footer>
+        <a href="javascript:">
+            <span class="addbtn joinshpping">加入购物车</span>
+        </a>
+        <a href="javascript:">
+            <span class="addbtn nowbuy" data-buyflag='false'>立即购买</span>
+        </a>
+    </footer>
+    <!-- 底部结束 -->
+
+    <!-- 商品规格弹出层 -->
+    <div class="cover"></div>
+    <div id="showEject" class='showEject'>
+        <div class="eject_box">
+            <div class="box_head">
+                <img src="/static/home/images/sd1.jpg" alt="" class="img">
+                <div class="money">
+                    <span class="money_prise">￥ 00.00</span>
+                    <span style="font-size:20px">/ 件</span>
+                    <span class='iconfont iconquxiao'>x</span>
+                    <span class="money_descript">加载中...</span>
+                </div>
+            </div>
+            <div class="box_content">
+                <!-- 选择样式 -->
+
+                <!-- 数量 -->
+                <div class="content_number">
+                    <span>数量</span>
+                    <span id="btn_add" class="iconfont iconzengjia addbtn_s iconcolor"></span>
+                    <span class="addbtn_s store_nums">1</span>
+                    <span id="btn_less" class="iconfont iconiconless addbtn_s iconcolor"></span>
+                    <span style="clear:both"></span>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+     
+            <!-- <div id='box_submit' class="box_submit">确定</div> -->
+            <div id='box_submit' class="box_submit"><a href="javascript:" id="suba" style="color: #fff;display:block;">确定</a></div>
+            
+        </div>
+    </div>
+    <!-- 商品规格弹出层结束 -->
+
+</div>
+
+
+<script src="/static/home/js/jquery.min.js"></script>
+<script src="/static/home/js/listContent.js"></script>
+<script src="/static/home/js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay:true,
+        pagination: {
+            el : '.swiper-pagination',
+
+        },
+
+    });
+</script>
+
+</body>
+</html>

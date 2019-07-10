@@ -1,0 +1,1 @@
+DELETE FROM `mtt_auth_rule` WHERE `mtt_auth_rule`.`id` in(3,4,5,126,127,128,129,230,232);

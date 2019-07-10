@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>务团网</title>
+    <link rel="stylesheet" href="/static/home/css/shoppingCart.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont.css" />
+    <link rel="stylesheet" href="/static/home/css/iconfont_gwc.css" />
+</head>
+<body>
+
+<div id="wrap">
+
+    <!-- 顶部 -->
+    <header class="head">
+        <div class="headcon">
+            <!-- <a href="index.html" style="left:0"><span class="iconfont iconfanhui"></span></a>
+            <a href="index.html" style="left:8%"><span class="iconfont iconzhuye"></span></a> -->
+            <span class="fanxin">购物车</span>
+            <span class="edit">编辑</span>
+        </div>
+    </header>
+
+    <!-- 物品列表 -->
+
+    <div class="storeList">
+        <div class="store_l_content">
+            <ul>
+                {volist name="list" id="vo"}
+                <li>
+                    <span class="iconfont iconwxz iconflag" data-iflag="n" data-id="{$vo.id}"></span>
+                    <div class="store_l_c_r">
+                        <div class="con_leftImg">
+                            <img src="/static/home/images/sd1.jpg" alt="">
+                        </div>
+                        <div class="co_right">
+                            <div class="right_top">
+                                <span class="right_top_title">{$vo.goods_title}</span>
+                                <span class="right_top_gg">{$vo.goods_norms}</span>
+                            </div>
+                            <div class="right_btm">
+                                <div class="btm_moeny">
+                                        <span class="money_unitPrise">
+                                            单价:
+                                            <span class="unitPrise_mon">{$vo.goods_price}</span>
+                                            元
+                                        </span>
+                                    <span class="money_total">
+                                            小计:
+                                            <span class="total_mon">{$vo.price}</span>
+                                            元
+                                        </span>
+                                </div>
+                                <div class="btm_btn">
+                                    <span id="btn_less" class="iconfont iconjian addbtn_s iconcolor"></span>
+                                    <span class="addbtn_s store_nums">{$vo.number}</span>
+                                    <span id="btn_add" class="iconfont iconjia addbtn_s iconcolor"></span>
+                                    <span style="clear:both"></span>
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                    </div>
+                </li>
+                {/volist}
+
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- 物品列表结束 -->
+
+
+    <!-- 合计 -->
+
+    <div class="totalNum">
+
+        <div class="allelection">
+            <span id="allelection_btn" class="iconfont iconwxz iconflag" data-iflag='n'></span>
+            全选
+        </div>
+
+        <div class="total_txt">
+            合计:
+            <span class="total_t_money">123.00</span>
+        </div>
+        <div class="payment">去支付</div>
+        <div style="clear:both"></div>
+    </div>
+    <div style="clear:both"></div>
+
+
+
+    <!-- 合计结束 -->
+
+
+    <!-- footer -->
+    {include file="common/footer"/}
+    <!-- footer结束 -->
+
+
+</div>
+
+<script src="/static/home/js/jquery.js"></script>
+<script src="/static/home/js/shoppingCart.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>编辑区域</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" id="the-form">
+        <input type="hidden" name="id" id="id" value="{$info.id|default=''}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">上级区域</label>
+            <div class="layui-input-inline">
+                <input type="hidden" name="pid" value="{$parent.id}">
+                <input type="text" value="{$parent.name}" class="layui-input" disabled>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">区域名称</label>
+            <div class="layui-input-2">
+                <input type="text" name="name" value="{$info.name|default=''}" lay-verify="required" placeholder="{:lang('pleaseEnter')}区域名称" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">显示状态</label>
+            <div class="layui-input-inline">
+                <input type="radio" name="type" value="1" title="显示" {if condition="!isset($info) || $info['type'] eq 1"}checked{/if}>
+                <input type="radio" name="type" value="0" title="隐藏" {if condition="isset($info['type']) && $info['type'] eq 0"}checked{/if}>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
+                <a href="{:url('index')}" class="layui-btn layui-btn-primary">{:lang('back')}</a>
+            </div>
+        </div>
+    </form>
+</div>
+{include file="common/foot"/}
+<script>
+    layui.use(['form', 'layer','upload'], function () {
+        var form = layui.form, layer = layui.layer,$= layui.jquery, upload = layui.upload;
+        form.on('select(province)', function(data) {
+            var pid = data.value;
+            var loading = layer.load(1, {shade: [0.1, '#fff']});
+            $.get("{:url('getRegion')}?pid=" + pid, function (data) {
+                layer.close(loading);
+                var html='<option value="">请选择市</option>';
+                $.each(data, function (i, value) {
+                    html += '<option value="'+value.id+'">'+value.name+'</option>';
+                });
+                $('#city').html(html);
+                $('#district').html('<option value="">请选择县/区</option>');
+                form.render()
+            });
+        });
+        form.on('select(city)', function(data) {
+            var pid = data.value;
+            var loading = layer.load(1, {shade: [0.1, '#fff']});
+            $.get("{:url('getRegion')}?pid=" + pid, function (data) {
+                layer.close(loading);
+                var html='<option value="">请选择县/区</option>';
+                $.each(data, function (i, value) {
+                    html += '<option value="'+value.id+'">'+value.name+'</option>';
+                });
+                $('#district').html(html);
+
+                form.render()
+            });
+        });
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#adBtn'
+            ,url: '{:url("UpFiles/upload")}'
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#adLogo').attr('src', result); //图片链接（base64）
+                });
+            },
+            done: function(res){
+                if(res.code>0){
+                    $('#logo').val(res.url);
+                }else{
+                    //如果上传失败
+                    return layer.msg('上传失败');
+                }
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst.upload();
+                });
+            }
+        });
+        form.on('submit(submit)', function (data) {
+            // 提交到方法 默认为本身
+            var loading = layer.load(1, {shade: [0.1, '#fff']});
+            $.post("", $('#the-form').serialize(), function (res) {
+                layer.close(loading);
+                if (res.code > 0) {
+                    layer.msg(res.msg, {time: 1800, icon: 1}, function () {
+                        location.href = res.url;
+                    });
+                } else {
+                    layer.msg(res.msg, {time: 1800, icon: 2});
+                }
+            });
+        })
+    });
+</script>
+</body>
+</html>

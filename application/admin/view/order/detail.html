@@ -1,0 +1,109 @@
+{include file="common/head"/}
+<table class="layui-table" style="margin-left:20px;margin-top:20px;">
+    <colgroup>
+        <col width="50">
+        <col width="200">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>名称</th>
+        <th>内容</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>订单编号</td>
+        <td>{$order.order_id}</td>
+    </tr>
+    <tr>
+        <td>商品名称</td>
+        <td>{$order.name}</td>
+    </tr>
+    <tr>
+        <td>商品规格</td>
+        <td>{$order.norms|default='无'}</td>
+    </tr>
+    <tr>
+        <td>购买数量</td>
+        <td>{$order.num}</td>
+    </tr>
+    <tr>
+        <td>金额</td>
+        <td>{$order.money}元</td>
+    </tr>
+    <tr>
+        <td>用户名</td>
+        <td>{$order.username|default='无'}</td>
+    </tr>
+    <tr>
+        <td>用户手机</td>
+        <td>{$order.mobile}</td>
+    </tr>
+    <tr>
+        <td>用户收件地址信息</td>
+        <td>
+            姓名：{$order.addr_name}<br>
+            手机号码：{$order.addr_phone}<br>
+            地址：{$order.addr_province}&nbsp;{$order.addr_city}&nbsp;{$order.addr_district}&nbsp;{$order.addr_address}
+        </td>
+    </tr>
+    <tr>
+        <td>预约时间</td>
+        <td>{$order.make_time|date='Y-m-d H:i:s'}</td>
+    </tr>
+    <tr>
+        <td>订单状态</td>
+        <td>
+            {if condition="$order['status']  eq '1'"}
+            未支付
+            {/if}
+            {if condition="$order['status']  eq '2'"}
+            已支付（待发货）
+            {/if}
+            {if condition="$order['status']  eq '3'"}
+            已发货（待收货）
+            {/if}
+            {if condition="$order['status']  eq '4'"}
+            已完成（待评价）
+            {/if}
+            {if condition="$order['status']  eq '5'"}
+            已评价
+            {/if}
+        </td>
+    </tr>
+    <tr>
+        <td>下单时间</td>
+        <td>{$order.create_time|date='Y-m-d H:i:s'}</td>
+    </tr>
+    <tr>
+        <td>备注</td>
+        <td>{$order.remark|default='无'}</td>
+    </tr>
+    <tr>
+        <td>发货状态</td>
+        <td>
+            {if condition="$order['send_type'] eq 0"}
+            未发货
+            {/if}
+            {if condition="$order['send_type'] eq 1"}
+            快递
+            {/if}
+            {if condition="$order['send_type'] eq 2"}
+            无需快递
+            {/if}
+        </td>
+    </tr>
+    <tr>
+        <td>物流信息</td>
+        <td>
+            {if condition="$order['send_type'] eq 1 && $order['send_id'] gt 0"}
+                快递名称：{$order.express_name}<br>
+                快递单号：{$order.express_code}
+            {else}
+                无
+            {/if}
+        </td>
+    </tr>
+    </tbody>
+</table>
+{include file="common/foot"/}

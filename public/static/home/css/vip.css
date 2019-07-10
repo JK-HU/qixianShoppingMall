@@ -1,0 +1,317 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow: auto !important;
+}
+ul,li{list-style: none;padding: 0;margin: 0;}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+body{
+    background: #000;
+}
+
+#wrap{
+    max-width: 1200px;
+    height: auto;
+    background-color: rgb(244, 244, 244);
+    overflow: hidden;
+}
+header{
+    width: 100%;
+    height: 45px;
+    background: rgba(0,0,0,0);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+header a{
+    width: auto;
+    height: auto;
+    display: inline-block;
+    color: #fff;
+   
+}
+header a .iconfanhui{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 33px;
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10px;
+    margin-top: 15px;
+    transform: translateY(-5.6px);
+
+}
+header .iconzy{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    color: #fff;
+    margin-top: 15px;
+    transform: translateY(-3.6px);
+
+}
+header .ordertit{
+    display: block;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+/* mianbg */
+.mainbg{
+    width: 100%;
+    height: 100%;
+    padding-top: 45px;
+    background-color: #000000;
+    position: relative;
+}
+.mainbg .vipOpen{
+    position: absolute;
+    display: block;
+    top: 44%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    font-size: 21px;
+    color: #ceb156;
+    background-image: linear-gradient(to right, #fbf4ba 41%, #ffd55c 100%);
+    border-radius: 7px;
+}
+
+/* 会员价格 */
+.vipprise{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.vipprise .vippriseli{
+    width: 100% !important;
+    height: 64px;
+    line-height: 64px !important;
+    text-align: center;
+    font-size: 22px !important;
+    color: rgb(171, 128, 0) !important;
+    float: left;
+}
+.vipprise .vippriseli:nth-child(1){
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px
+}
+.vipprise .vippriseli:nth-child(3){
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.vipprise .vippriseli.active{
+    background: yellow;
+}
+/* 会员价格结束 */
+
+/* 会员特权 */
+.mainbg .vipPriv{
+    width: 90%;
+    height: auto;
+    margin: 0 auto 0 auto;
+}
+.mainbg .vipPriv .vipPriv_tit{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #f1d16c;
+    font-size: 22px;
+    margin-bottom: 11px;
+    text-align: center;
+}
+.mainbg .vipPriv .vipPriv_tit span{
+    padding: 6px 8px;
+    border-bottom: 1px solid #f1d16c;
+}
+.mainbg .vipPriv .vipPriv_ul{
+    width: 100%;
+    height: auto;
+    margin-bottom: 8rem;
+}
+.mainbg .vipPriv .vipPriv_ul ul{
+    width: 100%;
+    height: auto;
+}
+.mainbg .vipPriv .vipPriv_ul ul li{
+    width: 33.333%;
+    height: auto;
+    text-align: center;
+    color: #fff;
+    float: left;
+}
+.mainbg .vipPriv .vipPriv_ul ul li img{
+    width: 55px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+.mainbg .vipPriv .vipPriv_ul ul li span{
+    display: block;
+}
+
+/* 领积分 */
+.mainbg .vipPriv .vipIntegral{
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    
+}
+.mainbg .vipPriv .vipIntegral .tegral_img{
+    width: 80%;
+    height: auto;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    font-size: 15px;
+    color: #fff;
+    /* color: #cbca94; */
+    text-align: left;
+}
+.mainbg .vipPriv .vipIntegral .tegral_img img{
+    width: auto;
+    height: 28px;
+    vertical-align: middle;
+}
+.mainbg .vipPriv .vipIntegral .tegraltxt{
+    display: flex;
+    height: auto;
+    padding: 15px 0;
+    border-radius: 10px;
+    background: rgba(64, 60, 60, 0.8);
+    /* background-image: linear-gradient(to right, #f3edba 41%, #e2cf97 100%); */
+
+}
+.mainbg .vipPriv .vipIntegral .tegraltxt .tegraltxt_img{
+    flex: 1;
+    height: auto;
+    text-align: center;
+}
+.mainbg .vipPriv .vipIntegral .tegraltxt .tegraltxt_img img{
+    width: auto;
+    height: 7rem;
+}
+
+.mainbg .vipPriv .vipIntegral .tegraltxt ul{
+    flex: 1;
+    margin-left: 30px;
+}
+.mainbg .vipPriv .vipIntegral .tegraltxt ul li{
+    width: auto;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(243, 242, 242);
+    /* color: rgb(189, 148, 0); */
+    list-style-type: decimal !important;
+    
+}
+
+/* 底部开通会员 */
+/* .cover{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: block;
+    background: rgba(0,0,0,0.85);
+    z-index: 998;
+} */
+
+.openVip{
+    width: 100%;
+    height: 54px;
+    line-height: 54px;
+    background-image: linear-gradient(to right, #f3edba 41%, #e2cf97 100%);
+    color: rgb(171, 128, 0) !important;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.card{
+    width: 85%;
+    height: auto;
+    /* background-image: linear-gradient(to right, #e0cd94 41%, #d6b75c 100%); */
+    background: #000000f0;
+    border: 1px solid #4c4a4a;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: -15px 5px 15px 0px rgb(0, 0, 0);
+    /* box-shadow: 0px 1px 11px 0px rgb(162, 131, 37); */
+    text-align: center;
+    display: none;
+    z-index: 999;
+}
+.card p{
+    width: 100%;
+    line-height: 28px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+.card .card_con{
+    width: auto;
+    height: auto;
+    padding: 4px 6px;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+.card button{
+    border: none;
+    background: #999;
+    color: #fff;
+    border-radius: 4px;
+    width: auto;
+    padding: 6px 14px;
+    margin: 35px auto 5px auto;
+}
+.card .card_success{
+    background-color:red;
+    margin-left: 22px;
+}
+
+
+/* 底部开通会员结束 */
+
+
+
+
+
+
+
+
+
